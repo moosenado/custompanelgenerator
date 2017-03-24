@@ -1,5 +1,6 @@
 .App {
-  text-align: center; }
+  text-align: center;
+  background-color: black; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -10,8 +11,9 @@
   height: 150px;
   padding: 20px;
   color: white; }
-  .App-header.hithere {
-    font-size: 20px; }
+
+.App-header.hithereyoyo {
+  font-size: 20px; }
 
 .App-intro {
   font-size: large; }
