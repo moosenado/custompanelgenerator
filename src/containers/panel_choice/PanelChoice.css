@@ -55,7 +55,25 @@
   width: 100px;
   background-color: red;
   position: relative;
-  opacity: .2; }
+  opacity: .2;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1); }
+
+.PanelChoice .PanelChoice__start_btn:hover {
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+.PanelChoice .PanelChoice__start_btn:hover .inner_outline .centered {
+  opacity: 1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
 
 .PanelChoice .PanelChoice__start_btn .inner_outline {
   position: absolute;
@@ -79,7 +97,12 @@
   border-radius: 50%;
   height: 88px;
   width: 88px;
-  background-color: transparent; }
+  background-color: transparent;
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  -webkit-transform: scale3d(0, 0, 1);
+  transform: scale3d(0, 0, 1); }
 
 .PanelChoice .PanelChoice__start_btn .text {
   position: absolute;

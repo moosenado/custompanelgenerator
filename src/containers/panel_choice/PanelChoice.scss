@@ -42,6 +42,19 @@
 		background-color: red;
 		position: relative;
 		opacity: .2;
+		cursor: pointer;
+		@include transition(all .5s);
+		@include transform(scale3d(.95,.95,1));
+
+		&:hover {
+			@include transition(all .25s);
+			@include transform(scale3d(1,1,1));
+			.inner_outline .centered {
+				opacity: 1;
+				@include transition(all .4s);
+				@include transform(scale3d(1,1,1));
+			}
+		}
 
 		.inner_outline {
 			@include center-element;
@@ -53,6 +66,9 @@
 				height: 88px;
 				width: 88px;
 				background-color: transparent;
+				opacity: 0;
+				@include transition(all 1.5s);
+				@include transform(scale3d(0,0,1));
 			}
 		}
 

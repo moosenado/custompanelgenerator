@@ -48,9 +48,8 @@ table {
 .App header {
   width: 100%;
   box-shadow: 0 8px 8px -9px rgba(0, 0, 0, 0.2); }
-
-.App header img {
-  padding: 50px; }
+  .App header img {
+    padding: 50px; }
 
 .App footer {
   width: 100%;
