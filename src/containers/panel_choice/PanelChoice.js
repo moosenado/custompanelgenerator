@@ -22,12 +22,17 @@ class PanelChoice extends Component {
 	      		</div>
 
 	      		<div className="PanelChoice__dropdown" onClick={this.dropMenu}>
-	      			<div className="text">CHOOSE ENCLOSURE SIZE</div>
+	      			<div className="text">
+	      				<div>CHOOSE ENCLOSURE SIZE</div>
+	      			</div>
 	      		</div>
 
 	      		<div className="PanelChoice__start_btn">
-	      			<div className="inner_btn">
-	      				<div className="text">START</div>
+	      			<div className="inner_outline">
+						<div className="centered"></div>
+	      			</div>
+	      			<div className="text">
+	      				<div>START</div>
 	      			</div>
 	      		</div>
 

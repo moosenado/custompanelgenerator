@@ -1,8 +1,11 @@
 @import './../../Shared.scss';
 
 .PanelChoice {
+	margin: 50px 0;
+
 	.PanelChoice__title {
 		text-align: center;
+		margin: 60px 0;
 
 		h2 {
 			font-size: 30px;
@@ -17,12 +20,17 @@
 		margin: 0 auto;
 		position: relative;
 		cursor: pointer;
+		margin-bottom: 150px;
 
 		.text {
 			white-space: nowrap;
 			font-size: 18px;
 			color: #d2d0d0;
 			@include center-element;
+
+			div {
+				@include complete-centering;
+			}
 		}
 	}
 
@@ -31,22 +39,32 @@
 		border-radius: 50%;
 		height: 100px;
 		width: 100px;
-		background-color: green;
+		background-color: red;
 		position: relative;
+		opacity: .2;
 
-		.inner_btn {
+		.inner_outline {
 			@include center-element;
-			border: 2px solid white;
-			border-radius: 50%;
-			height: 88px;
-			width: 88px;
-			background-color: transparent;
 
-			.text {
-				@include center-element;
-				color: white;
-				font-size: 22px;
-				line-height: 20px;
+			.centered {
+				@include complete-centering;
+				border: 2px solid white;
+				border-radius: 50%;
+				height: 88px;
+				width: 88px;
+				background-color: transparent;
+			}
+		}
+
+		.text {
+			@include center-element;
+			color: white;
+			font-size: 20px;
+			line-height: 20px;
+			font-weight: 700;
+
+			div {
+				@include complete-centering;
 			}
 		}
 	}
