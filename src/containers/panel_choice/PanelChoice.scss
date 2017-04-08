@@ -20,7 +20,6 @@
 		margin: 0 auto;
 		position: relative;
 		cursor: pointer;
-		margin-bottom: 150px;
 
 		.text {
 			white-space: nowrap;
@@ -84,4 +83,15 @@
 			}
 		}
 	}
+
+	.PanelChoice__dropdown_menu {
+		overflow: hidden;
+	}
+}
+
+.PanelDropdown {
+	margin: 0 auto;
+	height: 150px;
+	width: 265px;
+	border: 1px solid black;
 }

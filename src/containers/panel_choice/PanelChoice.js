@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PanelDropdown from './PanelDropdown';
 
 import './PanelChoice.css';
 
@@ -25,6 +26,9 @@ class PanelChoice extends Component {
 	      			<div className="text">
 	      				<div>CHOOSE ENCLOSURE SIZE</div>
 	      			</div>
+	      		</div>
+	      		<div className="PanelChoice__dropdown_menu">
+	      			<PanelDropdown />
 	      		</div>
 
 	      		<div className="PanelChoice__start_btn">
