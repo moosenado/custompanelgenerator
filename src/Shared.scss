@@ -1,0 +1,138 @@
+/* TRANSITIONS/ANIMATIONS
+---------------------------------------------- */
+
+@mixin transition($content) {
+  -webkit-transition: $content;
+  // -moz-transition   : $content;
+  // -ms-transition    : $content;
+  // -o-transition     : $content;
+  transition        : $content;
+}
+
+@mixin transitionTiming($content) {
+  -webkit-transition-timing-function: $content;
+  // -moz-transition-timing-function: $content;
+  // -ms-transition-timing-function: $content;
+  // -o-transition-timing-function: $content;
+  transition-timing-function: $content;
+}
+
+@mixin transform($content) {
+  -webkit-transform: $content;
+  // -moz-transform   : $content;
+  // -ms-transform    : $content;
+  // -o-transform     : $content;
+  transform        : $content;
+}
+
+@mixin animation($content) {
+  -webkit-animation: $content;
+  // -moz-animation   : $content;
+  // -o-animation     : $content;
+  animation        : $content;
+}
+
+@mixin keyframes($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+    // @-moz-keyframes #{$animation_name}  {
+    //     @content;
+    // }
+    // @-o-keyframes #{$animation_name} {
+    //     @content;
+    // }
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+/* BREAKPOINTS
+---------------------------------------------- */
+
+@mixin screen-xs {
+  @media (min-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+  @media (min-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
+
+/* HARDWARE
+---------------------------------------------- */
+
+@mixin useHardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    perspective: $perspective;
+}
+
+/* COMMON CONTAINER ELEMENTS
+---------------------------------------------- */
+
+@mixin bold-lettering {
+  text-shadow: 1px 0 0 #000;
+}
+
+@mixin white-gradient {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255,255,255,0);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 41%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(41%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 41%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 41%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 41%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 41%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+
+@mixin blue-button {
+  background: $sn-blue;
+  border: none;
+  border-radius:4px;
+  color: white;
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  padding:0.8em 3em;
+  position: relative;
+  @include transition(background 0.3s ease-in-out);
+  text-transform: capitalize;
+  &:hover {
+    background: lighten(#156BAC, 6%);
+  }
+}
+
+@mixin center-element($left: 50%, $x:-50%, $top: 50%, $y:-50%) {
+  position: absolute;
+  top: #{$top};
+  left: #{$left};
+  @include transform(translate3d(#{$x},#{$y},0));
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 9px 19px -4px rgba(0,0,0,0.06);
+  -moz-box-shadow: 0px 9px 19px -4px rgba(0,0,0,0.06);
+  box-shadow: 0px 9px 19px -4px rgba(0,0,0,0.06);
+}

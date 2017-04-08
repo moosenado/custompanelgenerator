@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  font: normal .9em Tahoma, Verdana, Arial, Helvetica, sans-serif
 }
 ol, ul {
   list-style: none;
@@ -45,7 +46,7 @@ table {
 
 /*GLOBAL CODE*/
 
-.app {
+.App {
   header {
     width: 100%;
     box-shadow: 0 8px 8px -9px rgba(0,0,0,0.2);

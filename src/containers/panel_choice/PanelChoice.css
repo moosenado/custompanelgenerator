@@ -1,0 +1,62 @@
+/* TRANSITIONS/ANIMATIONS
+---------------------------------------------- */
+/* BREAKPOINTS
+---------------------------------------------- */
+/* HARDWARE
+---------------------------------------------- */
+/* COMMON CONTAINER ELEMENTS
+---------------------------------------------- */
+.PanelChoice .PanelChoice__title {
+  text-align: center; }
+
+.PanelChoice .PanelChoice__title h2 {
+  font-size: 30px; }
+
+.PanelChoice .PanelChoice__dropdown {
+  width: 300px;
+  height: 50px;
+  border-radius: 18px;
+  border: 1px solid black;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer; }
+
+.PanelChoice .PanelChoice__dropdown .text {
+  white-space: nowrap;
+  font-size: 18px;
+  color: #d2d0d0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+.PanelChoice .PanelChoice__start_btn {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  position: relative; }
+
+.PanelChoice .PanelChoice__start_btn .inner_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 88px;
+  width: 88px;
+  background-color: transparent; }
+
+.PanelChoice .PanelChoice__start_btn .inner_btn .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  color: white;
+  font-size: 22px;
+  line-height: 20px; }
