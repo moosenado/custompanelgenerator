@@ -8,126 +8,110 @@
 ---------------------------------------------- */
 .PanelChoice {
   margin: 50px 0; }
-
-.PanelChoice .PanelChoice__title {
-  text-align: center;
-  margin: 60px 0; }
-
-.PanelChoice .PanelChoice__title h2 {
-  font-size: 30px; }
-
-.PanelChoice .PanelChoice__dropdown {
-  width: 300px;
-  height: 50px;
-  border-radius: 18px;
-  border: 1px solid black;
-  margin: 0 auto;
-  position: relative;
-  cursor: pointer; }
-
-.PanelChoice .PanelChoice__dropdown .text {
-  white-space: nowrap;
-  font-size: 18px;
-  color: #d2d0d0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center; }
-
-.PanelChoice .PanelChoice__dropdown .text:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.PanelChoice .PanelChoice__dropdown .text div {
-  vertical-align: middle;
-  display: inline-block;
-  width: 100%; }
-
-.PanelChoice .PanelChoice__start_btn {
-  margin: 0 auto;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  background-color: red;
-  position: relative;
-  opacity: .2;
-  cursor: pointer;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: scale3d(0.95, 0.95, 1);
-  transform: scale3d(0.95, 0.95, 1); }
-
-.PanelChoice .PanelChoice__start_btn:hover {
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1); }
-
-.PanelChoice .PanelChoice__start_btn:hover .inner_outline .centered {
-  opacity: 1;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1); }
-
-.PanelChoice .PanelChoice__start_btn .inner_outline {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center; }
-
-.PanelChoice .PanelChoice__start_btn .inner_outline:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.PanelChoice .PanelChoice__start_btn .inner_outline .centered {
-  vertical-align: middle;
-  display: inline-block;
-  width: 100%;
-  border: 2px solid white;
-  border-radius: 50%;
-  height: 88px;
-  width: 88px;
-  background-color: transparent;
-  opacity: 0;
-  -webkit-transition: all 1.5s;
-  transition: all 1.5s;
-  -webkit-transform: scale3d(0, 0, 1);
-  transform: scale3d(0, 0, 1); }
-
-.PanelChoice .PanelChoice__start_btn .text {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: 700; }
-
-.PanelChoice .PanelChoice__start_btn .text:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.PanelChoice .PanelChoice__start_btn .text div {
-  vertical-align: middle;
-  display: inline-block;
-  width: 100%; }
-
-.PanelChoice .PanelChoice__dropdown_menu {
-  overflow: hidden; }
+  .PanelChoice .PanelChoice__title {
+    text-align: center;
+    margin: 60px 0; }
+    .PanelChoice .PanelChoice__title h2 {
+      font-size: 30px; }
+  .PanelChoice .PanelChoice__dropdown {
+    width: 300px;
+    height: 50px;
+    border-radius: 18px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer; }
+    .PanelChoice .PanelChoice__dropdown .text {
+      white-space: nowrap;
+      font-size: 18px;
+      color: #d2d0d0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-align: center; }
+      .PanelChoice .PanelChoice__dropdown .text:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; }
+      .PanelChoice .PanelChoice__dropdown .text div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 100%; }
+  .PanelChoice .PanelChoice__start_btn {
+    margin: 0 auto;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    opacity: .2;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+    transform: scale3d(0.95, 0.95, 1); }
+    .PanelChoice .PanelChoice__start_btn:hover {
+      -webkit-transition: all 0.25s;
+      transition: all 0.25s;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1); }
+      .PanelChoice .PanelChoice__start_btn:hover .inner_outline .centered {
+        opacity: 1;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1); }
+    .PanelChoice .PanelChoice__start_btn .inner_outline {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-align: center; }
+      .PanelChoice .PanelChoice__start_btn .inner_outline:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; }
+      .PanelChoice .PanelChoice__start_btn .inner_outline .centered {
+        vertical-align: middle;
+        display: inline-block;
+        width: 100%;
+        border: 2px solid white;
+        border-radius: 50%;
+        height: 88px;
+        width: 88px;
+        background-color: transparent;
+        opacity: 0;
+        -webkit-transition: all 1.5s;
+        transition: all 1.5s;
+        -webkit-transform: scale3d(0, 0, 1);
+        transform: scale3d(0, 0, 1); }
+    .PanelChoice .PanelChoice__start_btn .text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 700; }
+      .PanelChoice .PanelChoice__start_btn .text:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; }
+      .PanelChoice .PanelChoice__start_btn .text div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 100%; }
+  .PanelChoice .PanelChoice__dropdown_menu {
+    overflow: hidden; }
 
 .PanelDropdown {
   margin: 0 auto;

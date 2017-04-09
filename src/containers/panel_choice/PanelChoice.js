@@ -27,6 +27,7 @@ class PanelChoice extends Component {
 	      				<div>CHOOSE ENCLOSURE SIZE</div>
 	      			</div>
 	      		</div>
+	      		
 	      		<div className="PanelChoice__dropdown_menu">
 	      			<PanelDropdown />
 	      		</div>

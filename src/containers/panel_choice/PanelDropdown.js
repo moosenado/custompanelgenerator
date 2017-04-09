@@ -17,6 +17,11 @@ class PanelDropdown extends Component {
 	    return (
 	      	<div className="PanelDropdown">
 	      		<ul>
+	      			{Object.keys(this.state.panels).map((key, i) => {
+	      				return (
+	      					<li>{this.state.panels[key]}</li>
+	      				)
+	      			})}
 	      		</ul>
 	      	</div>
 	    );
