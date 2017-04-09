@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './PanelChoice.css';
 
@@ -52,9 +53,12 @@ class PanelChoice extends Component {
 	      		</div>
 
 	      		<div className={"PanelChoice__dropdown " + dropdown_bg} onClick={this.dropMenu}>
-	      			<div className="text">
-	      				<div>{(!this.state.selected_panel) ? 'CHOOSE ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
-	      			</div>
+	      			<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='PanelChoice__ani_text'>
+	      				<div className="text" key={this.state.selected_panel}>
+	      					<div>{(!this.state.selected_panel) ? 'CHOOSE ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
+	      				</div>
+	      			</ReactCSSTransitionGroup>
+	      			<div className="PanelChoice__arrow_down"></div>
 	      		</div>
 
 	      		<div className="PanelChoice__dropdown_menu">

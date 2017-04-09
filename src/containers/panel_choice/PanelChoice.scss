@@ -128,6 +128,7 @@
 
 			ul {
 				margin-top: 20px;
+
 				li {
 					cursor: pointer;
 					padding: 5px 10px;
@@ -139,5 +140,36 @@
 				}
 			}
 		}
+	}
+
+	.PanelChoice__ani_text-enter {
+		opacity: 0;
+		@include transition(opacity .5s);
+
+		&.PanelChoice__ani_text-enter-active {
+			opacity: 1;
+			@include transition(opacity .5s);
+		}
+	}
+
+	.PanelChoice__ani_text-leave {
+		opacity: 1;
+		@include transition(opacity .5s);
+
+		&.PanelChoice__ani_text-leave-active {
+			opacity: 0;
+			@include transition(opacity .5s);
+		}
+	}
+
+	.PanelChoice__arrow_down {
+		position: absolute;
+		top: 44%;
+		right: 15px;
+	  	width: 0;
+	  	height: 0;
+	  	border-left: 6px solid transparent;
+	  	border-right: 6px solid transparent;
+	  	border-top: 8px solid #d2d0d0;
 	}
 }
