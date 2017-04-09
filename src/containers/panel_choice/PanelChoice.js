@@ -61,8 +61,9 @@ class PanelChoice extends Component {
 	      			<div className={'container ' + menu_open_class}>
 			      		<ul>
 			      			{Object.keys(this.state.panels).map((key, i) => {
+			      				let highlight = (key === this.state.selected_panel) ? 'highlight' : '';
 			      				return (
-			      					<li onClick={() => this.panelSelection(key)} key={key}>{key.toUpperCase()}</li>
+			      					<li className={highlight} onClick={() => this.panelSelection(key)} key={key}>{key.toUpperCase()}</li>
 			      				)
 			      			})}
 			      		</ul>
