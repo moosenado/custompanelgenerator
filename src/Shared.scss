@@ -1,6 +1,3 @@
-/* TRANSITIONS/ANIMATIONS
----------------------------------------------- */
-
 @mixin transition($content) {
   -webkit-transition: $content;
   // -moz-transition   : $content;
@@ -47,9 +44,6 @@
     }
 }
 
-/* BREAKPOINTS
----------------------------------------------- */
-
 @mixin screen-xs {
   @media (min-width: $screen-xs) {
     @content;
@@ -74,9 +68,6 @@
   }
 }
 
-/* HARDWARE
----------------------------------------------- */
-
 @mixin useHardware($backface: true, $perspective: 1000) {
     @if $backface {
         -webkit-backface-visibility: hidden;
@@ -84,9 +75,6 @@
     }
     perspective: $perspective;
 }
-
-/* COMMON CONTAINER ELEMENTS
----------------------------------------------- */
 
 @mixin bold-lettering {
   text-shadow: 1px 0 0 #000;

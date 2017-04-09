@@ -4,6 +4,13 @@ import './SmallPanel.css';
 
 class SmallPanel extends Component {
 
+	constructor() {
+		super();
+		this.state = {
+			
+		}
+	}
+
 	render() {
 	    return (
 	      	<div className="SmallPanel">
