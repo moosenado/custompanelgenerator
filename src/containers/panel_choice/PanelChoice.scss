@@ -44,16 +44,6 @@
 		@include transition(all .5s);
 		@include transform(scale3d(.95,.95,1));
 
-		&:hover {
-			@include transition(all .25s);
-			@include transform(scale3d(1,1,1));
-			.inner_outline .centered {
-				opacity: 1;
-				@include transition(all .4s);
-				@include transform(scale3d(1,1,1));
-			}
-		}
-
 		&.red {
 			background-color: red;
 		}
@@ -61,6 +51,16 @@
 		&.green {
 			background-color: green;
 			opacity: 1;
+
+			&:hover {
+				@include transition(all .25s);
+				@include transform(scale3d(1,1,1));
+				.inner_outline .centered {
+					opacity: 1;
+					@include transition(all .4s);
+					@include transform(scale3d(1,1,1));
+				}
+			}
 		}
 
 		.inner_outline {
@@ -98,18 +98,22 @@
 		.container {
 			margin: 0 auto;
 			height: 150px;
-			width: 265px;
+			width: 285px;
 			border: 1px solid black;
+			margin-bottom: 20px;
 			@include transform(translate3d(0,-200px,0));
 			@include transition(all .5s);
 
 			&.active {
-				@include transform(translate3d(0,0,0));
+				@include transform(translate3d(0,-10px,0));
 			}
 
 			ul {
+				margin-top: 20px;
 				li {
 					cursor: pointer;
+					padding: 0 10px 10px 10px;
+					font-size: 18px;
 				}
 			}
 		}
