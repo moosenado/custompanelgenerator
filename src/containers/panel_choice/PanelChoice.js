@@ -42,6 +42,7 @@ class PanelChoice extends Component {
 		let menu_open_class = (!this.state.menu_opened) ? '' : 'active';
 		let start_btn_class = (!this.state.start) ? 'red' : 'green';
 		let active_link = (this.state.panels[this.state.selected_panel]) ? this.state.panels[this.state.selected_panel] : '';
+		let dropdown_bg = (this.state.panels[this.state.selected_panel]) ? 'blue' : '';
 
 	    return (
 	      	<div className="PanelChoice">
@@ -50,7 +51,7 @@ class PanelChoice extends Component {
 	      			<h2>Create your custom dbSAFE I/O panel</h2>
 	      		</div>
 
-	      		<div className="PanelChoice__dropdown" onClick={this.dropMenu}>
+	      		<div className={"PanelChoice__dropdown " + dropdown_bg} onClick={this.dropMenu}>
 	      			<div className="text">
 	      				<div>{(!this.state.selected_panel) ? 'CHOOSE ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
 	      			</div>
@@ -68,16 +69,16 @@ class PanelChoice extends Component {
 			      	</div>
 	      		</div>
 
-	      		<Link to={'/' + active_link}>
-		      		<div className={"PanelChoice__start_btn " + start_btn_class}>
+	      		<div className={"PanelChoice__start_btn " + start_btn_class}>
+	      			<Link to={'/' + active_link}>
 		      			<div className="inner_outline">
 							<div className="centered"></div>
 		      			</div>
 		      			<div className="text">
 		      				<div>START</div>
 		      			</div>
-		      		</div>
-	      		</Link>
+	      			</Link>
+	      		</div>
 
 	      	</div>
 	    );

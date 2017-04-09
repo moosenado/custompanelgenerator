@@ -9,6 +9,9 @@
 .PanelChoice {
   margin: 50px 0; }
 
+.PanelChoice a {
+  display: inline-block; }
+
 .PanelChoice .PanelChoice__title {
   text-align: center;
   margin: 60px 0; }
@@ -20,10 +23,18 @@
   width: 300px;
   height: 50px;
   border-radius: 18px;
-  border: 1px solid black;
+  border: 1px solid #1f3364;
   margin: 0 auto;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s; }
+
+.PanelChoice .PanelChoice__dropdown:hover, .PanelChoice .PanelChoice__dropdown:active, .PanelChoice .PanelChoice__dropdown:focus {
+  background-color: #1f3364; }
+
+.PanelChoice .PanelChoice__dropdown.blue {
+  background-color: #1f3364; }
 
 .PanelChoice .PanelChoice__dropdown .text {
   white-space: nowrap;
@@ -54,7 +65,6 @@
   width: 100px;
   position: relative;
   opacity: .2;
-  cursor: pointer;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-transform: scale3d(0.95, 0.95, 1);
@@ -63,9 +73,15 @@
 .PanelChoice .PanelChoice__start_btn.red {
   background-color: red; }
 
+.PanelChoice .PanelChoice__start_btn.red a {
+  cursor: default; }
+
 .PanelChoice .PanelChoice__start_btn.green {
   background-color: green;
   opacity: 1; }
+
+.PanelChoice .PanelChoice__start_btn.green a {
+  cursor: pointer; }
 
 .PanelChoice .PanelChoice__start_btn.green:hover {
   -webkit-transition: all 0.25s;
@@ -139,7 +155,7 @@
   margin: 0 auto;
   height: 150px;
   width: 285px;
-  border: 1px solid black;
+  border: 1px solid #1f3364;
   margin-bottom: 20px;
   -webkit-transform: translate3d(0, -200px, 0);
   transform: translate3d(0, -200px, 0);
