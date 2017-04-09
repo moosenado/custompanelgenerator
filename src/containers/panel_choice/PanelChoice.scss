@@ -38,7 +38,6 @@
 		border-radius: 50%;
 		height: 100px;
 		width: 100px;
-		background-color: red;
 		position: relative;
 		opacity: .2;
 		cursor: pointer;
@@ -53,6 +52,15 @@
 				@include transition(all .4s);
 				@include transform(scale3d(1,1,1));
 			}
+		}
+
+		&.red {
+			background-color: red;
+		}
+
+		&.green {
+			background-color: green;
+			opacity: 1;
 		}
 
 		.inner_outline {
@@ -86,12 +94,24 @@
 
 	.PanelChoice__dropdown_menu {
 		overflow: hidden;
-	}
-}
 
-.PanelDropdown {
-	margin: 0 auto;
-	height: 150px;
-	width: 265px;
-	border: 1px solid black;
+		.container {
+			margin: 0 auto;
+			height: 150px;
+			width: 265px;
+			border: 1px solid black;
+			@include transform(translate3d(0,-200px,0));
+			@include transition(all .5s);
+
+			&.active {
+				@include transform(translate3d(0,0,0));
+			}
+
+			ul {
+				li {
+					cursor: pointer;
+				}
+			}
+		}
+	}
 }
