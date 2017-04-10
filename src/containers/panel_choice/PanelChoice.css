@@ -198,4 +198,12 @@
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 8px solid #d2d0d0; }
+  border-top: 8px solid #d2d0d0;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s; }
+
+.PanelChoice .PanelChoice__arrow_down.active {
+  -webkit-transform: translate3d(0, -2px, 0) rotate(180deg);
+  transform: translate3d(0, -2px, 0) rotate(180deg);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s; }

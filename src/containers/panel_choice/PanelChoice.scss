@@ -172,5 +172,11 @@
 	  	border-left: 6px solid transparent;
 	  	border-right: 6px solid transparent;
 	  	border-top: 8px solid #d2d0d0;
+	  	@include transition(all .25s);
+
+	  	&.active {
+	  		@include transform(translate3d(0,-2px,0) rotate(180deg));
+	  		@include transition(all .25s);
+	  	}
 	}
 }

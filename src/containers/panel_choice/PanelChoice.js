@@ -41,6 +41,7 @@ class PanelChoice extends Component {
 
 	render() {
 		let menu_open_class = (!this.state.menu_opened) ? '' : 'active';
+		let arrow_class = (!this.state.menu_opened) ? '' : 'active';
 		let start_btn_class = (!this.state.start) ? 'red' : 'green';
 		let active_link = (this.state.panels[this.state.selected_panel]) ? this.state.panels[this.state.selected_panel] : '';
 		let dropdown_bg = (this.state.panels[this.state.selected_panel]) ? 'blue' : '';
@@ -58,7 +59,7 @@ class PanelChoice extends Component {
 	      					<div>{(!this.state.selected_panel) ? 'CHOOSE ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
 	      				</div>
 	      			</ReactCSSTransitionGroup>
-	      			<div className="PanelChoice__arrow_down"></div>
+	      			<div className={"PanelChoice__arrow_down " + arrow_class}></div>
 	      		</div>
 
 	      		<div className="PanelChoice__dropdown_menu">
