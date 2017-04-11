@@ -1,5 +1,48 @@
 @import './../../Shared.scss';
 
 .SmallPanel {
-	
+	height: 745px;
+	width: 1200px;
+	border: 1px solid black;
+	display: flex;
+	display: -webkit-flex;
+	border-radius: 25px;
+	overflow: hidden;
+
+	.SmallPanel__rightcol {
+
+		h1 {
+			font-size: 34px;
+			margin: 10px 0 5px 0;
+		}
+
+		.SmallPanel__desc {
+			font-size: 14px;
+			margin: 0 0 20px 0;
+
+			span {
+				font-weight: 700;
+			}
+		}
+
+		.SmallPanel__border {
+			width: 742px; //twice the size of actual panel specs
+			height: 562px; //twice the size of actual panel specs
+			border: 1px solid black;
+			position: relative;
+			border-radius: 25px;
+
+			.SmallPanel__surface_centered {
+				@include center-element;
+
+				.SmallPanel__surface {
+					@include complete-centering;
+					width: 562px; //twice the size of actual panel specs
+					height: 379px; //twice the size of actual panel specs
+					border: 1px solid black;
+					border-radius: 25px;
+				}
+			}
+		}
+	}
 }
