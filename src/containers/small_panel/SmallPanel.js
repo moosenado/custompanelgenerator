@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
+import PanelButtons from './../panel_buttons/PanelButtons';
 
 import './SmallPanel.css';
 
@@ -27,6 +28,7 @@ class SmallPanel extends Component {
 		      				</div>
 		      			</div>
 		      		</div>
+		      		<PanelButtons />
 		      	</div>
 	      	</div>
 	    );

@@ -2,14 +2,20 @@
 
 .SmallPanel {
 	height: 745px;
-	width: 1200px;
+	width: 1024px;
 	border: 1px solid black;
 	display: flex;
 	display: -webkit-flex;
 	border-radius: 25px;
 	overflow: hidden;
+	margin: 20px auto;
+
+	.SmallPanel__leftcol {
+		width: 250px;
+	}
 
 	.SmallPanel__rightcol {
+		padding-left: 15px;
 
 		h1 {
 			font-size: 34px;
