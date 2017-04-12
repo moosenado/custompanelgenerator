@@ -63,8 +63,8 @@
   opacity: 0;
   -webkit-transition: all 0.75s;
   transition: all 0.75s;
-  -webkit-transform: scale3d(0, 0, 1);
-  transform: scale3d(0, 0, 1); }
+  -webkit-transform: scale3d(0.9, 0.9, 1);
+  transform: scale3d(0.9, 0.9, 1); }
 
 .PanelButtons .PanelButtons__panelbtn .text {
   position: absolute;
