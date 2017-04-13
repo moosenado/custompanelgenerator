@@ -3,6 +3,7 @@ import bnc from './../../../public/imgs/connectors_actual/bnc_connector_actual.j
 import db9 from './../../../public/imgs/connectors_actual/db9_connector_actual.jpg';
 import hdmi from './../../../public/imgs/connectors_actual/hdmi_connector_actual.jpg';
 import ntype from './../../../public/imgs/connectors_actual/ntype_connector_actual.jpg';
+import power from './../../../public/imgs/connectors_actual/power_entry_actual.jpg';
 
 import './ConnectorLibrary.css';
 
@@ -21,6 +22,7 @@ class ConnectorLibrary extends Component {
 	    				<li><img src={db9} alt="db9"/></li>
 	    				<li><img src={hdmi} alt="hdmi"/></li>
 	    				<li><img src={ntype} alt="ntype"/></li>
+	    				<li><img src={power} alt="power entry"/></li>
 	    			</ul>
 	    		</div>
 	      	</div>
