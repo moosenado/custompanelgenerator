@@ -1,10 +1,12 @@
 .ConnectorLibrary {
   width: auto;
   height: 100%;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 10px; }
-  .ConnectorLibrary h2 {
-    font-size: 18px;
-    margin-bottom: 5px; }
-  .ConnectorLibrary .desc {
-    font-size: 14px; }
+
+.ConnectorLibrary h2 {
+  font-size: 18px;
+  margin-bottom: 5px; }
+
+.ConnectorLibrary .desc {
+  font-size: 14px; }

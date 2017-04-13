@@ -1,47 +1,56 @@
 .SmallPanel {
   height: 745px;
   width: 1024px;
-  border: 1px solid black;
+  border: 2px solid black;
   display: flex;
   display: -webkit-flex;
   border-radius: 25px;
   overflow: hidden;
   margin: 20px auto; }
-  .SmallPanel .SmallPanel__leftcol {
-    width: 250px; }
-  .SmallPanel .SmallPanel__rightcol {
-    padding-left: 15px; }
-    .SmallPanel .SmallPanel__rightcol h1 {
-      font-size: 34px;
-      margin: 10px 0 5px 0; }
-    .SmallPanel .SmallPanel__rightcol .SmallPanel__desc {
-      font-size: 14px;
-      margin: 0 0 20px 0; }
-      .SmallPanel .SmallPanel__rightcol .SmallPanel__desc span {
-        font-weight: 700; }
-    .SmallPanel .SmallPanel__rightcol .SmallPanel__border {
-      width: 742px;
-      height: 562px;
-      border: 1px solid black;
-      position: relative;
-      border-radius: 25px; }
-      .SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center; }
-        .SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered .SmallPanel__surface {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%;
-          width: 562px;
-          height: 379px;
-          border: 1px solid black;
-          border-radius: 25px; }
+
+.SmallPanel .SmallPanel__leftcol {
+  width: 250px; }
+
+.SmallPanel .SmallPanel__rightcol {
+  padding-left: 15px; }
+
+.SmallPanel .SmallPanel__rightcol h1 {
+  font-size: 34px;
+  margin: 10px 0 5px 0; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__desc {
+  font-size: 14px;
+  margin: 0 0 20px 0; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__desc span {
+  font-weight: 700; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__border {
+  width: 742px;
+  height: 562px;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 25px; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.SmallPanel .SmallPanel__rightcol .SmallPanel__border .SmallPanel__surface_centered .SmallPanel__surface {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  width: 562px;
+  height: 379px;
+  border: 1px solid black;
+  border-radius: 25px; }
