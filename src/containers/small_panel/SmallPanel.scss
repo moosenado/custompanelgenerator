@@ -3,7 +3,7 @@
 .SmallPanel {
 	height: 745px;
 	width: 1024px;
-	border: 2px solid black;
+	border: 1px solid black;
 	display: flex;
 	display: -webkit-flex;
 	border-radius: 25px;
@@ -22,6 +22,67 @@
 			margin: 10px 0 5px 0;
 		}
 
+		.SmallPanel__bolts_horiz {
+			position: absolute;
+			left: 0;
+			right: 0;
+
+			&.top {
+				top: 20px;
+			}
+
+			&.bottom {
+				bottom: 20px;
+			}
+
+			.SmallPanel__bolt {
+				width: 16.6666%;
+				float: left;
+
+				&:before {
+					content: '';
+					width: 15px;
+					height: 15px;
+					border: 1px solid black;
+					border-radius: 50%;
+					display: block;
+					margin: 0 auto;
+					background-color: white;
+					@include animation(bolted 1s forwards);
+				}
+			}
+		}
+
+		.SmallPanel__bolts_vert {
+			position: absolute;
+			top: 125px;
+			bottom: 0;
+
+			&.left {
+				left: 20px;
+			}
+
+			&.right {
+				right: 20px;
+			}
+
+			.SmallPanel__bolt {
+				height: 33.3333%;
+
+				&:before {
+					content: '';
+					width: 15px;
+					height: 15px;
+					border: 1px solid black;
+					border-radius: 50%;
+					display: block;
+					margin: 0 auto;
+					background-color: white;
+					@include animation(bolted 1s forwards);
+				}
+			}
+		}
+
 		.SmallPanel__desc {
 			font-size: 14px;
 			margin: 0 0 20px 0;
@@ -37,6 +98,7 @@
 			border: 1px solid black;
 			position: relative;
 			border-radius: 25px;
+			background-color: #ececec;
 
 			.SmallPanel__surface_centered {
 				@include center-element;
@@ -47,8 +109,18 @@
 					height: 379px; //twice the size of actual panel specs
 					border: 1px solid black;
 					border-radius: 25px;
+					background-color: white;
 				}
 			}
 		}
+	}
+}
+
+@include keyframes(bolted) {
+	0% {
+		@include transform(scale3d(0,0,1));
+	}
+	100% {
+		@include transform(scale3d(1,1,1));
 	}
 }

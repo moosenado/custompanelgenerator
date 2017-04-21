@@ -3,7 +3,6 @@
 .ConnectorLibrary {
 	width: auto;
 	height: 100%;
-	border: 2px solid black;
 	padding: 10px;
 	overflow-y: scroll;
 
@@ -19,17 +18,36 @@
 
 	.ConnectorLibrary__list {
 		text-align: center;
+		@include animation(fadeInConnectors 1.2s forwards);
+		opacity: 0;
 
 		ul {
 			padding: 20px 0;
 
 			li {
 				padding: 10px;
+				cursor: pointer;
+				opacity: .8;
+				@include transition(opacity .25s);
+
+				&:hover {
+					opacity: 1;
+					@include transition(opacity .25s);
+				}
 
 				img {
 					max-width: 100%;
 				}
 			}
 		}
+	}
+}
+
+@include keyframes(fadeInConnectors) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
