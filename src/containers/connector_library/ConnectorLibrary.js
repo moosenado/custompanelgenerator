@@ -32,7 +32,7 @@ class ConnectorLibrary extends Component {
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>
-	    				<li><img src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
+	    				<li><img className="drag" src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
 	    				<li><img src={db9} alt="db9" style={{width:'1.21in'}}/></li>
 	    				<li><img src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
 	    				<li><img src={ntype} alt="ntype" style={{width:'1in'}}/></li>

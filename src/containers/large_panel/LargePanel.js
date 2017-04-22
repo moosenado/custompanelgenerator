@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
+import Draggabilly from 'draggabilly';
 
 import './LargePanel.css';
 
 class LargePanel extends Component {
+
+	// componentDidMount() {
+	// 	var draggableElems = document.querySelectorAll('.drag');
+
+	// 	console.log(draggableElems);
+
+	// 	var draggie = new Draggabilly(draggableElems[0], {
+	//     // options...
+	//   });
+	// }
 
 	render() {
 	    return (

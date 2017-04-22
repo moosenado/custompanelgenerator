@@ -2,7 +2,7 @@
 
 .SmallPanel {
 	height: 645px;
-	width: 1024px;
+	width: 1000px;
 	border: 1px solid black;
 	display: flex;
 	display: -webkit-flex;
@@ -15,7 +15,7 @@
 	}
 
 	.SmallPanel__rightcol {
-		padding-left: 15px;
+		margin: 0 auto;
 
 		h1 {
 			font-size: 34px;
@@ -109,7 +109,7 @@
 					height: 2.63in; //actual panel specs
 					border: 1px solid black;
 					border-radius: 25px;
-					background-color: white;
+					background-color: #f7f7f7;
 				}
 			}
 		}
