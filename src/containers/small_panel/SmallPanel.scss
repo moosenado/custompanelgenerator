@@ -1,7 +1,7 @@
 @import './../../Shared.scss';
 
 .SmallPanel {
-	height: 745px;
+	height: 645px;
 	width: 1024px;
 	border: 1px solid black;
 	display: flex;
@@ -41,8 +41,8 @@
 
 				&:before {
 					content: '';
-					width: 15px;
-					height: 15px;
+					width: 10px;
+					height: 10px;
 					border: 1px solid black;
 					border-radius: 50%;
 					display: block;
@@ -55,7 +55,7 @@
 
 		.SmallPanel__bolts_vert {
 			position: absolute;
-			top: 125px;
+			top: 80px;
 			bottom: 0;
 
 			&.left {
@@ -71,8 +71,8 @@
 
 				&:before {
 					content: '';
-					width: 15px;
-					height: 15px;
+					width: 10px;
+					height: 10px;
 					border: 1px solid black;
 					border-radius: 50%;
 					display: block;
@@ -93,8 +93,8 @@
 		}
 
 		.SmallPanel__border {
-			width: 742px; //twice the size of actual panel specs
-			height: 562px; //twice the size of actual panel specs
+			width: 5.15in; //actual panel specs
+			height: 3.90in; //actual panel specs
 			border: 1px solid black;
 			position: relative;
 			border-radius: 25px;
@@ -105,8 +105,8 @@
 
 				.SmallPanel__surface {
 					@include complete-centering;
-					width: 562px; //twice the size of actual panel specs
-					height: 379px; //twice the size of actual panel specs
+					width: 3.90in; //actual panel specs
+					height: 2.63in; //actual panel specs
 					border: 1px solid black;
 					border-radius: 25px;
 					background-color: white;

@@ -10,13 +10,17 @@ class LargePanel extends Component {
 	    return (
 	    	<div className="LargePanel">
 	    		<div className="LargePanel__leftcol">
-	    			<ConnectorLibrary />
+	    			<ConnectorLibrary type={'large'}/>
 	    		</div>
 		      	<div className="LargePanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
 		      		<div className="LargePanel__desc">You are currently working on a <span>Large</span> dbSAFE I/O Panel.</div>
 		      		<div className="LargePanel__border">
 		      			<div className="LargePanel__bolts_horiz top">
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
@@ -31,13 +35,21 @@ class LargePanel extends Component {
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
 		      			</div>
 		      			<div className="LargePanel__bolts_vert left">
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
 		      			</div>
 		      			<div className="LargePanel__bolts_vert right">
+		      				<div className="LargePanel__bolt"></div>
+		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>

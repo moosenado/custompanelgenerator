@@ -10,7 +10,7 @@ class SmallPanel extends Component {
 	    return (
 	    	<div className="SmallPanel">
 	    		<div className="SmallPanel__leftcol">
-	    			<ConnectorLibrary />
+	    			<ConnectorLibrary type={'small'}/>
 	    		</div>
 		      	<div className="SmallPanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>

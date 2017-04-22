@@ -1,5 +1,5 @@
 .LargePanel {
-  height: 745px;
+  height: 660px;
   width: 1024px;
   border: 1px solid black;
   display: flex;
@@ -24,19 +24,19 @@
   right: 0; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_horiz.top {
-  top: 20px; }
+  top: 10px; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_horiz.bottom {
-  bottom: 20px; }
+  bottom: 10px; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_horiz .LargePanel__bolt {
-  width: 16.6666%;
+  width: 10%;
   float: left; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_horiz .LargePanel__bolt:before {
   content: '';
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border: 1px solid black;
   border-radius: 50%;
   display: block;
@@ -47,22 +47,22 @@
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_vert {
   position: absolute;
-  top: 125px;
+  top: 75px;
   bottom: 0; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_vert.left {
-  left: 20px; }
+  left: 10px; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_vert.right {
-  right: 20px; }
+  right: 10px; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_vert .LargePanel__bolt {
-  height: 33.3333%; }
+  height: 20%; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__bolts_vert .LargePanel__bolt:before {
   content: '';
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border: 1px solid black;
   border-radius: 50%;
   display: block;
@@ -79,8 +79,8 @@
   font-weight: 700; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__border {
-  width: 742px;
-  height: 562px;
+  width: 7.25in;
+  height: 5in;
   border: 1px solid black;
   position: relative;
   border-radius: 25px;
@@ -104,8 +104,8 @@
   vertical-align: middle;
   display: inline-block;
   width: 100%;
-  width: 562px;
-  height: 379px;
+  width: 6in;
+  height: 3.75in;
   border: 1px solid black;
   border-radius: 25px;
   background-color: white; }

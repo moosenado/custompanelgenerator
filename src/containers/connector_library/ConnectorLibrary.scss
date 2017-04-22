@@ -16,6 +16,18 @@
 		font-size: 14px;
 	}
 
+	&.small_connectors {
+		ul li {
+			max-width: 100%;
+		}
+	}
+
+	&.large_connectors {
+		ul li {
+			max-width: 100%;
+		}
+	}
+
 	.ConnectorLibrary__list {
 		text-align: center;
 		@include animation(fadeInConnectors 1.2s forwards);
@@ -28,6 +40,7 @@
 				padding: 10px;
 				cursor: pointer;
 				opacity: .8;
+				margin: 0 auto;
 				@include transition(opacity .25s);
 
 				&:hover {

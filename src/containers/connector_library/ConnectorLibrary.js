@@ -15,24 +15,33 @@ import './ConnectorLibrary.css';
 class ConnectorLibrary extends Component {
 
 	render() {
+		const {type} = this.props;
+
+		let type_styles = {
+			small: 'small_connectors',
+			large: 'large_connectors'
+		}
+
+		let type_class = type ? type_styles[type] : '';
+
 	    return (
-	    	<div className="ConnectorLibrary">
+	    	<div className={`ConnectorLibrary ${type_class}`}>
 	    		<h2>Connector Library</h2>
 	    		<div className="desc">
 					Click on a connector to add it onto your custom I/O panel
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>
-	    				<li><img src={bnc} alt="bnc"/></li>
-	    				<li><img src={db9} alt="db9"/></li>
-	    				<li><img src={hdmi} alt="hdmi"/></li>
-	    				<li><img src={ntype} alt="ntype"/></li>
-	    				<li><img src={power} alt="power entry"/></li>
-	    				<li><img src={rj45} alt="rj45"/></li>
-	    				<li><img src={sma} alt="sma"/></li>
-	    				<li><img src={tnc} alt="tnc"/></li>
-	    				<li><img src={usb2} alt="usb2"/></li>
-	    				<li><img src={usb3} alt="usb3"/></li>
+	    				<li><img src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
+	    				<li><img src={db9} alt="db9" style={{width:'1.21in'}}/></li>
+	    				<li><img src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
+	    				<li><img src={ntype} alt="ntype" style={{width:'1in'}}/></li>
+	    				<li><img src={power} alt="power entry" style={{width:'1.73in'}}/></li>
+	    				<li><img src={rj45} alt="rj45" style={{width:'2.34in'}}/></li>
+	    				<li><img src={sma} alt="sma" style={{width:'.50in'}}/></li>
+	    				<li><img src={tnc} alt="tnc" style={{width:'.69in'}}/></li>
+	    				<li><img src={usb2} alt="usb2" style={{width:'1.74in'}}/></li>
+	    				<li><img src={usb3} alt="usb3" style={{width:'1.74in'}}/></li>
 	    			</ul>
 	    		</div>
 	      	</div>
