@@ -1,0 +1,126 @@
+@import './../../Shared.scss';
+
+.LargePanel {
+	height: 745px;
+	width: 1024px;
+	border: 1px solid black;
+	display: flex;
+	display: -webkit-flex;
+	border-radius: 25px;
+	overflow: hidden;
+	margin: 20px auto;
+
+	.LargePanel__leftcol {
+		width: 250px;
+	}
+
+	.LargePanel__rightcol {
+		padding-left: 15px;
+
+		h1 {
+			font-size: 34px;
+			margin: 10px 0 5px 0;
+		}
+
+		.LargePanel__bolts_horiz {
+			position: absolute;
+			left: 0;
+			right: 0;
+
+			&.top {
+				top: 20px;
+			}
+
+			&.bottom {
+				bottom: 20px;
+			}
+
+			.LargePanel__bolt {
+				width: 16.6666%;
+				float: left;
+
+				&:before {
+					content: '';
+					width: 15px;
+					height: 15px;
+					border: 1px solid black;
+					border-radius: 50%;
+					display: block;
+					margin: 0 auto;
+					background-color: white;
+					@include animation(boltedSmall 1s forwards);
+				}
+			}
+		}
+
+		.LargePanel__bolts_vert {
+			position: absolute;
+			top: 125px;
+			bottom: 0;
+
+			&.left {
+				left: 20px;
+			}
+
+			&.right {
+				right: 20px;
+			}
+
+			.LargePanel__bolt {
+				height: 33.3333%;
+
+				&:before {
+					content: '';
+					width: 15px;
+					height: 15px;
+					border: 1px solid black;
+					border-radius: 50%;
+					display: block;
+					margin: 0 auto;
+					background-color: white;
+					@include animation(bolted 1s forwards);
+				}
+			}
+		}
+
+		.LargePanel__desc {
+			font-size: 14px;
+			margin: 0 0 20px 0;
+
+			span {
+				font-weight: 700;
+			}
+		}
+
+		.LargePanel__border {
+			width: 742px; //twice the size of actual panel specs
+			height: 562px; //twice the size of actual panel specs
+			border: 1px solid black;
+			position: relative;
+			border-radius: 25px;
+			background-color: #ececec;
+
+			.LargePanel__surface_centered {
+				@include center-element;
+
+				.LargePanel__surface {
+					@include complete-centering;
+					width: 562px; //twice the size of actual panel specs
+					height: 379px; //twice the size of actual panel specs
+					border: 1px solid black;
+					border-radius: 25px;
+					background-color: white;
+				}
+			}
+		}
+	}
+}
+
+@include keyframes(boltedSmall) {
+	0% {
+		@include transform(scale3d(0,0,1));
+	}
+	100% {
+		@include transform(scale3d(1,1,1));
+	}
+}

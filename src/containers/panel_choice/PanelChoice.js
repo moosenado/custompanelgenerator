@@ -14,8 +14,8 @@ class PanelChoice extends Component {
 		this.state = {
 			panels: {
 				small: 'smallpanel',
-				medium: 'mediumpanel',
-				large: 'mediumpanel'
+				medium: 'largepanel',
+				large: 'largepanel'
 			},
 			menu_opened: false,
 			selected_panel: '',
