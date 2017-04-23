@@ -19,12 +19,13 @@ class App extends Component {
 	}
 
   	render() {
-  		console.log(this.props.data);
 	    return (
 	      	<div className="App">
-	        	<main className="app-container">
-	        		<PanelChoice />
-	        	</main>
+	      		{Object.keys(this.props.data).length !== 0 &&
+		        	<main className="app-container">
+		        		<PanelChoice />
+		        	</main>
+	        	}
 	      	</div>
 	    );
 	}

@@ -10,7 +10,7 @@ class SmallPanel extends Component {
 	render() {
 		const {smallconnectors} = this.props;
 
-		console.log(smallconnectors);
+		let connectors_exist = smallconnectors.length > 0;
 
 	    return (
 	    	<div className="SmallPanel">
@@ -49,6 +49,7 @@ class SmallPanel extends Component {
 		      			</div>
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
+		      					{connectors_exist ? smallconnectors[0].name : ''}
 		      				</div>
 		      			</div>
 		      		</div>

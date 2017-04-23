@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import configureStore from './configureStore';
+import store from './store';
 
 import SmallPanel from './containers/small_panel/SmallPanel';
 import LargePanel from './containers/large_panel/LargePanel';
-
-const store = configureStore();
 
 const router = (
 	<Provider store={store}>

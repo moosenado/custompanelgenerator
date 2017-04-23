@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import bnc from './../../../public/imgs/connectors_actual/bnc_connector_actual.jpg';
 import db9 from './../../../public/imgs/connectors_actual/db9_connector_actual.jpg';
 import hdmi from './../../../public/imgs/connectors_actual/hdmi_connector_actual.jpg';
@@ -9,13 +10,31 @@ import sma from './../../../public/imgs/connectors_actual/sma_connector_actual.j
 import tnc from './../../../public/imgs/connectors_actual/tnc_connector_actual.jpg';
 import usb2 from './../../../public/imgs/connectors_actual/usb2_actual.jpg';
 import usb3 from './../../../public/imgs/connectors_actual/usb3_actual.jpg';
+import store from './../../store';
 
 import './ConnectorLibrary.css';
 
 class ConnectorLibrary extends Component {
 
+	constructor() {
+		super();
+		this.addItemToData = this.addItemToData.bind(this);
+	}
+
+	addItemToData() {
+		console.log(this.props.type);
+		store.dispatch({
+			type: 'INIT_CONNECTORS',
+			data: {smallconnectors:[
+			{
+				name: 'connector'
+			}
+			]}
+		});
+	}
+
 	render() {
-		const {type} = this.props;
+		const {type, smallconnectors, largeconnectors} = this.props;
 
 		let type_styles = {
 			small: 'small_connectors',
@@ -32,7 +51,7 @@ class ConnectorLibrary extends Component {
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>
-	    				<li><img className="drag" src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
+	    				<li><img onClick={this.addItemToData} src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
 	    				<li><img src={db9} alt="db9" style={{width:'1.21in'}}/></li>
 	    				<li><img src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
 	    				<li><img src={ntype} alt="ntype" style={{width:'1in'}}/></li>
@@ -49,4 +68,11 @@ class ConnectorLibrary extends Component {
 	}
 }
 
-export default ConnectorLibrary;
+const mapStateToProps = (state) => {
+    return {
+        smallconnectors: state.data.smallconnectors,
+        largeconnectors: state.data.largeconnectors
+    };
+};
+
+export default connect(mapStateToProps)(ConnectorLibrary);
