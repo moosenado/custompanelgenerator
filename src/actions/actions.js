@@ -1,6 +1,6 @@
-export function initConnectors() {
+export function initConnectors(obj) {
     return {
         type: 'INIT_CONNECTORS',
-        smallconnectors: {}
+        data: obj
     };
 }

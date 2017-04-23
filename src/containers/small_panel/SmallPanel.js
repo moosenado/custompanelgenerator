@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
+import { connect } from 'react-redux';
 
 import './SmallPanel.css';
 
 class SmallPanel extends Component {
 
 	render() {
+		const {smallconnectors} = this.props;
+
 	    return (
 	    	<div className="SmallPanel">
 	    		<div className="SmallPanel__leftcol">
@@ -54,4 +57,10 @@ class SmallPanel extends Component {
 	}
 }
 
-export default SmallPanel;
+const mapStateToProps = (state) => {
+    return {
+        smallconnectors: state.data.smallconnectors
+    };
+};
+
+export default connect(mapStateToProps)(SmallPanel);

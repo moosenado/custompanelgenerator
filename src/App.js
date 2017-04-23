@@ -7,11 +7,6 @@ import './App.css';
 
 class App extends Component {
 
-	constructor(props) {
-		super(props);
-		this.loadData();
-	}
-
 	componentDidMount() {
 		this.loadData();
 	}
@@ -21,11 +16,6 @@ class App extends Component {
 	}
 
   	render() {
-
-	  	const {smallconnectors} = this.props;
-
-	  	console.log(smallconnectors);
-
 	    return (
 	      	<div className="App">
 	        	<main className="app-container">
@@ -38,7 +28,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        smallconnectors: state.initConnectors
+        data: state.data
     };
 };
 

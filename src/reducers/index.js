@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
 
-const initConnectors = (state = {}, action) => {
+const data = (state = {}, action) => {
   switch (action.type) {
     case 'INIT_CONNECTORS':
-      return action.smallconnectors;
+      return action.data;
     default:
       return state;
   }
 }
 
 const rootReducer = combineReducers({ 
-  initConnectors
+  data
 });
 
 export default rootReducer;
