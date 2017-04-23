@@ -10,6 +10,8 @@ class SmallPanel extends Component {
 	render() {
 		const {smallconnectors} = this.props;
 
+		console.log(smallconnectors);
+
 	    return (
 	    	<div className="SmallPanel">
 	    		<div className="SmallPanel__leftcol">

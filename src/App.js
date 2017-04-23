@@ -12,10 +12,14 @@ class App extends Component {
 	}
 
 	loadData() {
-		this.props.initData();
+		//only reset objects when data is 0
+		if(Object.keys(this.props.data).length === 0) {
+			this.props.initData();
+		}
 	}
 
   	render() {
+  		console.log(this.props.data);
 	    return (
 	      	<div className="App">
 	        	<main className="app-container">
