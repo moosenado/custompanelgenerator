@@ -24,10 +24,10 @@ class ConnectorLibrary extends Component {
 	addItemToData() {
 		console.log(this.props.type);
 		store.dispatch({
-			type: 'INIT_CONNECTORS',
+			type: 'ADD_SMALL_CONNECTOR',
 			data: {smallconnectors:[
 			{
-				name: 'connector'
+				name: 'connector1'
 			}
 			]}
 		});
