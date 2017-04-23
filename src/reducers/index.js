@@ -5,13 +5,18 @@ const data = (state = {}, action) => {
     case 'INIT_CONNECTORS':
       return action.data;
     case 'ADD_SMALL_CONNECTOR':
-      return action.data;
+      return {
+      	...state,
+        smallconnectors: [...state.smallconnectors, {
+        	name: action.name
+        }]
+    	}
     default:
       return state;
   }
 }
 
-const rootReducer = combineReducers({ 
+const rootReducer = combineReducers({
   data
 });
 

@@ -9,6 +9,7 @@ class SmallPanel extends Component {
 
 	render() {
 		const {smallconnectors} = this.props;
+		console.log(smallconnectors);
 
 		let connectors_exist = smallconnectors.length > 0;
 
