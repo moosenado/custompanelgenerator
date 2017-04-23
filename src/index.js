@@ -2,18 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from './configureStore';
 
 import SmallPanel from './containers/small_panel/SmallPanel';
 import LargePanel from './containers/large_panel/LargePanel';
 
+const store = configureStore();
+
 const router = (
-    <Router>
-    	<div>
-        	<Route exact path="/" component={App} />
-        	<Route path="/smallpanel" component={SmallPanel} />
-        	<Route path="/largepanel" component={LargePanel} />
-        </div>
-    </Router>
+	<Provider store={store}>
+	    <Router>
+	    	<div>
+	        	<Route exact path="/" component={App} />
+	        	<Route path="/smallpanel" component={SmallPanel} />
+	        	<Route path="/largepanel" component={LargePanel} />
+	        </div>
+	    </Router>
+    </Provider>
 )
 
 ReactDOM.render(router, document.getElementById('root'));
