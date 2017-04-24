@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
 import { connect } from 'react-redux';
+import FinishedView from './../finished_view/FinishedView'
 
 import './SmallPanel.css';
 
 class SmallPanel extends Component {
+
+	constructor() {
+		super();
+		this.finishedView = this.finishedView.bind(this);
+		this.state = {
+			finished: false
+		};
+	}
+
+	finishedView() {
+		this.setState({
+			finished: true
+		});
+	}
 
 	render() {
 		const {smallconnectors} = this.props;
@@ -50,12 +65,15 @@ class SmallPanel extends Component {
 		      			</div>
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
-		      					{connectors_exist ? smallconnectors[0].name : ''}
+		      					{connectors_exist ? smallconnectors.map((item, i)=>{
+									return item.name
+		      					}) : ''}
 		      				</div>
 		      			</div>
 		      		</div>
 		      		<PanelButtons />
 		      	</div>
+		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
 	      	</div>
 	    );
 	}
