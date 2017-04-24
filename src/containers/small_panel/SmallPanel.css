@@ -6,7 +6,8 @@
   display: -webkit-flex;
   border-radius: 25px;
   overflow: hidden;
-  margin: 20px auto; }
+  margin: 20px auto;
+  position: relative; }
 
 .SmallPanel .SmallPanel__leftcol {
   width: 250px; }

@@ -18,7 +18,7 @@ class SmallPanel extends Component {
 
 	finishedView() {
 		this.setState({
-			finished: true
+			finished: !this.state.finished
 		});
 	}
 
@@ -71,9 +71,9 @@ class SmallPanel extends Component {
 		      				</div>
 		      			</div>
 		      		</div>
-		      		<PanelButtons />
+		      		<PanelButtons finishedView={this.finishedView}/>
 		      	</div>
-		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
+		      	<FinishedView active={this.state.finished}/>
 	      	</div>
 	    );
 	}
