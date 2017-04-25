@@ -4,6 +4,7 @@ import PanelButtons from './../panel_buttons/PanelButtons';
 import { connect } from 'react-redux';
 import FinishedView from './../finished_view/FinishedView';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Draggabilly from 'draggabilly';
 
 import './SmallPanel.css';
 
@@ -11,6 +12,7 @@ class SmallPanel extends Component {
 
 	constructor() {
 		super();
+		this.mountDragabbles = this.mountDragabbles.bind(this);
 		this.finishedView = this.finishedView.bind(this);
 		this.state = {
 			finished: false
@@ -21,6 +23,27 @@ class SmallPanel extends Component {
 		this.setState({
 			finished: !this.state.finished
 		});
+	}
+
+	mountDragabbles() {
+		var draggableElems = document.querySelectorAll('.dragme');
+		var draggies = []
+		console.log(draggableElems);
+
+		for (let i = 0; i < draggableElems.length; i++) {
+			var draggie = new Draggabilly(draggableElems[i], {
+		    	containment: '.SmallPanel__surface'
+		  	});
+		  	draggies.push( draggie );
+		}
+	}
+
+	componentDidMount() {
+		this.mountDragabbles();
+	}
+
+	componentDidUpdate() {
+		this.mountDragabbles();
 	}
 
 	render() {
@@ -67,7 +90,7 @@ class SmallPanel extends Component {
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
 		      					{connectors_exist ? smallconnectors.map((item, i)=>{
-									return item.name
+									return <img key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
 		      					}) : ''}
 		      				</div>
 		      			</div>

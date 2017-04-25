@@ -23,16 +23,6 @@ class LargePanel extends Component {
 		});
 	}
 
-	// componentDidMount() {
-	// 	var draggableElems = document.querySelectorAll('.drag');
-
-	// 	console.log(draggableElems);
-
-	// 	var draggie = new Draggabilly(draggableElems[0], {
-	//     // options...
-	//   });
-	// }
-
 	render() {
 	    return (
 	    	<div className="LargePanel">

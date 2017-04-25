@@ -8,7 +8,9 @@ const data = (state = {}, action) => {
       return {
       	...state,
         smallconnectors: [...state.smallconnectors, {
-        	name: action.name
+        	name: action.name,
+        	src: action.src,
+        	width: action.width
         }]
     	}
     default:

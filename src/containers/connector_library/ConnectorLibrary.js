@@ -21,11 +21,13 @@ class ConnectorLibrary extends Component {
 		this.addItemToData = this.addItemToData.bind(this);
 	}
 
-	addItemToData(name) {
+	addItemToData(name, src, width) {
 		console.log(this.props.type);
 		store.dispatch({
 			type: 'ADD_SMALL_CONNECTOR',
-			name: name
+			name: name,
+			src: src,
+			width: width
 		});
 	}
 
@@ -47,16 +49,16 @@ class ConnectorLibrary extends Component {
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>
-	    				<li><img onClick={() => this.addItemToData('bnc')} src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('db9')} src={db9} alt="db9" style={{width:'1.21in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('hdmi')} src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('ntype')} src={ntype} alt="ntype" style={{width:'1in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('power')} src={power} alt="power entry" style={{width:'1.73in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('rj45')} src={rj45} alt="rj45" style={{width:'2.34in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('sma')} src={sma} alt="sma" style={{width:'.50in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('tnc')} src={tnc} alt="tnc" style={{width:'.69in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('usb2')} src={usb2} alt="usb2" style={{width:'1.74in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('usb3')} src={usb3} alt="usb3" style={{width:'1.74in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('bnc', bnc, .69)} src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('db9', db9, 1.21)} src={db9} alt="db9" style={{width:'1.21in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('hdmi', hdmi, 1.02)} src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('ntype', ntype, 1)} src={ntype} alt="ntype" style={{width:'1in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('power', power, 1.73)} src={power} alt="power entry" style={{width:'1.73in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('rj45', rj45, 2.34)} src={rj45} alt="rj45" style={{width:'2.34in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('sma', sma, .50)} src={sma} alt="sma" style={{width:'.50in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('tnc', tnc, .69)} src={tnc} alt="tnc" style={{width:'.69in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('usb2', usb2, 1.74)} src={usb2} alt="usb2" style={{width:'1.74in'}}/></li>
+	    				<li><img onClick={() => this.addItemToData('usb3', usb3, 1.74)} src={usb3} alt="usb3" style={{width:'1.74in'}}/></li>
 	    			</ul>
 	    		</div>
 	      	</div>
