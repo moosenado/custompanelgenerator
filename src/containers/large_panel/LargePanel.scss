@@ -115,6 +115,26 @@
 			}
 		}
 	}
+
+	.LargePanel__finishedView-enter {
+		opacity: 0;
+		@include transition(opacity .5s);
+
+		&.LargePanel__finishedView-enter-active {
+			opacity: 1;
+			@include transition(opacity .5s);
+		}
+	}
+
+	.LargePanel__finishedView-leave {
+		opacity: 1;
+		@include transition(opacity .5s);
+
+		&.LargePanel__finishedView-leave-active {
+			opacity: 0;
+			@include transition(opacity .5s);
+		}
+	}
 }
 
 @include keyframes(boltedSmall) {

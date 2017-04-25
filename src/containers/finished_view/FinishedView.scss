@@ -27,6 +27,14 @@
 					border-radius: 15px;
 					margin: 10px;
 					cursor: pointer;
+					opacity: 0;
+					@include animation(liftRight .75s forwards);
+					@include transition(.5s background-color);
+
+					&:hover {
+						background-color: #f7f7f7;
+						@include transition(.5s background-color);
+					}
 
 					span {
 						display: block;
@@ -44,6 +52,8 @@
 
 				.FinishedView__finishedbtn {
 					position: relative;
+					opacity: 0;
+					@include animation(liftLeft .75s forwards);
 
 					span {
 						display: block;
@@ -66,5 +76,47 @@
 				}
 			}
 		}
+	}
+
+	.FinishedView__Quote-enter {
+		opacity: 0;
+		@include transition(opacity .5s);
+
+		&.FinishedView__Quote-enter-active {
+			opacity: 1;
+			@include transition(opacity .25s);
+		}
+	}
+
+	.FinishedView__Quote-leave {
+		opacity: 1;
+		@include transition(opacity .5s);
+
+		&.FinishedView__Quote-leave-active {
+			opacity: 0;
+			@include transition(opacity .25s);
+		}
+	}
+}
+
+@include keyframes(liftRight) {
+	0% {
+		opacity: 0;
+		@include transform(translate3d(-50px,0,0));
+	}
+	100% {
+		opacity: 1;
+		@include transform(translate3d(0,0,0));
+	}
+}
+
+@include keyframes(liftLeft) {
+	0% {
+		opacity: 0;
+		@include transform(translate3d(50px,0,0));
+	}
+	100% {
+		opacity: 1;
+		@include transform(translate3d(0,0,0));
 	}
 }

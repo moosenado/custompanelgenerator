@@ -21,6 +21,12 @@
 			height: 25px;
 			background-color: #1f3364;
 			cursor: pointer;
+			@include transition(opacity .25s);
+
+			&:hover {
+				opacity:.8;
+				@include transition(opacity .25s);
+			}
 
 			&:before {
 				content: '';
@@ -32,6 +38,7 @@
 			    top: 7.5px;
 			    background-color: white;
 			    @include transform(rotate(45deg));
+			    @include animation(closeRotateIn 1s forwards);
 			}
 
 			&:after {
@@ -44,6 +51,7 @@
 			    top: 7.5px;
 			    background-color: white;
 			    @include transform(rotate(-45deg));
+			    @include animation(closeRotateInTwo 1s forwards);
 			}
 		}
 
@@ -85,6 +93,7 @@
 			opacity: .2;
 			@include transition(all .5s);
 			@include transform(scale3d(.95,.95,1));
+			@include animation(1s buttonUpPlease forwards);
 
 			&.blue {
 				background-color: #1f3364;
@@ -131,5 +140,36 @@
 				}
 			}
 		}
+	}
+}
+
+@include keyframes(closeRotateIn) {
+	0% {
+		opacity: 0;
+		@include transform(rotate(0deg));
+	}
+	100% {
+		opacity: 1;
+		@include transform(rotate(45deg));
+	}
+}
+
+@include keyframes(closeRotateInTwo) {
+	0% {
+		opacity: 0;
+		@include transform(rotate(0deg));
+	}
+	100% {
+		opacity: 1;
+		@include transform(rotate(-45deg));
+	}
+}
+
+@include keyframes(buttonUpPlease) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

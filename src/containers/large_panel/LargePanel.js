@@ -3,6 +3,7 @@ import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
 import Draggabilly from 'draggabilly';
 import FinishedView from './../finished_view/FinishedView';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './LargePanel.css';
 
@@ -87,7 +88,9 @@ class LargePanel extends Component {
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView}/>
 		      	</div>
-		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
+		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='LargePanel__finishedView'>
+		      		<FinishedView key={this.state.finished} active={this.state.finished} finishedView={this.finishedView}/>
+	      		</ReactCSSTransitionGroup>
 	      	</div>
 	    );
 	}

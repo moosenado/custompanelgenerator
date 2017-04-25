@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Quote from './../quote/Quote';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './FinishedView.css';
 
@@ -44,7 +45,9 @@ class FinishedView extends Component {
 			    			</div>
 		    			</div>
 		    		</div>
-		    		<Quote active={this.state.active_quote} quoteView={this.toggleQuote}/>
+		    		<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='FinishedView__Quote'>
+		    			<Quote key={this.state.active_quote} active={this.state.active_quote} quoteView={this.toggleQuote}/>
+		      		</ReactCSSTransitionGroup>
 		      	</div>
 	      	}
 	      	</div>

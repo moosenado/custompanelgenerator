@@ -91,6 +91,22 @@
           border: 1px solid black;
           border-radius: 25px;
           background-color: #f7f7f7; }
+  .LargePanel .LargePanel__finishedView-enter {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .LargePanel .LargePanel__finishedView-enter.LargePanel__finishedView-enter-active {
+      opacity: 1;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
+  .LargePanel .LargePanel__finishedView-leave {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .LargePanel .LargePanel__finishedView-leave.LargePanel__finishedView-leave-active {
+      opacity: 0;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
 
 @-webkit-keyframes boltedSmall {
   0% {

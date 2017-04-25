@@ -92,6 +92,22 @@
           border-radius: 25px;
           background-color: #f7f7f7;
           overflow: hidden; }
+  .SmallPanel .SmallPanel__finishedView-enter {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .SmallPanel .SmallPanel__finishedView-enter.SmallPanel__finishedView-enter-active {
+      opacity: 1;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
+  .SmallPanel .SmallPanel__finishedView-leave {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .SmallPanel .SmallPanel__finishedView-leave.SmallPanel__finishedView-leave-active {
+      opacity: 0;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
 
 @-webkit-keyframes bolted {
   0% {

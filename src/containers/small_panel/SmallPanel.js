@@ -3,6 +3,7 @@ import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
 import { connect } from 'react-redux';
 import FinishedView from './../finished_view/FinishedView';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './SmallPanel.css';
 
@@ -73,7 +74,9 @@ class SmallPanel extends Component {
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView}/>
 		      	</div>
-		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
+		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='SmallPanel__finishedView'>
+		      		<FinishedView key={this.state.finished} active={this.state.finished} finishedView={this.finishedView}/>
+		      	</ReactCSSTransitionGroup>
 	      	</div>
 	    );
 	}
