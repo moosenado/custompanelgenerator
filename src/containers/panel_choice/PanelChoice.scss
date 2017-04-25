@@ -94,7 +94,7 @@
 				background-color: transparent;
 				opacity: 0;
 				@include transition(all 1.5s);
-				@include transform(scale3d(0,0,1));
+				@include transform(scale3d(.9,.9,1));
 			}
 		}
 

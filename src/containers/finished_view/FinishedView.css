@@ -7,66 +7,56 @@
   background-color: rgba(255, 255, 255, 0.9);
   overflow: hidden;
   border-radius: 25px; }
-
-.FinishedView .FinishedView__btns_centered {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center; }
-
-.FinishedView .FinishedView__btns_centered:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns {
-  vertical-align: middle;
-  display: inline-block;
-  width: 100%; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont {
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn {
-  border: 1px solid black;
-  border-radius: 15px;
-  margin: 10px;
-  cursor: pointer; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn span {
-  display: block;
-  padding: 15px;
-  font-size: 18px; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 {
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn {
-  position: relative; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn span {
-  display: block;
-  padding: 15px;
-  font-size: 18px;
-  cursor: pointer; }
-
-.FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn:first-child:after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-  height: 25px;
-  width: 1px;
-  background-color: black; }
+  .FinishedView .FinishedView__btns_centered {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center; }
+    .FinishedView .FinishedView__btns_centered:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%; }
+    .FinishedView .FinishedView__btns_centered .FinishedView__btns {
+      vertical-align: middle;
+      display: inline-block;
+      width: 100%; }
+      .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center; }
+        .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn {
+          border: 1px solid black;
+          border-radius: 15px;
+          margin: 10px;
+          cursor: pointer; }
+          .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn span {
+            display: block;
+            padding: 15px;
+            font-size: 18px; }
+      .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center; }
+        .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn {
+          position: relative; }
+          .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn span {
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer; }
+          .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn:first-child:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+            height: 25px;
+            width: 1px;
+            background-color: black; }
