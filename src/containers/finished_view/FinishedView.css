@@ -4,7 +4,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.9); }
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow: hidden; }
 
 .FinishedView .FinishedView__btns_centered {
   position: absolute;
@@ -34,7 +35,8 @@
 .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn {
   border: 1px solid black;
   border-radius: 15px;
-  margin: 10px; }
+  margin: 10px;
+  cursor: pointer; }
 
 .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont .FinishedView__btn span {
   display: block;
@@ -53,7 +55,8 @@
 .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn span {
   display: block;
   padding: 15px;
-  font-size: 18px; }
+  font-size: 18px;
+  cursor: pointer; }
 
 .FinishedView .FinishedView__btns_centered .FinishedView__btns .FinishedView__btns_cont_2 .FinishedView__finishedbtn:first-child:after {
   content: '';

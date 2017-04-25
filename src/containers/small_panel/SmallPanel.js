@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
 import { connect } from 'react-redux';
-import FinishedView from './../finished_view/FinishedView'
+import FinishedView from './../finished_view/FinishedView';
 
 import './SmallPanel.css';
 
@@ -36,7 +36,7 @@ class SmallPanel extends Component {
 		      	<div className="SmallPanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
 		      		<div className="SmallPanel__desc">You are currently working on a <span>Small</span> dbSAFE I/O Panel.</div>
-		      		<div className="SmallPanel__border">
+		      		<div id="section-to-print" className="SmallPanel__border">
 		      			<div className="SmallPanel__bolts_horiz top">
 		      				<div className="SmallPanel__bolt"></div>
 		      				<div className="SmallPanel__bolt"></div>
@@ -73,7 +73,7 @@ class SmallPanel extends Component {
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView}/>
 		      	</div>
-		      	<FinishedView active={this.state.finished}/>
+		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
 	      	</div>
 	    );
 	}

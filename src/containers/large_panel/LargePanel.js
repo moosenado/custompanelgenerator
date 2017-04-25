@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
 import Draggabilly from 'draggabilly';
+import FinishedView from './../finished_view/FinishedView';
 
 import './LargePanel.css';
 
 class LargePanel extends Component {
+
+	constructor() {
+		super();
+		this.finishedView = this.finishedView.bind(this);
+		this.state = {
+			finished: false
+		};
+	}
+
+	finishedView() {
+		this.setState({
+			finished: !this.state.finished
+		});
+	}
 
 	// componentDidMount() {
 	// 	var draggableElems = document.querySelectorAll('.drag');
@@ -26,7 +41,7 @@ class LargePanel extends Component {
 		      	<div className="LargePanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
 		      		<div className="LargePanel__desc">You are currently working on a <span>Large</span> dbSAFE I/O Panel.</div>
-		      		<div className="LargePanel__border">
+		      		<div id="section-to-print" className="LargePanel__border">
 		      			<div className="LargePanel__bolts_horiz top">
 		      				<div className="LargePanel__bolt"></div>
 		      				<div className="LargePanel__bolt"></div>
@@ -70,8 +85,9 @@ class LargePanel extends Component {
 		      				</div>
 		      			</div>
 		      		</div>
-		      		<PanelButtons />
+		      		<PanelButtons finishedView={this.finishedView}/>
 		      	</div>
+		      	<FinishedView active={this.state.finished} finishedView={this.finishedView}/>
 	      	</div>
 	    );
 	}

@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
+import Quote from './../quote/Quote';
 
 import './FinishedView.css';
 
 class FinishedView extends Component {
 
+	constructor() {
+		super();
+		this.toggleQuote = this.toggleQuote.bind(this);
+		this.state = {
+			active_quote: false
+		}
+	}
+
+	toggleQuote() {
+		this.setState({active_quote: !this.state.quote});
+	}
+
 	render() {
-		const {active} = this.props;
+		const {active, finishedView} = this.props;
 
 	    return (
 	    	<div>
@@ -15,22 +28,23 @@ class FinishedView extends Component {
 		    			<div className="FinishedView__btns">
 		    				<div className="FinishedView__btns_cont">
 				    			<div className="FinishedView__btn">
-				    				<span>PRINT I/O PANEL</span>
+				    				<span onClick={()=>{window.print()}}>PRINT I/O PANEL</span>
 				    			</div>
 				    			<div className="FinishedView__btn">
-				    				<span>GET A QUOTE</span>
+				    				<span onClick={this.toggleQuote}>GET A QUOTE</span>
 				    			</div>
 			    			</div>
 			    			<div className="FinishedView__btns_cont_2">
 				    			<div className="FinishedView__finishedbtn">
-				    				<span>BACK</span>
+				    				<span onClick={finishedView}>BACK</span>
 				    			</div>
 				    			<div className="FinishedView__finishedbtn">
-				    				<span>DONE</span>
+				    				<span><a href="http://www.testforce.com">DONE</a></span>
 				    			</div>
 			    			</div>
 		    			</div>
 		    		</div>
+		    		<Quote active={this.state.active_quote}/>
 		      	</div>
 	      	}
 	      	</div>

@@ -1,0 +1,31 @@
+.Quote {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.Quote .Quote__content h3 {
+  font-size: 34px;
+  text-align: center; }
+
+.Quote .Quote__content .Quote__fieldtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 15px 0; }
+
+.Quote .Quote__content .Quote__input {
+  text-align: center;
+  margin: 15px 0; }
+
+.Quote .Quote__content .Quote__input input, .Quote .Quote__content .Quote__input textarea {
+  border: 1px solid black;
+  height: 25px;
+  width: 300px;
+  padding: 2px;
+  font-size: 16px; }
+
+.Quote .Quote__content .Quote__input textarea {
+  height: 75px; }
