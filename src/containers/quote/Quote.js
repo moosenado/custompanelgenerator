@@ -5,13 +5,17 @@ import './Quote.css';
 class Quote extends Component {
 
 	render() {
-		const {active} = this.props;
+		const {active, quoteView} = this.props;
+		console.log(active);
 
 	    return (
 	    	<div>
 	    	{active &&
 		    	<div className="Quote">
 		    		<div className="Quote__content">
+
+		    			<div className="Quote__close" onClick={quoteView}></div>
+
 		    			<h3>Get a Quote</h3>
 
 		    			<div className="Quote__fieldtitle">NAME</div>
@@ -28,6 +32,15 @@ class Quote extends Component {
 
 		    			<div className="Quote__fieldtitle">NOTES</div>
 		    			<div className="Quote__input"><textarea name="notes" id="notes" /></div>
+		    		
+		    			<div className="Quote__offishbtn blue">
+			    			<div className="inner_outline">
+								<div className="centered"></div>
+			      			</div>
+			      			<div className="text">
+			      				<div>QUOTE</div>
+			      			</div>
+			    		</div>
 		    		</div>
 		      	</div>
 	      	}

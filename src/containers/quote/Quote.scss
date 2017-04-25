@@ -7,8 +7,46 @@
 	bottom: 0;
 	left: 0;
 	background-color: rgba(255,255,255,.9);
+	border-radius: 25px;
 
 	.Quote__content {
+		margin-top: 15px;
+
+		.Quote__close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+			background-color: #1f3364;
+			cursor: pointer;
+
+			&:before {
+				content: '';
+			    display: block;
+			    height: 10px;
+			    position: absolute;
+			    left: 11.5px;
+			    width: 2px;
+			    top: 7.5px;
+			    background-color: white;
+			    @include transform(rotate(45deg));
+			}
+
+			&:after {
+				content: '';
+			    display: block;
+			    height: 10px;
+			    position: absolute;
+			    left: 11.5px;
+			    width: 2px;
+			    top: 7.5px;
+			    background-color: white;
+			    @include transform(rotate(-45deg));
+			}
+		}
+
 		h3 {
 			font-size: 34px;
 			text-align: center;
@@ -35,6 +73,62 @@
 
 			textarea {
 				height: 75px;
+			}
+		}
+
+		.Quote__offishbtn {
+			margin: 0 auto;
+			border-radius: 50%;
+			height: 70px;
+			width: 70px;
+			position: relative;
+			opacity: .2;
+			@include transition(all .5s);
+			@include transform(scale3d(.95,.95,1));
+
+			&.blue {
+				background-color: #1f3364;
+				opacity: 1;
+				> div {
+					cursor: pointer;
+				}
+
+				&:hover {
+					@include transition(all .25s);
+					@include transform(scale3d(1,1,1));
+					.inner_outline .centered {
+						opacity: 1;
+						@include transition(all .2s);
+						@include transform(scale3d(1,1,1));
+					}
+				}
+			}
+
+			.inner_outline {
+				@include center-element;
+
+				.centered {
+					@include complete-centering;
+					border: 2px solid #eaeaea;
+					border-radius: 50%;
+					height: 62px;
+					width: 62px;
+					background-color: transparent;
+					opacity: 0;
+					@include transition(all .75s);
+					@include transform(scale3d(.9,.9,1));
+				}
+			}
+
+			.text {
+				@include center-element;
+				color: white;
+				font-size: 14px;
+				line-height: 20px;
+
+				div {
+					@include complete-centering;
+				}
 			}
 		}
 	}

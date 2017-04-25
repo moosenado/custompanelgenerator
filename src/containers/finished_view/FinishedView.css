@@ -5,7 +5,8 @@
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.9);
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 25px; }
 
 .FinishedView .FinishedView__btns_centered {
   position: absolute;

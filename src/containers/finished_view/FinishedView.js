@@ -14,7 +14,7 @@ class FinishedView extends Component {
 	}
 
 	toggleQuote() {
-		this.setState({active_quote: !this.state.quote});
+		this.setState({active_quote: !this.state.active_quote});
 	}
 
 	render() {
@@ -44,7 +44,7 @@ class FinishedView extends Component {
 			    			</div>
 		    			</div>
 		    		</div>
-		    		<Quote active={this.state.active_quote}/>
+		    		<Quote active={this.state.active_quote} quoteView={this.toggleQuote}/>
 		      	</div>
 	      	}
 	      	</div>
