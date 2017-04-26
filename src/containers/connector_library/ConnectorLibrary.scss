@@ -2,7 +2,6 @@
 
 .ConnectorLibrary {
 	width: auto;
-	height: 100%;
 	padding: 10px;
 	border-right: 1px solid black;
 
@@ -17,12 +16,16 @@
 	}
 
 	&.small_connectors {
+		height: 580px; //same as panel height - for scroll to work on ios
+
 		ul li {
 			max-width: 100%;
 		}
 	}
 
 	&.large_connectors {
+		height: 660px; //same as panel height - for scroll to work on ios
+
 		ul li {
 			max-width: 100%;
 		}
