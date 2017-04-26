@@ -48,6 +48,7 @@ class ConnectorLibrary extends Component {
 	            className={`ConnectorLibrary ${type_class}`}
 	            vertical={true}
 	            horizontal={false}
+	            smoothScrolling={true}
 	            >
 
 	    		<h2>Connector Library</h2>
