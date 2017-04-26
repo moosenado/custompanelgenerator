@@ -2,48 +2,37 @@
   width: auto;
   height: 100%;
   padding: 10px;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
   border-right: 1px solid black; }
-
-.ConnectorLibrary h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  font-weight: 700; }
-
-.ConnectorLibrary .desc {
-  font-size: 14px; }
-
-.ConnectorLibrary.small_connectors ul li {
-  max-width: 100%; }
-
-.ConnectorLibrary.large_connectors ul li {
-  max-width: 100%; }
-
-.ConnectorLibrary .ConnectorLibrary__list {
-  text-align: center;
-  -webkit-animation: fadeInConnectors 1.2s forwards;
-  animation: fadeInConnectors 1.2s forwards;
-  opacity: 0; }
-
-.ConnectorLibrary .ConnectorLibrary__list ul {
-  padding: 20px 0; }
-
-.ConnectorLibrary .ConnectorLibrary__list ul li {
-  padding: 10px;
-  cursor: pointer;
-  opacity: .8;
-  margin: 0 auto;
-  -webkit-transition: opacity 0.25s;
-  transition: opacity 0.25s; }
-
-.ConnectorLibrary .ConnectorLibrary__list ul li:hover {
-  opacity: 1;
-  -webkit-transition: opacity 0.25s;
-  transition: opacity 0.25s; }
-
-.ConnectorLibrary .ConnectorLibrary__list ul li img {
-  max-width: 100%; }
+  .ConnectorLibrary h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 700; }
+  .ConnectorLibrary .desc {
+    font-size: 14px; }
+  .ConnectorLibrary.small_connectors ul li {
+    max-width: 100%; }
+  .ConnectorLibrary.large_connectors ul li {
+    max-width: 100%; }
+  .ConnectorLibrary .ConnectorLibrary__list {
+    text-align: center;
+    -webkit-animation: fadeInConnectors 1.2s forwards;
+    animation: fadeInConnectors 1.2s forwards;
+    opacity: 0; }
+    .ConnectorLibrary .ConnectorLibrary__list ul {
+      padding: 20px 0; }
+      .ConnectorLibrary .ConnectorLibrary__list ul li {
+        padding: 10px;
+        cursor: pointer;
+        opacity: .8;
+        margin: 0 auto;
+        -webkit-transition: opacity 0.25s;
+        transition: opacity 0.25s; }
+        .ConnectorLibrary .ConnectorLibrary__list ul li:hover {
+          opacity: 1;
+          -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
+        .ConnectorLibrary .ConnectorLibrary__list ul li img {
+          max-width: 100%; }
 
 @-webkit-keyframes fadeInConnectors {
   0% {

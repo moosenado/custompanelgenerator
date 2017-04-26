@@ -11,6 +11,7 @@ import tnc from './../../../public/imgs/connectors_actual/tnc_connector_actual.j
 import usb2 from './../../../public/imgs/connectors_actual/usb2_actual.jpg';
 import usb3 from './../../../public/imgs/connectors_actual/usb3_actual.jpg';
 import store from './../../store';
+import ScrollArea from 'react-scrollbar';
 
 import './ConnectorLibrary.css';
 
@@ -42,7 +43,13 @@ class ConnectorLibrary extends Component {
 		let type_class = type ? type_styles[type] : '';
 
 	    return (
-	    	<div className={`ConnectorLibrary ${type_class}`}>
+	    	<ScrollArea
+		    	speed={0.8}
+	            className={`ConnectorLibrary ${type_class}`}
+	            vertical={true}
+	            horizontal={false}
+	            >
+
 	    		<h2>Connector Library</h2>
 	    		<div className="desc">
 					Click on a connector to add it onto your custom I/O panel
@@ -61,7 +68,8 @@ class ConnectorLibrary extends Component {
 	    				<li><img onClick={() => this.addItemToData('usb3', usb3, 1.74)} src={usb3} alt="usb3" style={{width:'1.74in'}}/></li>
 	    			</ul>
 	    		</div>
-	      	</div>
+
+	      	</ScrollArea>
 	    );
 	}
 }
