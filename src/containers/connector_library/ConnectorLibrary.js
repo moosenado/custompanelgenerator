@@ -23,17 +23,21 @@ class ConnectorLibrary extends Component {
 	}
 
 	addItemToData(name, src, width) {
-		console.log(this.props.type);
-		store.dispatch({
-			type: 'ADD_SMALL_CONNECTOR',
-			name: name,
-			src: src,
-			width: width
-		});
+		switch(this.props.type) {
+			case "small":
+				store.dispatch({
+					type: 'ADD_SMALL_CONNECTOR',
+					name: name,
+					src: src,
+					width: width
+				});
+			break;
+		}
 	}
 
 	render() {
 		const {type, smallconnectors, largeconnectors} = this.props;
+		console.log('what type?: ' + type);
 
 		let type_styles = {
 			small: 'small_connectors',

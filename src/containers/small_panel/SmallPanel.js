@@ -28,7 +28,7 @@ class SmallPanel extends Component {
 	mountDragabbles() {
 		var draggableElems = document.querySelectorAll('.dragme');
 		var draggies = []
-		console.log(draggableElems);
+		console.log('DRAG ELMS: ' + draggableElems);
 
 		for (let i = 0; i < draggableElems.length; i++) {
 			var draggie = new Draggabilly(draggableElems[i], {
@@ -47,10 +47,11 @@ class SmallPanel extends Component {
 	}
 
 	render() {
-		const {smallconnectors} = this.props;
-		console.log(smallconnectors);
+		const {data} = this.props;
+		console.log('small panel:');
+		console.log(data);
 
-		let connectors_exist = smallconnectors.length > 0;
+		let connectors_exist = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
 
 	    return (
 	    	<div className="SmallPanel">
@@ -89,7 +90,7 @@ class SmallPanel extends Component {
 		      			</div>
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
-		      					{connectors_exist ? smallconnectors.map((item, i)=>{
+		      					{connectors_exist ? data.smallconnectors.map((item, i)=>{
 									return <img key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
 		      					}) : ''}
 		      				</div>
@@ -107,7 +108,7 @@ class SmallPanel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        smallconnectors: state.data.smallconnectors
+        data: state.data
     };
 };
 
