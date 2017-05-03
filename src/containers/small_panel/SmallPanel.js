@@ -122,7 +122,9 @@ class SmallPanel extends Component {
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
 		      					{connectors_exist ? data.smallconnectors.map((item, i)=>{
-									return <img id={item.id} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
+									let top = item.top;
+									let left = item.left;
+									return <img id={item.id} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in', top: top, left: left}}/>;
 		      					}) : ''}
 		      				</div>
 		      			</div>
