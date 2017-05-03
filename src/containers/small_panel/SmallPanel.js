@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import FinishedView from './../finished_view/FinishedView';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Draggabilly from 'draggabilly';
+import store from './../../store';
 
 import './SmallPanel.css';
 
@@ -14,6 +15,10 @@ class SmallPanel extends Component {
 		super();
 		this.mountDragabbles = this.mountDragabbles.bind(this);
 		this.finishedView = this.finishedView.bind(this);
+		this.refreshState = this.refreshState.bind(this);
+		this.dragEndStuff = this.dragEndStuff.bind(this);
+		this.draggies = [];
+
 		this.state = {
 			finished: false
 		};
@@ -25,25 +30,45 @@ class SmallPanel extends Component {
 		});
 	}
 
-	mountDragabbles() {
+	refreshState() {
+		store.dispatch({
+			type: 'REFRESH_SMALL_CONNECTORS'
+		});
+	}
+
+	dragEndStuff(event, pointer) {
+		let element = document.getElementById(event.target.id);
+		let top = (element.style.top !== null) ? element.style.top : 0;
+		let left = (element.style.left !== null) ? element.style.left : 0;
+		console.log(element.style.left);
+	}
+
+	mountDragabbles(update) {
 		var draggableElems = document.querySelectorAll('.dragme');
-		var draggies = []
-		console.log('DRAG ELMS: ' + draggableElems);
+		console.log('DRAG ELMS:');
+		console.log(draggableElems);
+
+		if(update) {
+			for (let i = 0; i < this.draggies.length; i++) {
+				this.draggies[i].off( 'dragEnd', this.dragEndStuff );
+			}
+		}
 
 		for (let i = 0; i < draggableElems.length; i++) {
 			var draggie = new Draggabilly(draggableElems[i], {
 		    	containment: '.SmallPanel__surface'
 		  	});
-		  	draggies.push( draggie );
+			draggie.on( 'dragEnd', this.dragEndStuff );
+			this.draggies.push(draggie);
 		}
 	}
 
 	componentDidMount() {
-		this.mountDragabbles();
+		this.mountDragabbles(false);
 	}
 
 	componentDidUpdate() {
-		this.mountDragabbles();
+		this.mountDragabbles(true);
 	}
 
 	render() {
@@ -91,12 +116,12 @@ class SmallPanel extends Component {
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
 		      					{connectors_exist ? data.smallconnectors.map((item, i)=>{
-									return <img key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
+									return <img id={i++} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
 		      					}) : ''}
 		      				</div>
 		      			</div>
 		      		</div>
-		      		<PanelButtons finishedView={this.finishedView}/>
+		      		<PanelButtons finishedView={this.finishedView} refreshState={this.refreshState}/>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='SmallPanel__finishedView'>
 		      		<FinishedView key={this.state.finished} active={this.state.finished} finishedView={this.finishedView}/>

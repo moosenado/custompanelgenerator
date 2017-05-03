@@ -10,9 +10,17 @@ const data = (state = {}, action) => {
         smallconnectors: [...state.smallconnectors, {
         	name: action.name,
         	src: action.src,
-        	width: action.width
+        	width: action.width,
+        	top: action.top,
+        	left: action.left
         }]
     	}
+    case 'REFRESH_SMALL_CONNECTORS':
+    	return {
+      	...state,
+        smallconnectors: []
+    	}
+    break;
     default:
       return state;
   }

@@ -29,7 +29,9 @@ class ConnectorLibrary extends Component {
 					type: 'ADD_SMALL_CONNECTOR',
 					name: name,
 					src: src,
-					width: width
+					width: width,
+					top: 0,
+					left: 0
 				});
 			break;
 		}

@@ -5,7 +5,7 @@ import './PanelButtons.css';
 class PanelButtons extends Component {
 
 	render() {
-		const {finishedView} = this.props;
+		const {finishedView, refreshState} = this.props;
 
 	    return (
 	    	<div className="PanelButtons">
@@ -19,7 +19,7 @@ class PanelButtons extends Component {
 	      			</div>
 	    		</div>
 
-	    		<div className="PanelButtons__panelbtn blue">
+	    		<div className="PanelButtons__panelbtn blue" onClick={refreshState}>
 	    			<div className="inner_outline">
 						<div className="centered"></div>
 	      			</div>
