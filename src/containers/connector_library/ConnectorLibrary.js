@@ -20,6 +20,7 @@ class ConnectorLibrary extends Component {
 	constructor() {
 		super();
 		this.addItemToData = this.addItemToData.bind(this);
+		this.i = 0;
 	}
 
 	addItemToData(name, src, width) {
@@ -27,6 +28,7 @@ class ConnectorLibrary extends Component {
 			case "small":
 				store.dispatch({
 					type: 'ADD_SMALL_CONNECTOR',
+					id: this.i++,
 					name: name,
 					src: src,
 					width: width,

@@ -40,7 +40,13 @@ class SmallPanel extends Component {
 		let element = document.getElementById(event.target.id);
 		let top = (element.style.top !== null) ? element.style.top : 0;
 		let left = (element.style.left !== null) ? element.style.left : 0;
-		console.log(element.style.left);
+
+		store.dispatch({
+			type: 'EDIT_SMALL_CONNECTORS',
+			id: event.target.id,
+			top: element.style.top,
+			left: element.style.left
+		});
 	}
 
 	mountDragabbles(update) {
@@ -116,7 +122,7 @@ class SmallPanel extends Component {
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
 		      					{connectors_exist ? data.smallconnectors.map((item, i)=>{
-									return <img id={i++} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
+									return <img id={item.id} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in'}}/>;
 		      					}) : ''}
 		      				</div>
 		      			</div>

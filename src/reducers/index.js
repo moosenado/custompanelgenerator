@@ -9,6 +9,7 @@ const data = (state = {}, action) => {
       	...state,
         smallconnectors: [...state.smallconnectors, {
         	name: action.name,
+        	id: action.id,
         	src: action.src,
         	width: action.width,
         	top: action.top,
@@ -19,6 +20,23 @@ const data = (state = {}, action) => {
     	return {
       	...state,
         smallconnectors: []
+    	}
+    break;
+    case 'EDIT_SMALL_CONNECTORS':
+    	let smalls = state.smallconnectors.map(c => {
+	    		if (+c.id !== +action.id) {
+	    			return c;
+	    		}
+	    		console.log(c.id + ' ' + action.id);
+	    		return {
+	    			...c,
+	    			top: action.top,
+		        	left: action.left
+	    		}
+	    	});
+    	return {
+    		...state,
+    		smallconnectors: smalls
     	}
     break;
     default:
