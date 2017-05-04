@@ -5,21 +5,22 @@ const data = (state = {}, action) => {
     case 'INIT_CONNECTORS':
       return action.data;
     case 'ADD_SMALL_CONNECTOR':
+    let last_entry = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : 0;
       return {
       	...state,
-        smallconnectors: [...state.smallconnectors, {
+        smallconnectors: [...state.smallconnectors, [...last_entry, {
         	name: action.name,
         	id: action.id,
         	src: action.src,
         	width: action.width,
         	top: action.top,
         	left: action.left
-        }]
+        }]]
     	}
     case 'REFRESH_SMALL_CONNECTORS':
     	return {
-      	...state,
-        smallconnectors: []
+      		...state,
+        	smallconnectors: []
     	}
     break;
     case 'EDIT_SMALL_CONNECTORS':
@@ -27,7 +28,6 @@ const data = (state = {}, action) => {
 	    		if (+c.id !== +action.id) {
 	    			return c;
 	    		}
-	    		console.log(c.id + ' ' + action.id);
 	    		return {
 	    			...c,
 	    			top: action.top,
@@ -37,6 +37,12 @@ const data = (state = {}, action) => {
     	return {
     		...state,
     		smallconnectors: smalls
+    	}
+    break;
+    case 'UNDO_SMALL_CONNECTORS':
+    	return {
+    		...state,
+    		smallconenctors: state.smallconnectors.pop()
     	}
     break;
     default:

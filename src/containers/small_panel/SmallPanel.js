@@ -16,6 +16,7 @@ class SmallPanel extends Component {
 		this.mountDragabbles = this.mountDragabbles.bind(this);
 		this.finishedView = this.finishedView.bind(this);
 		this.refreshState = this.refreshState.bind(this);
+		this.undoState = this.undoState.bind(this);
 		this.dragEndStuff = this.dragEndStuff.bind(this);
 		this.draggies = [];
 
@@ -36,16 +37,21 @@ class SmallPanel extends Component {
 		});
 	}
 
+	undoState() {
+		store.dispatch({
+			type: 'UNDO_SMALL_CONNECTORS'
+		});
+	}
+
 	dragEndStuff(event, pointer) {
-		let element = document.getElementById(event.target.id);
-		let top = (element.style.top !== null) ? element.style.top : 0;
-		let left = (element.style.left !== null) ? element.style.left : 0;
+		let top = event.target.offsetTop;
+		let left = event.target.offsetLeft;
 
 		store.dispatch({
 			type: 'EDIT_SMALL_CONNECTORS',
 			id: event.target.id,
-			top: element.style.top,
-			left: element.style.left
+			top: top,
+			left: left
 		});
 	}
 
@@ -121,7 +127,7 @@ class SmallPanel extends Component {
 		      			</div>
 		      			<div className="SmallPanel__surface_centered">
 		      				<div className="SmallPanel__surface">
-		      					{connectors_exist ? data.smallconnectors.map((item, i)=>{
+		      					{connectors_exist ? data.smallconnectors[data.smallconnectors.length-1].map((item, i)=>{
 									let top = item.top;
 									let left = item.left;
 									return <img id={item.id} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in', top: top, left: left}}/>;
@@ -129,7 +135,7 @@ class SmallPanel extends Component {
 		      				</div>
 		      			</div>
 		      		</div>
-		      		<PanelButtons finishedView={this.finishedView} refreshState={this.refreshState}/>
+		      		<PanelButtons finishedView={this.finishedView} refreshState={this.refreshState} undoState={this.undoState}/>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='SmallPanel__finishedView'>
 		      		<FinishedView key={this.state.finished} active={this.state.finished} finishedView={this.finishedView}/>

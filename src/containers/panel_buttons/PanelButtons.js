@@ -5,12 +5,12 @@ import './PanelButtons.css';
 class PanelButtons extends Component {
 
 	render() {
-		const {finishedView, refreshState} = this.props;
+		const {finishedView, refreshState, undoState} = this.props;
 
 	    return (
 	    	<div className="PanelButtons">
 
-	    		<div className="PanelButtons__panelbtn blue">
+	    		<div className="PanelButtons__panelbtn blue" onClick={undoState}>
 	    			<div className="inner_outline">
 						<div className="centered"></div>
 	      			</div>
