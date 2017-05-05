@@ -53,6 +53,9 @@
 
 				img {
 					max-width: 100%;
+					&:focus, &:active {
+						opacity: .75 !important;
+					}
 				}
 			}
 		}
