@@ -44,14 +44,11 @@ class SmallPanel extends Component {
 	}
 
 	dragEndStuff(event, pointer) {
-		let top = event.target.offsetTop;
-		let left = event.target.offsetLeft;
-
 		store.dispatch({
 			type: 'EDIT_SMALL_CONNECTORS',
 			id: event.target.id,
-			top: top,
-			left: left
+			top: event.target.offsetTop,
+			left: event.target.offsetLeft
 		});
 	}
 
