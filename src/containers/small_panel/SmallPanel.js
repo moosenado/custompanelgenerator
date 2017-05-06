@@ -128,7 +128,7 @@ class SmallPanel extends Component {
 		      				</div>
 		      			</div>
 		      		</div>
-		      		<PanelButtons finishedView={this.finishedView} refreshState={this.refreshState} undoState={this.undoState}/>
+		      		<PanelButtons finishedView={this.finishedView} type={'small'} refreshState={this.refreshState} undoState={this.undoState}/>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='SmallPanel__finishedView'>
 		      		<FinishedView key={this.state.finished} active={this.state.finished} finishedView={this.finishedView}/>

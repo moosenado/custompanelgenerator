@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './PanelButtons.css';
 
 class PanelButtons extends Component {
 
 	render() {
-		const {finishedView, refreshState, undoState} = this.props;
+		const {finishedView, refreshState, undoState, data, type} = this.props;
+
+		let small_exists = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
+		let large_exists = (data.hasOwnProperty("largeconnectors")) ? data.largeconnectors.length > 0 : false;
+		let finish_style = ((type === 'small' && small_exists) || (type === 'large' && large_exists));
 
 	    return (
 	    	<div className="PanelButtons">
@@ -33,7 +38,7 @@ class PanelButtons extends Component {
 						<div className="centered"></div>
 	      			</div>
 	      			<div className="text">
-	      				<div>FINISH</div>
+	      				{finish_style && <div>FINISH</div>}
 	      			</div>
 	    		</div>
 
@@ -42,4 +47,10 @@ class PanelButtons extends Component {
 	}
 }
 
-export default PanelButtons;
+const mapStateToProps = (state) => {
+    return {
+        data: state.data
+    };
+};
+
+export default connect(mapStateToProps)(PanelButtons);
