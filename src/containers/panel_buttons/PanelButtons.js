@@ -10,7 +10,8 @@ class PanelButtons extends Component {
 
 		let small_exists = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
 		let large_exists = (data.hasOwnProperty("largeconnectors")) ? data.largeconnectors.length > 0 : false;
-		let finish_style = ((type === 'small' && small_exists) || (type === 'large' && large_exists));
+		let can_finish = ((type === 'small' && small_exists) || (type === 'large' && large_exists));
+		let finish_style = (can_finish) ? '' : 'unactive';
 
 	    return (
 	    	<div className="PanelButtons">
@@ -33,12 +34,12 @@ class PanelButtons extends Component {
 	      			</div>
 	    		</div>
 
-	    		<div className="PanelButtons__panelbtn blue" onClick={finishedView}>
+	    		<div className={`PanelButtons__panelbtn blue ${finish_style}`} onClick={can_finish ? finishedView : ''}>
 	    			<div className="inner_outline">
 						<div className="centered"></div>
 	      			</div>
 	      			<div className="text">
-	      				{finish_style && <div>FINISH</div>}
+	      				<div>FINISH</div>
 	      			</div>
 	    		</div>
 

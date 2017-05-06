@@ -17,6 +17,10 @@
 		@include transition(all .5s);
 		@include transform(scale3d(.95,.95,1));
 
+		&.unactive {
+			opacity: .7 !important;
+		}
+
 		&.blue {
 			background-color: #1f3364;
 			opacity: 1;
