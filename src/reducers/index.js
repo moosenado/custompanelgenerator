@@ -3,12 +3,15 @@ import { combineReducers } from 'redux';
 const data = (state = {}, action) => {
   switch (action.type) {
     case 'INIT_CONNECTORS':
-      return action.data;
+    	return action.data;
+
+    //SMALL CONNECTORS
+
     case 'ADD_SMALL_CONNECTOR':
-    	let last_entry = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : 0;
+    	let last_entry_small = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : 0;
       	return {
       		...state,
-        	smallconnectors: [...state.smallconnectors, [...last_entry, {
+        	smallconnectors: [...state.smallconnectors, [...last_entry_small, {
         		name: action.name,
         		id: action.id,
         		src: action.src,
@@ -24,8 +27,8 @@ const data = (state = {}, action) => {
     	}
     break;
     case 'EDIT_SMALL_CONNECTORS':
-    	let last_edit = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : state.smallconnectors[0];
-    	let smalls = last_edit.map(c => {
+    	let last_edit_small = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : state.smallconnectors[0];
+    	let last_edited_small = last_edit_small.map(c => {
 	    		if (+c.id !== +action.id) {
 	    			return c;
 	    		}
@@ -37,7 +40,7 @@ const data = (state = {}, action) => {
 	    	});
     	return {
       		...state,
-        	smallconnectors: [...state.smallconnectors, smalls]
+        	smallconnectors: [...state.smallconnectors, last_edited_small]
     	}
     break;
     case 'UNDO_SMALL_CONNECTORS':
@@ -45,6 +48,53 @@ const data = (state = {}, action) => {
     	return {
     		...state,
     		smallconnectors: state.smallconnectors
+    	}
+    break;
+    
+
+    //LARGE CONNECTORS
+
+    case 'ADD_LARGE_CONNECTOR':
+    	let last_entry_large = (state.largeconnectors.length > 0) ? state.largeconnectors[state.largeconnectors.length-1] : 0;
+      	return {
+      		...state,
+        	largeconnectors: [...state.largeconnectors, [...last_entry_large, {
+        		name: action.name,
+        		id: action.id,
+        		src: action.src,
+        		width: action.width,
+        		top: action.top,
+        		left: action.left
+        	}]]
+    	}
+    case 'REFRESH_LARGE_CONNECTORS':
+    	return {
+      		...state,
+        	largeconnectors: []
+    	}
+    break;
+    case 'EDIT_LARGE_CONNECTORS':
+    	let last_edit_large = (state.largeconnectors.length > 0) ? state.largeconnectors[state.largeconnectors.length-1] : state.largeconnectors[0];
+    	let last_edited_large = last_edit_large.map(c => {
+	    		if (+c.id !== +action.id) {
+	    			return c;
+	    		}
+	    		return {
+	    			...c,
+	    			top: action.top,
+		        	left: action.left
+	    		}
+	    	});
+    	return {
+      		...state,
+        	largeconnectors: [...state.largeconnectors, last_edited_large]
+    	}
+    break;
+    case 'UNDO_LARGE_CONNECTORS':
+   		state.largeconnectors.pop();
+    	return {
+    		...state,
+    		largeconnectors: state.largeconnectors
     	}
     break;
     default:

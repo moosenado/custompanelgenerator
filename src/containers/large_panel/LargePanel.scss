@@ -49,7 +49,7 @@
 					display: block;
 					margin: 0 auto;
 					background-color: white;
-					@include animation(boltedSmall 1s forwards);
+					@include animation(boltedLarge 1s forwards);
 				}
 			}
 		}
@@ -79,7 +79,7 @@
 					display: block;
 					margin: 0 auto;
 					background-color: white;
-					@include animation(bolted 1s forwards);
+					@include animation(boltedLarge 1s forwards);
 				}
 			}
 		}
@@ -115,10 +115,9 @@
 					position: relative;
 					-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 
-					.dragme {
+					.dragme_large {
 						position: absolute;
-						top: 0;
-						left: 0;
+						@include animation(fadePieceInLarge .5s forwards);
 					}
 				}
 			}
@@ -146,11 +145,20 @@
 	}
 }
 
-@include keyframes(boltedSmall) {
+@include keyframes(boltedLarge) {
 	0% {
 		@include transform(scale3d(0,0,1));
 	}
 	100% {
 		@include transform(scale3d(1,1,1));
+	}
+}
+
+@include keyframes(fadePieceInLarge) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

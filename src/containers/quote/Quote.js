@@ -6,7 +6,6 @@ class Quote extends Component {
 
 	render() {
 		const {active, quoteView} = this.props;
-		console.log(active);
 
 	    return (
 	    	<div>

@@ -49,7 +49,7 @@
 					display: block;
 					margin: 0 auto;
 					background-color: white;
-					@include animation(bolted 1s forwards);
+					@include animation(boltedSmall 1s forwards);
 				}
 			}
 		}
@@ -79,7 +79,7 @@
 					display: block;
 					margin: 0 auto;
 					background-color: white;
-					@include animation(bolted 1s forwards);
+					@include animation(boltedSmall 1s forwards);
 				}
 			}
 		}
@@ -115,11 +115,11 @@
 					position: relative;
 					-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 
-					.dragme {
+					.dragme_small {
 						position: absolute;
-						@include animation(fadePieceIn .5s forwards);
-						outline: 1px solid #999;
-						padding: .75in; //padding?
+						@include animation(fadePieceInSmall .5s forwards);
+						//outline: 1px solid #999;
+						//padding: .75in; //padding?
 					}
 				}
 			}
@@ -147,7 +147,7 @@
 	}
 }
 
-@include keyframes(bolted) {
+@include keyframes(boltedSmall) {
 	0% {
 		@include transform(scale3d(0,0,1));
 	}
@@ -156,7 +156,7 @@
 	}
 }
 
-@include keyframes(fadePieceIn) {
+@include keyframes(fadePieceInSmall) {
 	0% {
 		opacity: 0;
 	}

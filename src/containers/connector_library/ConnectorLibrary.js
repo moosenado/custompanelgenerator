@@ -36,12 +36,24 @@ class ConnectorLibrary extends Component {
 					left: 0
 				});
 			break;
+			case "large":
+				store.dispatch({
+					type: 'ADD_LARGE_CONNECTOR',
+					id: this.i++,
+					name: name,
+					src: src,
+					width: width,
+					top: 0,
+					left: 0
+				});
+			break;
+			default:
+				return;
 		}
 	}
 
 	render() {
 		const {type, smallconnectors, largeconnectors} = this.props;
-		console.log('what type?: ' + type);
 
 		let type_styles = {
 			small: 'small_connectors',

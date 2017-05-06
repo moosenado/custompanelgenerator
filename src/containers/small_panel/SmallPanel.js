@@ -53,9 +53,7 @@ class SmallPanel extends Component {
 	}
 
 	mountDragabbles(update) {
-		var draggableElems = document.querySelectorAll('.dragme');
-		console.log('DRAG ELMS:');
-		console.log(draggableElems);
+		var draggableElems = document.querySelectorAll('.dragme_small');
 
 		if(update) {
 			for (let i = 0; i < this.draggies.length; i++) {
@@ -82,8 +80,6 @@ class SmallPanel extends Component {
 
 	render() {
 		const {data} = this.props;
-		console.log('small panel:');
-		console.log(data);
 
 		let connectors_exist = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
 
@@ -127,7 +123,7 @@ class SmallPanel extends Component {
 		      					{connectors_exist ? data.smallconnectors[data.smallconnectors.length-1].map((item, i)=>{
 									let top = item.top;
 									let left = item.left;
-									return <img id={item.id} key={i} className="dragme" src={item.src} alt={item.name} style={{width: item.width + 'in', top: top, left: left}}/>;
+									return <img id={item.id} key={i} className="dragme_small" src={item.src} alt={item.name} style={{width: item.width + 'in', top: top, left: left}}/>;
 		      					}) : ''}
 		      				</div>
 		      			</div>
