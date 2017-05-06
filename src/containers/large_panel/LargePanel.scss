@@ -118,6 +118,7 @@
 					.dragme_large {
 						position: absolute;
 						@include animation(fadePieceInLarge .5s forwards);
+						cursor: move;
 					}
 				}
 			}
