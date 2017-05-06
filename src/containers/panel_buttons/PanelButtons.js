@@ -11,12 +11,12 @@ class PanelButtons extends Component {
 		let small_exists = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
 		let large_exists = (data.hasOwnProperty("largeconnectors")) ? data.largeconnectors.length > 0 : false;
 		let can_finish = ((type === 'small' && small_exists) || (type === 'large' && large_exists));
-		let finish_style = (can_finish) ? '' : 'unactive';
+		let finish_style = (can_finish) ? 'active' : 'unactive';
 
 	    return (
 	    	<div className="PanelButtons">
 
-	    		<div className="PanelButtons__panelbtn blue" onClick={undoState}>
+	    		<div className="PanelButtons__panelbtn blue active" onClick={undoState}>
 	    			<div className="inner_outline">
 						<div className="centered"></div>
 	      			</div>
@@ -25,7 +25,7 @@ class PanelButtons extends Component {
 	      			</div>
 	    		</div>
 
-	    		<div className="PanelButtons__panelbtn blue" onClick={refreshState}>
+	    		<div className="PanelButtons__panelbtn blue active" onClick={refreshState}>
 	    			<div className="inner_outline">
 						<div className="centered"></div>
 	      			</div>

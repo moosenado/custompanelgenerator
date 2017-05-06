@@ -15,30 +15,37 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-transform: scale3d(0.95, 0.95, 1);
-  transform: scale3d(0.95, 0.95, 1); }
-
-.PanelButtons .PanelButtons__panelbtn.unactive {
-  opacity: .7 !important; }
-
-.PanelButtons .PanelButtons__panelbtn.blue {
-  background-color: #1f3364;
-  opacity: 1; }
-
-.PanelButtons .PanelButtons__panelbtn.blue > div {
+  transform: scale3d(0.95, 0.95, 1);
   cursor: pointer; }
 
-.PanelButtons .PanelButtons__panelbtn.blue:hover {
+.PanelButtons .PanelButtons__panelbtn:hover.active {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1); }
 
-.PanelButtons .PanelButtons__panelbtn.blue:hover .inner_outline .centered {
+.PanelButtons .PanelButtons__panelbtn:hover.active .inner_outline .centered {
   opacity: 1;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1); }
+
+.PanelButtons .PanelButtons__panelbtn:hover.unactive {
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1); }
+
+.PanelButtons .PanelButtons__panelbtn:hover.unactive .inner_outline .centered {
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1); }
+
+.PanelButtons .PanelButtons__panelbtn.unactive {
+  opacity: .7 !important;
+  cursor: default !important; }
+
+.PanelButtons .PanelButtons__panelbtn.blue {
+  background-color: #1f3364;
+  opacity: 1; }
 
 .PanelButtons .PanelButtons__panelbtn .inner_outline {
   position: absolute;

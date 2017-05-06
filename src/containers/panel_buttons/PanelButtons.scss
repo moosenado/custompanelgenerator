@@ -16,19 +16,10 @@
 		opacity: .2;
 		@include transition(all .5s);
 		@include transform(scale3d(.95,.95,1));
+		cursor: pointer;
 
-		&.unactive {
-			opacity: .7 !important;
-		}
-
-		&.blue {
-			background-color: #1f3364;
-			opacity: 1;
-			> div {
-				cursor: pointer;
-			}
-
-			&:hover {
+		&:hover {
+			&.active {
 				@include transition(all .25s);
 				@include transform(scale3d(1,1,1));
 				.inner_outline .centered {
@@ -37,6 +28,23 @@
 					@include transform(scale3d(1,1,1));
 				}
 			}
+
+			&.unactive {
+				@include transform(scale3d(.95,.95,1));
+				.inner_outline .centered {
+					@include transform(scale3d(.95,.95,1));
+				}
+			}
+		}
+
+		&.unactive {
+			opacity: .7 !important;
+			cursor: default !important;
+		}
+
+		&.blue {
+			background-color: #1f3364;
+			opacity: 1;
 		}
 
 		.inner_outline {
