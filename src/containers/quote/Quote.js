@@ -54,7 +54,7 @@ class Quote extends Component {
 		for (var key in form) {
 			if (form.hasOwnProperty(key)) {
 				if(this.regexCheck(key, form[key]) === false) {
-					document.getElementById(key).style.outline = '1px solid red';
+					document.getElementById(key).style.outline = '1px dotted red';
 					fail_array.push(true);
 				} else {
 					document.getElementById(key).style.outline = 'none';
