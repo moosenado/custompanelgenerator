@@ -8,6 +8,7 @@ class Quote extends Component {
 		super();
 		this.checkFormFields = this.checkFormFields.bind(this);
 		this.sendEmail = this.sendEmail.bind(this);
+		this.submit = false;
 	}
 
 	regexCheck(field, value) {
@@ -45,33 +46,36 @@ class Quote extends Component {
 		let fail_array = [];
 		let form = {};
 
-		form.name = document.getElementById('name').value;
-		form.company = document.getElementById('company').value;
-		form.email = document.getElementById('email').value;
-		form.phonenumber = document.getElementById('phonenumber').value;
-		form.notes = document.getElementById('notes').value;
+		if(this.submit) {
+			form.name = document.getElementById('name').value;
+			form.company = document.getElementById('company').value;
+			form.email = document.getElementById('email').value;
+			form.phonenumber = document.getElementById('phonenumber').value;
+			form.notes = document.getElementById('notes').value;
 
-		for (var key in form) {
-			if (form.hasOwnProperty(key)) {
-				if(this.regexCheck(key, form[key]) === false) {
-					document.getElementById(key).style.outline = '1px dotted red';
-					fail_array.push(true);
-				} else {
-					document.getElementById(key).style.outline = 'none';
-					fail_array.push(false);
+			for (var key in form) {
+				if (form.hasOwnProperty(key)) {
+					if(this.regexCheck(key, form[key]) === false) {
+						document.getElementById(key).style.outline = '1px solid red';
+						fail_array.push(true);
+					} else {
+						document.getElementById(key).style.outline = 'none';
+						fail_array.push(false);
+					}
 				}
 			}
-		}
 
-		if ((fail_array.indexOf(true) > -1)) {
-			return false;
-		} else {
-			return form;
+			if ((fail_array.indexOf(true) > -1)) {
+				return false;
+			} else {
+				return form;
+			}
 		}
 	}
 
 	sendEmail(e) {
 	    e.preventDefault();
+	    this.submit = true;
 	    let form = this.checkFormFields();
 
 	    if (form) {
