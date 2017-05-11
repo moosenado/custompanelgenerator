@@ -159,6 +159,13 @@
   vertical-align: middle;
   height: 100%; }
 
+.Quote .Quote__content .Quote__offishbtn .text input {
+  height: 62px;
+  width: 62px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer; }
+
 .Quote .Quote__content .Quote__offishbtn .text div {
   vertical-align: middle;
   display: inline-block;

@@ -13,6 +13,10 @@
 
 	.desc {
 		font-size: 14px;
+
+		.underline {
+			text-decoration: underline;
+		}
 	}
 
 	&.small_connectors {

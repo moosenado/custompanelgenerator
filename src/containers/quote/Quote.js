@@ -15,6 +15,7 @@ class Quote extends Component {
 
 	    switch(field) {
 	      case 'name':
+	      case 'company':
 	        let name_regex = /^[a-zA-Z ]{2,30}$/;
 	        pass = (name_regex.test(value)) ? true : false;
 	      break;
@@ -24,12 +25,12 @@ class Quote extends Component {
 	        pass = (email_regex.test(value)) ? true : false;
 	      break;
 
-	      case 'phone':
+	      case 'phonenumber':
 	        let phone_regex = /^\d{10}$/;
-	        pass = true;
+	        pass = (phone_regex.test(value)) ? true : false;
 	      break;
 
-	      case 'message':
+	      case 'notes':
 	        pass = true;
 	      break;
 
@@ -53,7 +54,7 @@ class Quote extends Component {
 		for (var key in form) {
 			if (form.hasOwnProperty(key)) {
 				if(this.regexCheck(key, form[key]) === false) {
-					document.getElementById(key).style.outline = '1px dotted #54bfea';
+					document.getElementById(key).style.outline = '1px solid red';
 					fail_array.push(true);
 				} else {
 					document.getElementById(key).style.outline = 'none';
@@ -73,27 +74,28 @@ class Quote extends Component {
 	    e.preventDefault();
 	    let form = this.checkFormFields();
 
-	    // if (form) {
-	    //   let xmlhttp= window.XMLHttpRequest ?
-	    //     new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+	    if (form) {
+	    	console.log('THIS PASSES');
+	      // let xmlhttp= window.XMLHttpRequest ?
+	      //   new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
-	    //   xmlhttp.onreadystatechange = () => {
-	    //     console.log('sending...');
-	    //     this.handleFormSubmit('sending', true);
+	      // xmlhttp.onreadystatechange = () => {
+	      //   console.log('sending...');
+	      //   this.handleFormSubmit('sending', true);
 
-	    //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-	    //       console.log(xmlhttp.responseText);
-	    //       this.handleFormSubmit('Thank you. We will be in touch soon.');
-	    //     }
+	      //   if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+	      //     console.log(xmlhttp.responseText);
+	      //     this.handleFormSubmit('Thank you. We will be in touch soon.');
+	      //   }
 
-	    //     if (xmlhttp.status == 404 || xmlhttp.status == 500) {
-	    //       console.log(xmlhttp.status);
-	    //       this.handleFormSubmit('An error has occured. Please try sending again.');
-	    //     }
-	    //   }
-	    //   xmlhttp.open("GET","/sendemail?name=" + form.name + "&email=" + form.email + "&phone=" + form.phone + "&message=" + encodeURIComponent(form.message), true);
-	    //   xmlhttp.send();
-	    // }
+	      //   if (xmlhttp.status == 404 || xmlhttp.status == 500) {
+	      //     console.log(xmlhttp.status);
+	      //     this.handleFormSubmit('An error has occured. Please try sending again.');
+	      //   }
+	      // }
+	      // xmlhttp.open("GET","/sendemail?name=" + form.name + "&email=" + form.email + "&phone=" + form.phone + "&message=" + encodeURIComponent(form.message), true);
+	      // xmlhttp.send();
+	    }
 	}
 
 	render() {
@@ -103,40 +105,41 @@ class Quote extends Component {
 			<div>
 			{active &&
 				<div className="Quote">
-				<div className="Quote__content">
+					<div className="Quote__content">
 
-				<div className="Quote__close" onClick={quoteView}></div>
+					<div className="Quote__close" onClick={quoteView}></div>
 
-				<h3>Get a Quote</h3>
+					<h3>Get a Quote</h3>
 
-				<form action="" onSubmit={this.sendEmail}>
+					<form action="" onSubmit={this.sendEmail}>
 
-					<div className="Quote__fieldtitle">NAME</div>
-					<div className="Quote__input"><input type="text" name="name" id="name" onFocus={this.checkFormFields}/></div>
+						<div className="Quote__fieldtitle">NAME</div>
+						<div className="Quote__input"><input type="text" name="name" id="name" onFocus={this.checkFormFields}/></div>
 
-					<div className="Quote__fieldtitle">COMPANY</div>
-					<div className="Quote__input"><input type="text" name="company" id="company" onFocus={this.checkFormFields}/></div>
+						<div className="Quote__fieldtitle">COMPANY</div>
+						<div className="Quote__input"><input type="text" name="company" id="company" onFocus={this.checkFormFields}/></div>
 
-					<div className="Quote__fieldtitle">EMAIL</div>
-					<div className="Quote__input"><input type="text" name="email" id="email" onFocus={this.checkFormFields}/></div>
+						<div className="Quote__fieldtitle">EMAIL</div>
+						<div className="Quote__input"><input type="text" name="email" id="email" onFocus={this.checkFormFields}/></div>
 
-					<div className="Quote__fieldtitle">PHONE NUMBER</div>
-					<div className="Quote__input"><input type="text" name="phonenumber" id="phonenumber" onFocus={this.checkFormFields}/></div>
+						<div className="Quote__fieldtitle">PHONE NUMBER</div>
+						<div className="Quote__input"><input type="text" name="phonenumber" id="phonenumber" onFocus={this.checkFormFields}/></div>
 
-					<div className="Quote__fieldtitle">NOTES</div>
-					<div className="Quote__input"><textarea name="notes" id="notes" onFocus={this.checkFormFields}/></div>
+						<div className="Quote__fieldtitle">NOTES</div>
+						<div className="Quote__input"><textarea name="notes" id="notes" onFocus={this.checkFormFields}/></div>
 
-					<div className="Quote__offishbtn blue">
-						<div className="inner_outline">
-							<div className="centered"></div>
+						<div className="Quote__offishbtn blue">
+							<div className="inner_outline">
+								<div className="centered"></div>
+							</div>
+							<div className="text">
+								<input type="submit" value="QUOTE"/>
+							</div>
 						</div>
-						<div className="text">
-							<input type="submit" value="QUOTE"/>
-						</div>
+
+					</form>
+
 					</div>
-				</form>
-
-				</div>
 				</div>
 			}
 			</div>

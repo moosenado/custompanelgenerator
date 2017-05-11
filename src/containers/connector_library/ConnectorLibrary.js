@@ -73,7 +73,7 @@ class ConnectorLibrary extends Component {
 
 	    		<h2>Connector Library</h2>
 	    		<div className="desc">
-					Click on a connector to add it onto your custom I/O panel
+					<span className="underline">Click</span> on a connector to add it onto your custom I/O panel
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>

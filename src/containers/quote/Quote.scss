@@ -135,6 +135,14 @@
 				font-size: 14px;
 				line-height: 20px;
 
+				input {
+					height: 62px;
+					width: 62px; //fit overtop circle style
+					background-color: transparent;
+					color: white;
+					cursor: pointer;
+				}
+
 				div {
 					@include complete-centering;
 				}
