@@ -20,7 +20,7 @@
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5"
   },
-  "homepage": "http://moosenado.com/testforce/",
+  "homepage": "http://moosenado.com/custompanel/",
   "scripts": {
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
