@@ -148,7 +148,7 @@ class Quote extends Component {
 	      					"&phonenumber=" + form.phonenumber +
 	      					"&notes=" + encodeURIComponent(form.notes) +
 	      					"&connectortotal=" + this.getConnectorCount() + 
-	      					this.getSerialize()
+	      					"&" + this.getSerialize()
 	      				, true);
 
 	      	xmlhttp.send();
