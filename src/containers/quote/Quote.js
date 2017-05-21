@@ -58,6 +58,21 @@ class Quote extends Component {
 		return string;
 	}
 
+	getConnectorCount() {
+		let count = 0;
+		switch(this.props.type) {
+			case 'small':
+				count = this.props.data.smallconnectors[this.props.data.smallconnectors.length-1].length;
+			break;
+			case 'large':
+				count = this.props.data.largeconnectors[this.props.data.largeconnectors.length-1].length;
+			break;
+			default:
+				count = 0;
+		}
+		return count;
+	}
+
 	serializeArray(array) {
 		let str = [];
 
@@ -73,8 +88,6 @@ class Quote extends Component {
 	}
 
 	checkFormFields() {
-		console.log(this.props.data);
-		console.log(this.getSerialize());
 		let fail_array = [];
 		let form = {};
 
@@ -110,34 +123,36 @@ class Quote extends Component {
 	    this.submit = true;
 	    let form = this.checkFormFields();
 
-	    // if (form) {
-     //  		let xmlhttp = new XMLHttpRequest();
+	    if (form) {
+      		let xmlhttp = new XMLHttpRequest();
 
-     //  		xmlhttp.onreadystatechange = () => {
-	    //     	console.log('sending...');
-	    //     	//this.handleFormSubmit('sending', true);
+      		xmlhttp.onreadystatechange = () => {
+	        	console.log('sending...');
+	        	//this.handleFormSubmit('sending', true);
 
-	    //     	if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
-	    //       		console.log(xmlhttp.responseText);
-	    //       		//this.handleFormSubmit('Thank you. We will be in touch soon.');
-	    //     	}
+	        	if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
+	          		console.log(xmlhttp.responseText);
+	          		//this.handleFormSubmit('Thank you. We will be in touch soon.');
+	        	}
 
-	    //     	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
-	    //       		console.log(xmlhttp.status);
-	    //       		//this.handleFormSubmit('An error has occured. Please try sending again.');
-	    //     	}
-     //  		}
+	        	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
+	          		console.log(xmlhttp.status);
+	          		//this.handleFormSubmit('An error has occured. Please try sending again.');
+	        	}
+      		}
 
-	    //   	xmlhttp.open("GET","/sendemail?name=" + form.name +
-	    //   					"&email=" + form.email +
-	    //   					"&company=" + form.company +
-	    //   					"&phonenumber=" + form.phonenumber +
-	    //   					"&notes=" + encodeURIComponent(form.notes) +
-	    //   					"&plotobj" + this.getSerialize()
-	    //   				, true);
+	      	xmlhttp.open("GET","/sendemail" + 
+	      					"?name=" + form.name +
+	      					"&email=" + form.email +
+	      					"&company=" + form.company +
+	      					"&phonenumber=" + form.phonenumber +
+	      					"&notes=" + encodeURIComponent(form.notes) +
+	      					"&connectortotal=" + this.getConnectorCount() + 
+	      					this.getSerialize()
+	      				, true);
 
-	    //   	xmlhttp.send();
-     //  	}
+	      	xmlhttp.send();
+      	}
 	}
 
 	render() {
