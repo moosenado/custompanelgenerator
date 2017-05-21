@@ -13,13 +13,14 @@ $src = $_POST['src'];
 $top = $_POST['top'];
 $width = $_POST['width'];
 
-$panelcreated = 'http://moosenado.com/custompanel/'.$panel.'/'.
+$panelcreated = 'http://moosenado.com/custompanel/#/'.$panel.'/'.
 				'?id='.$id.
 				'&partname='.$partname.
 				'&left='.$left.
 				'&src='.$src.
 				'&top='.$top.
-				'&width='.$width;
+				'&width='.$width.
+				'&panel='.$panel;
 
 $notes .=  "\r\n" . 'Panel URL: '.$panelcreated;
 
