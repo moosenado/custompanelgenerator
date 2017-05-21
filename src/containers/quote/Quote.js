@@ -126,6 +126,18 @@ class Quote extends Component {
 	    if (form) {
       		let xmlhttp = new XMLHttpRequest();
 
+      		let params = 	"name=" + form.name +
+	      					"&email=" + form.email +
+	      					"&company=" + form.company +
+	      					"&phonenumber=" + form.phonenumber +
+	      					"&notes=" + encodeURIComponent(form.notes) +
+	      					"&connectortotal=" + this.getConnectorCount() + 
+	      					"&" + this.getSerialize();
+
+      		xmlhttp.open("POST","/sendemail.php", true);
+
+      		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
       		xmlhttp.onreadystatechange = () => {
 	        	console.log('sending...');
 	        	//this.handleFormSubmit('sending', true);
@@ -141,17 +153,7 @@ class Quote extends Component {
 	        	}
       		}
 
-	      	xmlhttp.open("POST","/sendemail.php" + 
-	      					"?name=" + form.name +
-	      					"&email=" + form.email +
-	      					"&company=" + form.company +
-	      					"&phonenumber=" + form.phonenumber +
-	      					"&notes=" + encodeURIComponent(form.notes) +
-	      					"&connectortotal=" + this.getConnectorCount() + 
-	      					"&" + this.getSerialize()
-	      				, true);
-
-	      	xmlhttp.send();
+	      	xmlhttp.send(params);
       	}
 	}
 

@@ -1,18 +1,16 @@
 <?php
 
-$formOutput = "";
-$from = "";
-$message = "";
-$email = "";
-$name = "";
-$err = "";
+$name = $_POST['name'];
+$email = $_POST['email'];
+$company = $_POST['company'];
+$phonenumber = $_POST['phonenumber'];
+$notes = $_POST['notes'];
+$connectortotal = $_POST['connectortotal'];
 
-$namePat = "/^[a-z ,.'-]+$/i";
-$emailPat = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/";
+// $namePat = "/^[a-z ,.'-]+$/i";
+// $emailPat = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/";
 
-$validateArray = array();
-
-echo 'YOIM HEREEEE';
+var_dump($_POST);
 
 // if(isset($_POST['submit'])){
 
