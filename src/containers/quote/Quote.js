@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './Quote.css';
 
@@ -40,9 +41,40 @@ class Quote extends Component {
 	    }
 
 	    return pass;
-	 }
+	}
+
+	getSerialize() {
+		let string = '';
+		switch(this.props.type) {
+			case 'small':
+				string = this.serializeArray(this.props.data.smallconnectors[this.props.data.smallconnectors.length-1])
+			break;
+			case 'large':
+				string = this.serializeArray(this.props.data.largeconnectors[this.props.data.largeconnectors.length-1])
+			break;
+			default:
+				string = ''
+		}
+		return string;
+	}
+
+	serializeArray(array) {
+		let str = [];
+
+		for (let i = 0; i < array.length; i++) {
+			let obj = array[i];
+			for(let p in obj) {
+	    		if (obj.hasOwnProperty(p)) {
+	      			str.push(encodeURIComponent(p) + "_" + i + "=" + encodeURIComponent(obj[p]));
+	   			}
+	   		}
+		}
+		return str.join("&");
+	}
 
 	checkFormFields() {
+		console.log(this.props.data);
+		console.log(this.getSerialize());
 		let fail_array = [];
 		let form = {};
 
@@ -53,7 +85,7 @@ class Quote extends Component {
 			form.phonenumber = document.getElementById('phonenumber').value;
 			form.notes = document.getElementById('notes').value;
 
-			for (var key in form) {
+			for (let key in form) {
 				if (form.hasOwnProperty(key)) {
 					if(this.regexCheck(key, form[key]) === false) {
 						document.getElementById(key).style.outline = '1px solid red';
@@ -78,28 +110,34 @@ class Quote extends Component {
 	    this.submit = true;
 	    let form = this.checkFormFields();
 
-	    if (form) {
-	    	console.log('THIS PASSES');
-	      // let xmlhttp= window.XMLHttpRequest ?
-	      //   new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+	    // if (form) {
+     //  		let xmlhttp = new XMLHttpRequest();
 
-	      // xmlhttp.onreadystatechange = () => {
-	      //   console.log('sending...');
-	      //   this.handleFormSubmit('sending', true);
+     //  		xmlhttp.onreadystatechange = () => {
+	    //     	console.log('sending...');
+	    //     	//this.handleFormSubmit('sending', true);
 
-	      //   if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-	      //     console.log(xmlhttp.responseText);
-	      //     this.handleFormSubmit('Thank you. We will be in touch soon.');
-	      //   }
+	    //     	if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
+	    //       		console.log(xmlhttp.responseText);
+	    //       		//this.handleFormSubmit('Thank you. We will be in touch soon.');
+	    //     	}
 
-	      //   if (xmlhttp.status == 404 || xmlhttp.status == 500) {
-	      //     console.log(xmlhttp.status);
-	      //     this.handleFormSubmit('An error has occured. Please try sending again.');
-	      //   }
-	      // }
-	      // xmlhttp.open("GET","/sendemail?name=" + form.name + "&email=" + form.email + "&phone=" + form.phone + "&message=" + encodeURIComponent(form.message), true);
-	      // xmlhttp.send();
-	    }
+	    //     	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
+	    //       		console.log(xmlhttp.status);
+	    //       		//this.handleFormSubmit('An error has occured. Please try sending again.');
+	    //     	}
+     //  		}
+
+	    //   	xmlhttp.open("GET","/sendemail?name=" + form.name +
+	    //   					"&email=" + form.email +
+	    //   					"&company=" + form.company +
+	    //   					"&phonenumber=" + form.phonenumber +
+	    //   					"&notes=" + encodeURIComponent(form.notes) +
+	    //   					"&plotobj" + this.getSerialize()
+	    //   				, true);
+
+	    //   	xmlhttp.send();
+     //  	}
 	}
 
 	render() {
@@ -151,4 +189,10 @@ class Quote extends Component {
 	}
 }
 
-export default Quote;
+const mapStateToProps = (state) => {
+    return {
+        data: state.data
+    };
+};
+
+export default connect(mapStateToProps)(Quote);

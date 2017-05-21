@@ -19,7 +19,7 @@ class FinishedView extends Component {
 	}
 
 	render() {
-		const {active, finishedView} = this.props;
+		const {active, finishedView, type} = this.props;
 
 	    return (
 	    	<div>
@@ -46,7 +46,7 @@ class FinishedView extends Component {
 		    			</div>
 		    		</div>
 		    		<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='FinishedView__Quote'>
-		    			<Quote key={this.state.active_quote} active={this.state.active_quote} quoteView={this.toggleQuote}/>
+		    			<Quote key={this.state.active_quote} type={type} active={this.state.active_quote} quoteView={this.toggleQuote}/>
 		      		</ReactCSSTransitionGroup>
 		      	</div>
 	      	}

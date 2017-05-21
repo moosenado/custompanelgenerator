@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import bnc from './../../../public/imgs/connectors_actual/bnc_connector_actual.jpg';
-import db9 from './../../../public/imgs/connectors_actual/db9_connector_actual.jpg';
-import hdmi from './../../../public/imgs/connectors_actual/hdmi_connector_actual.jpg';
-import ntype from './../../../public/imgs/connectors_actual/ntype_connector_actual.jpg';
-import power from './../../../public/imgs/connectors_actual/power_entry_actual.jpg';
-import rj45 from './../../../public/imgs/connectors_actual/rj45_connector_actual.jpg';
-import sma from './../../../public/imgs/connectors_actual/sma_connector_actual.jpg';
-import tnc from './../../../public/imgs/connectors_actual/tnc_connector_actual.jpg';
-import usb2 from './../../../public/imgs/connectors_actual/usb2_actual.jpg';
-import usb3 from './../../../public/imgs/connectors_actual/usb3_actual.jpg';
 import store from './../../store';
 import ScrollArea from 'react-scrollbar';
 
@@ -54,6 +44,17 @@ class ConnectorLibrary extends Component {
 
 	render() {
 		const {type, smallconnectors, largeconnectors} = this.props;
+
+		let bnc = '/imgs/connectors_actual/bnc_connector_actual.jpg';
+		let db9 = '/imgs/connectors_actual/db9_connector_actual.jpg';
+		let hdmi = '/imgs/connectors_actual/hdmi_connector_actual.jpg';
+		let ntype = '/imgs/connectors_actual/ntype_connector_actual.jpg';
+		let power = '/imgs/connectors_actual/power_entry_actual.jpg';
+		let rj45 = '/imgs/connectors_actual/rj45_connector_actual.jpg';
+		let sma = '/imgs/connectors_actual/sma_connector_actual.jpg';
+		let tnc = '/imgs/connectors_actual/tnc_connector_actual.jpg';
+		let usb2 = '/imgs/connectors_actual/usb2_actual.jpg';
+		let usb3 = '/imgs/connectors_actual/usb3_actual.jpg';
 
 		let type_styles = {
 			small: 'small_connectors',
