@@ -12,6 +12,16 @@ $src = $_POST['src'];
 $top = $_POST['top'];
 $width = $_POST['width'];
 
+$panelcreated = 'http://moosenado.com/custompanel/?'.
+				'id='.$id.
+				'&partname='.$partname.
+				'&left='.$left.
+				'&src='.$src.
+				'&top='.$top.
+				'&width='.$width;
+
+$notes .=  "\r\n" . 'Panel URL: '.$panelcreated;
+
 // $namePat = "/^[a-z ,.'-]+$/i";
 // $emailPat = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/";
 $headers_testforce = array(
