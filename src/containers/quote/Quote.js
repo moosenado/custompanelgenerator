@@ -58,36 +58,40 @@ class Quote extends Component {
 		return string;
 	}
 
-	getConnectorCount() {
-		let count = 0;
-		switch(this.props.type) {
-			case 'small':
-				count = this.props.data.smallconnectors[this.props.data.smallconnectors.length-1].length;
-			break;
-			case 'large':
-				count = this.props.data.largeconnectors[this.props.data.largeconnectors.length-1].length;
-			break;
-			default:
-				count = 0;
-		}
-		return count;
-	}
-
 	serializeArray(array) {
-		let str = [];
+		let offish = [];
+
+		let id = ['&id='];
+		let left = ['&left='];
+		let name = ['&name='];
+		let src = ['&src='];
+		let top = ['&top='];
+		let width = ['&width='];
 
 		for (let i = 0; i < array.length; i++) {
 			let obj = array[i];
-			for(let p in obj) {
-	    		if (obj.hasOwnProperty(p)) {
-	      			str.push(encodeURIComponent(p) + "_" + i + "=" + encodeURIComponent(obj[p]));
-	   			}
-	   		}
+
+			id.push(encodeURIComponent(obj.id));
+			left.push(encodeURIComponent(obj.left));
+			name.push(encodeURIComponent(obj.name));
+			src.push(encodeURIComponent(obj.src));
+			top.push(encodeURIComponent(obj.top));
+			width.push(encodeURIComponent(obj.width));
 		}
-		return str.join("&");
+
+		id.join(",");
+		left.join(",");
+		name.join(",");
+		src.join(",");
+		top.join(",");
+		width.join(",");
+
+		offish.push(id,left,name,src,top,width);
+		return offish.join();
 	}
 
 	checkFormFields() {
+		console.log(this.getSerialize());
 		let fail_array = [];
 		let form = {};
 
@@ -131,8 +135,7 @@ class Quote extends Component {
 	      					"&company=" + form.company +
 	      					"&phonenumber=" + form.phonenumber +
 	      					"&notes=" + encodeURIComponent(form.notes) +
-	      					"&connectortotal=" + this.getConnectorCount() + 
-	      					"&" + this.getSerialize();
+	      					this.getSerialize();
 
       		xmlhttp.open("POST","/sendemail.php", true);
 
