@@ -46,10 +46,10 @@ class Quote extends Component {
 	getSerialize() {
 		let string = '';
 		switch(this.props.type) {
-			case 'small':
+			case 'smallpanel':
 				string = this.serializeArray(this.props.data.smallconnectors[this.props.data.smallconnectors.length-1])
 			break;
-			case 'large':
+			case 'largepanel':
 				string = this.serializeArray(this.props.data.largeconnectors[this.props.data.largeconnectors.length-1])
 			break;
 			default:
@@ -79,12 +79,11 @@ class Quote extends Component {
 			width.push(encodeURIComponent(obj.width));
 		}
 
-		offish.push('&id='+id,'&left='+left,'&partname='+partname,'&src='+src,'&top='+top,'&width='+width);
+		offish.push('&panel='+this.props.type,'&id='+id,'&left='+left,'&partname='+partname,'&src='+src,'&top='+top,'&width='+width);
 		return offish.join('');
 	}
 
 	checkFormFields() {
-		console.log(this.getSerialize());
 		let fail_array = [];
 		let form = {};
 
