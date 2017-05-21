@@ -141,7 +141,7 @@ class Quote extends Component {
 	        	}
       		}
 
-	      	xmlhttp.open("GET","/sendemail" + 
+	      	xmlhttp.open("POST","/sendemail.php" + 
 	      					"?name=" + form.name +
 	      					"&email=" + form.email +
 	      					"&company=" + form.company +
