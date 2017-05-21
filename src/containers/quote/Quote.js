@@ -61,33 +61,26 @@ class Quote extends Component {
 	serializeArray(array) {
 		let offish = [];
 
-		let id = ['&id='];
-		let left = ['&left='];
-		let name = ['&name='];
-		let src = ['&src='];
-		let top = ['&top='];
-		let width = ['&width='];
+		let id = [];
+		let left = [];
+		let partname = [];
+		let src = [];
+		let top = [];
+		let width = [];
 
 		for (let i = 0; i < array.length; i++) {
 			let obj = array[i];
 
 			id.push(encodeURIComponent(obj.id));
 			left.push(encodeURIComponent(obj.left));
-			name.push(encodeURIComponent(obj.name));
+			partname.push(encodeURIComponent(obj.name));
 			src.push(encodeURIComponent(obj.src));
 			top.push(encodeURIComponent(obj.top));
 			width.push(encodeURIComponent(obj.width));
 		}
 
-		id.join(",");
-		left.join(",");
-		name.join(",");
-		src.join(",");
-		top.join(",");
-		width.join(",");
-
-		offish.push(id,left,name,src,top,width);
-		return offish.join();
+		offish.push('&id='+id,'&left='+left,'&partname='+partname,'&src='+src,'&top='+top,'&width='+width);
+		return offish.join('');
 	}
 
 	checkFormFields() {

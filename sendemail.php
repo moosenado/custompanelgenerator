@@ -5,61 +5,23 @@ $email = $_POST['email'];
 $company = $_POST['company'];
 $phonenumber = $_POST['phonenumber'];
 $notes = $_POST['notes'];
-$connectortotal = $_POST['connectortotal'];
+$id = $_POST['id'];
+$partname = $_POST['partname'];
+$left = $_POST['left'];
+$src = $_POST['src'];
+$top = $_POST['top'];
+$width = $_POST['width'];
 
 // $namePat = "/^[a-z ,.'-]+$/i";
 // $emailPat = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/";
+$headers_testforce = array(
+  'From: ' . $name . ' ' . '<' . $email . '>',
+  'Reply-To: ' . $name . ' ' . '<' . $email . '>'
+);
+$headers_testforce = implode( "\r\n" , $headers_testforce );
+// email to testforce
+mail('egrabish@gmail.com', 'Testforce Email', $notes, $headers_testforce);
 
-var_dump($_POST);
-
-// if(isset($_POST['submit'])){
-
-// 	//require_once "Mail.php";
-
-// 	$name = $_POST['name'];
-// 	$email = $_POST['email'];
-// 	$from = $name . ' ' . '<' . $email . '>';
-// 	$message = $_POST['message'];
-
-// 	if (empty($name) || empty($email) || empty($message)){
-// 		$err .= "Those fields are empty!";
-
-// 	}elseif(!preg_match($namePat, $name)){
-// 		array_push($validateArray, "Is that really your name?");
-		
-// 	}elseif(!preg_match($emailPat, $email)){
-// 		array_push($validateArray, "Check your email again.");
-		
-// 	}else{
-
-// 	// $to = "egrabish@gmail.com";
-// 	// $subject = "EG Form Submission";
-
-// 	// $host = "ssl://mail.stem.arvixe.com";
-// 	// $port = "465";
-// 	// $username = "test@egrabishtest.com";
-// 	// $password = "egrabishtest";
-
-// 	// $headers = array ('From' => $from,
-// 	// 	'To' => $to,
-// 	// 	'Subject' => $subject);
-
-// 	// $smtp = Mail::factory('smtp',
-// 	// 	array ('host' => $host,
-// 	// 		'port' => $port,
-// 	// 		'auth' => true,
-// 	// 		'username' => $username,
-// 	// 		'password' => $password));
-
-// 	// $body = $message;
-
-// 	// $mail = $smtp->send($to, $headers, $body);
-		
-// 	$final_headers = $from;
-	
-// 	mail('egrabish@gmail.com', 'EG Form Submission', $message, $final_headers);
-
-// 	$formOutput = "Thanks! I will be in touch soon.";
-
-// 	}
-// }
+$headers_user = "Testforce Systems Inc" . ' ' . '<' . 'sales@testforce.com' . '>';
+// email to sender
+mail($email, 'Sender Email', 'thanks for sending panel', $headers_user);
