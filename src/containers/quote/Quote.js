@@ -9,7 +9,14 @@ class Quote extends Component {
 		super();
 		this.checkFormFields = this.checkFormFields.bind(this);
 		this.sendEmail = this.sendEmail.bind(this);
+		this.sendingOverlay = this.sendingOverlay.bind(this);
 		this.submit = false;
+
+		this.state = {
+			sending: false,
+			success: false,
+			error: false
+		}
 	}
 
 	regexCheck(field, value) {
@@ -56,6 +63,36 @@ class Quote extends Component {
 				string = ''
 		}
 		return string;
+	}
+
+	sendingOverlay() {
+		this.setState({
+			sending: !this.state.sending
+		})
+	}
+
+	sendingError() {
+		this.setState({
+			error: true
+		})
+	}
+
+	removeError() {
+		this.setState({
+			error: false
+		})
+	}
+
+	sendingSuccess() {
+		this.setState({
+			success: true
+		})
+	}
+
+	removeSuccess() {
+		this.setState({
+			success: false
+		})
 	}
 
 	serializeArray(array) {
@@ -118,33 +155,36 @@ class Quote extends Component {
 	    e.preventDefault();
 	    this.submit = true;
 	    let form = this.checkFormFields();
+	    this.removeError();
+	    this.removeSuccess();
 
 	    if (form) {
+	    	this.sendingOverlay();
+
       		let xmlhttp = new XMLHttpRequest();
 
-      		let params = 	"name=" + form.name +
-	      					"&email=" + form.email +
-	      					"&company=" + form.company +
-	      					"&phonenumber=" + form.phonenumber +
-	      					"&notes=" + encodeURIComponent(form.notes) +
-	      					this.getSerialize();
+      		let params = "name=" + form.name +
+	      				 "&email=" + form.email +
+	      				 "&company=" + form.company +
+	      				 "&phonenumber=" + form.phonenumber +
+	      				 "&notes=" + encodeURIComponent(form.notes) +
+	      				 this.getSerialize();
 
       		xmlhttp.open("POST","/sendemail.php", true);
 
       		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
       		xmlhttp.onreadystatechange = () => {
-	        	console.log('sending...');
-	        	//this.handleFormSubmit('sending', true);
-
 	        	if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
 	          		console.log(xmlhttp.responseText);
-	          		//this.handleFormSubmit('Thank you. We will be in touch soon.');
+	          		this.sendingOverlay();
+	          		this.sendingSuccess();
 	        	}
 
 	        	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
 	          		console.log(xmlhttp.status);
-	          		//this.handleFormSubmit('An error has occured. Please try sending again.');
+	          		this.sendingOverlay();
+	          		this.sendingError();
 	        	}
       		}
 
@@ -155,44 +195,64 @@ class Quote extends Component {
 	render() {
 		const {active, quoteView} = this.props;
 
+		let overlaystatus = (this.state.sending) ? 'active' : '';
+		let successstatus = (this.state.success) ? 'active' : '';
+		let errorstatus = (this.state.error) ? 'active' : '';
+
 		return (
 			<div>
 			{active &&
 				<div className="Quote">
 					<div className="Quote__content">
 
-					<div className="Quote__close" onClick={quoteView}></div>
+						<div className="Quote__close" onClick={quoteView}></div>
 
-					<h3>Get a Quote</h3>
+						<h3>Get a Quote</h3>
 
-					<form action="" onSubmit={this.sendEmail}>
+						<form action="" onSubmit={this.sendEmail}>
 
-						<div className="Quote__fieldtitle">NAME</div>
-						<div className="Quote__input"><input type="text" name="name" id="name" onFocus={this.checkFormFields}/></div>
+							<div className="Quote__fieldtitle">NAME</div>
+							<div className="Quote__input"><input type="text" name="name" id="name" onFocus={this.checkFormFields}/></div>
 
-						<div className="Quote__fieldtitle">COMPANY</div>
-						<div className="Quote__input"><input type="text" name="company" id="company" onFocus={this.checkFormFields}/></div>
+							<div className="Quote__fieldtitle">COMPANY</div>
+							<div className="Quote__input"><input type="text" name="company" id="company" onFocus={this.checkFormFields}/></div>
 
-						<div className="Quote__fieldtitle">EMAIL</div>
-						<div className="Quote__input"><input type="text" name="email" id="email" onFocus={this.checkFormFields}/></div>
+							<div className="Quote__fieldtitle">EMAIL</div>
+							<div className="Quote__input"><input type="text" name="email" id="email" onFocus={this.checkFormFields}/></div>
 
-						<div className="Quote__fieldtitle">PHONE NUMBER</div>
-						<div className="Quote__input"><input type="text" name="phonenumber" id="phonenumber" onFocus={this.checkFormFields}/></div>
+							<div className="Quote__fieldtitle">PHONE NUMBER</div>
+							<div className="Quote__input"><input type="text" name="phonenumber" id="phonenumber" onFocus={this.checkFormFields}/></div>
 
-						<div className="Quote__fieldtitle">NOTES</div>
-						<div className="Quote__input"><textarea name="notes" id="notes" onFocus={this.checkFormFields}/></div>
+							<div className="Quote__fieldtitle">NOTES</div>
+							<div className="Quote__input"><textarea name="notes" id="notes" onFocus={this.checkFormFields}/></div>
 
-						<div className="Quote__offishbtn blue">
-							<div className="inner_outline">
-								<div className="centered"></div>
+							<div className="Quote__offishbtn blue">
+								<div className="inner_outline">
+									<div className="centered"></div>
+								</div>
+								<div className="text">
+									<input type="submit" value="QUOTE"/>
+								</div>
 							</div>
-							<div className="text">
-								<input type="submit" value="QUOTE"/>
-							</div>
+
+						</form>
+
+						<div className={`Quote__success ${successstatus}`}>
+							Thank You. We Have Successfully Received Your Quote.
 						</div>
 
-					</form>
+						<div className={`Quote__error ${errorstatus}`}>
+							Unfortunately, An Error has Occured. Please Try Again.
+						</div>
 
+					</div>
+
+					<div className={`Quote__sendingoverlay ${overlaystatus}`}>
+						<div className="Quote_sendtext_centered">
+							<div className="Quote_sendtext">
+								Sending Quote<span>.</span><span>.</span><span>.</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			}

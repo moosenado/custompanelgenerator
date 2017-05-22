@@ -82,7 +82,7 @@ class LargePanel extends Component {
 		const {data} = this.props;
 
 		let connectors_exist = (data.hasOwnProperty("largeconnectors")) ? data.largeconnectors.length > 0 : false;
-		console.log(data);
+
 	    return (
 	    	<div className="LargePanel">
 	    		<div className="LargePanel__leftcol">
