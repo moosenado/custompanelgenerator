@@ -55,6 +55,41 @@
   -webkit-animation: dotAni 1.4s 0.4s both infinite;
   animation: dotAni 1.4s 0.4s both infinite; }
 
+.Quote .Quote__success {
+  display: none; }
+
+.Quote .Quote__success.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 200px;
+  bottom: 0;
+  background-color: white;
+  opacity: 1;
+  -webkit-animation: quoteSuccess 3s forwards;
+  animation: quoteSuccess 3s forwards; }
+
+.Quote .Quote__success.active .Quote_successtext_centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.Quote .Quote__success.active .Quote_successtext_centered:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.Quote .Quote__success.active .Quote_successtext_centered .Quote_successtext {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px; }
+
 .Quote .Quote__content {
   margin-top: 15px; }
 
@@ -102,17 +137,6 @@
   transform: rotate(-45deg);
   -webkit-animation: closeRotateInTwo 1s forwards;
   animation: closeRotateInTwo 1s forwards; }
-
-.Quote .Quote__content .Quote__success {
-  display: none;
-  text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  -webkit-animation: quoteFadeInOut 1.5s infinite linear;
-  animation: quoteFadeInOut 1.5s infinite linear; }
-
-.Quote .Quote__content .Quote__success.active {
-  display: block; }
 
 .Quote .Quote__content .Quote__error {
   display: none;
@@ -344,3 +368,25 @@
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes quoteSuccess {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  99% {
+    z-index: 1; }
+  100% {
+    opacity: 0;
+    z-index: -1; } }
+
+@keyframes quoteSuccess {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  99% {
+    z-index: 1; }
+  100% {
+    opacity: 0;
+    z-index: -1; } }

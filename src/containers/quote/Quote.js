@@ -179,6 +179,10 @@ class Quote extends Component {
 	          		console.log(xmlhttp.responseText);
 	          		this.sendingOverlay();
 	          		this.sendingSuccess();
+
+	          		setTimeout(()=>{
+	          			this.props.quoteView();
+	          		},2500);
 	        	}
 
 	        	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
@@ -237,10 +241,6 @@ class Quote extends Component {
 
 						</form>
 
-						<div className={`Quote__success ${successstatus}`}>
-							Thank You. We Have Successfully Received Your Quote.
-						</div>
-
 						<div className={`Quote__error ${errorstatus}`}>
 							Unfortunately, An Error has Occured. Please Try Again.
 						</div>
@@ -251,6 +251,14 @@ class Quote extends Component {
 						<div className="Quote_sendtext_centered">
 							<div className="Quote_sendtext">
 								Sending Quote<span>.</span><span>.</span><span>.</span>
+							</div>
+						</div>
+					</div>
+
+					<div className={`Quote__success ${successstatus}`}>
+						<div className="Quote_successtext_centered">
+							<div className="Quote_successtext">
+								Thank You. We Have Successfully Received Your Quote.
 							</div>
 						</div>
 					</div>
