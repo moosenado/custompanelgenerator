@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import App from './App';
 import { connect } from 'react-redux';
 import { initialStateConnection } from './actions/actionCreators.js';
 

@@ -25,7 +25,6 @@ const data = (state = {}, action) => {
       		...state,
         	smallconnectors: []
     	}
-    break;
     case 'EDIT_SMALL_CONNECTORS':
     	let last_edit_small = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : state.smallconnectors[0];
     	let last_edited_small = last_edit_small.map(c => {
@@ -42,14 +41,12 @@ const data = (state = {}, action) => {
       		...state,
         	smallconnectors: [...state.smallconnectors, last_edited_small]
     	}
-    break;
     case 'UNDO_SMALL_CONNECTORS':
    		state.smallconnectors.pop();
     	return {
     		...state,
     		smallconnectors: state.smallconnectors
     	}
-    break;
     
 
     //LARGE CONNECTORS
@@ -72,7 +69,6 @@ const data = (state = {}, action) => {
       		...state,
         	largeconnectors: []
     	}
-    break;
     case 'EDIT_LARGE_CONNECTORS':
     	let last_edit_large = (state.largeconnectors.length > 0) ? state.largeconnectors[state.largeconnectors.length-1] : state.largeconnectors[0];
     	let last_edited_large = last_edit_large.map(c => {
@@ -89,14 +85,12 @@ const data = (state = {}, action) => {
       		...state,
         	largeconnectors: [...state.largeconnectors, last_edited_large]
     	}
-    break;
     case 'UNDO_LARGE_CONNECTORS':
    		state.largeconnectors.pop();
     	return {
     		...state,
     		largeconnectors: state.largeconnectors
     	}
-    break;
     default:
       return state;
   }

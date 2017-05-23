@@ -43,7 +43,7 @@ class ConnectorLibrary extends Component {
 	}
 
 	render() {
-		const {type, smallconnectors, largeconnectors} = this.props;
+		const {type} = this.props;
 
 		let bnc = '/custompanel/imgs/connectors_actual/bnc_connector_actual.jpg';
 		let db9 = '/custompanel/imgs/connectors_actual/db9_connector_actual.jpg';
@@ -78,16 +78,16 @@ class ConnectorLibrary extends Component {
 	    		</div>
 	    		<div className="ConnectorLibrary__list">
 	    			<ul>
-	    				<li><img onClick={() => this.addItemToData('bnc', bnc, .69)} src={bnc} alt="bnc" style={{width:'.69in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('db9', db9, 1.21)} src={db9} alt="db9" style={{width:'1.21in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('hdmi', hdmi, 1.02)} src={hdmi} alt="hdmi" style={{width:'1.02in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('ntype', ntype, 1)} src={ntype} alt="ntype" style={{width:'1in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('power', power, 1.73)} src={power} alt="power entry" style={{width:'1.73in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('rj45', rj45, 2.34)} src={rj45} alt="rj45" style={{width:'2.34in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('sma', sma, .50)} src={sma} alt="sma" style={{width:'.50in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('tnc', tnc, .69)} src={tnc} alt="tnc" style={{width:'.69in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('usb2', usb2, 1.74)} src={usb2} alt="usb2" style={{width:'1.74in'}}/></li>
-	    				<li><img onClick={() => this.addItemToData('usb3', usb3, 1.74)} src={usb3} alt="usb3" style={{width:'1.74in'}}/></li>
+	    				<li onClick={() => this.addItemToData('bnc', bnc, .69)}><img src={bnc} alt="bnc" style={{width:'.69in'}}/><div className="connectortype">BNC</div></li>
+	    				<li onClick={() => this.addItemToData('db9', db9, 1.21)}><img src={db9} alt="db9" style={{width:'1.21in'}}/><div className="connectortype">DB9</div></li>
+	    				<li onClick={() => this.addItemToData('hdmi', hdmi, 1.02)}><img src={hdmi} alt="hdmi" style={{width:'1.02in'}}/><div className="connectortype">HDMI</div></li>
+	    				<li onClick={() => this.addItemToData('ntype', ntype, 1)}><img src={ntype} alt="ntype" style={{width:'1in'}}/><div className="connectortype">NTYPE</div></li>
+	    				<li onClick={() => this.addItemToData('power', power, 1.73)}><img src={power} alt="power entry" style={{width:'1.73in'}}/><div className="connectortype">POWER ENTRY</div></li>
+	    				<li onClick={() => this.addItemToData('rj45', rj45, 2.34)}><img src={rj45} alt="rj45" style={{width:'2.34in'}}/><div className="connectortype">RJ45</div></li>
+	    				<li onClick={() => this.addItemToData('sma', sma, .50)}><img src={sma} alt="sma" style={{width:'.50in'}}/><div className="connectortype">SMA</div></li>
+	    				<li onClick={() => this.addItemToData('tnc', tnc, .69)}><img src={tnc} alt="tnc" style={{width:'.69in'}}/><div className="connectortype">TNC</div></li>
+	    				<li onClick={() => this.addItemToData('usb2', usb2, 1.74)}><img src={usb2} alt="usb2" style={{width:'1.74in'}}/><div className="connectortype">USB2</div></li>
+	    				<li onClick={() => this.addItemToData('usb3', usb3, 1.74)}><img src={usb3} alt="usb3" style={{width:'1.74in'}}/><div className="connectortype">USB3</div></li>
 	    			</ul>
 	    		</div>
 
