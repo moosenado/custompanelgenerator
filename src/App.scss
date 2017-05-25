@@ -1,3 +1,5 @@
+@import 'Shared.scss';
+
 /*RESET*/
 
 html, body, div, span, applet, object, iframe,
@@ -28,7 +30,35 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  font: normal .9em Tahoma, Verdana, Arial, Helvetica, sans-serif
+  font: normal .9em Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+.app-container {
+  display: none;
+
+  @include screen-md {
+    display: block;
+  }
+}
+.bp-alert {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+
+  &:before {
+    content: 'This page must be viewed at landscape (1024px wide) or higher.';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%,-50%,0));
+  }
+
+  @include screen-md {
+    display: none;
+  }
 }
 ol, ul {
   list-style: none;

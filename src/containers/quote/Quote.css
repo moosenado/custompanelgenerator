@@ -67,8 +67,8 @@
   bottom: 0;
   background-color: white;
   opacity: 1;
-  -webkit-animation: quoteSuccess 3s forwards;
-  animation: quoteSuccess 3s forwards; }
+  -webkit-animation: quoteSuccess 3.5s forwards;
+  animation: quoteSuccess 3.5s forwards; }
 
 .Quote .Quote__success.active .Quote_successtext_centered {
   position: absolute;

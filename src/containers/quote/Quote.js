@@ -182,7 +182,7 @@ class Quote extends Component {
 
 	          		setTimeout(()=>{
 	          			this.props.quoteView();
-	          		},2500);
+	          		},3000);
 	        	}
 
 	        	if (xmlhttp.status === 404 || xmlhttp.status === 500) {
@@ -250,7 +250,7 @@ class Quote extends Component {
 					<div className={`Quote__sendingoverlay ${overlaystatus}`}>
 						<div className="Quote_sendtext_centered">
 							<div className="Quote_sendtext">
-								Sending Quote<span>.</span><span>.</span><span>.</span>
+								Sending<span>.</span><span>.</span><span>.</span>
 							</div>
 						</div>
 					</div>
@@ -258,7 +258,7 @@ class Quote extends Component {
 					<div className={`Quote__success ${successstatus}`}>
 						<div className="Quote_successtext_centered">
 							<div className="Quote_successtext">
-								Thank You. We Have Successfully Received Your Quote.
+								Thank You. We Have Successfully Received Your Request for a Quote.
 							</div>
 						</div>
 					</div>

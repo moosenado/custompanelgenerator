@@ -59,7 +59,7 @@
 			bottom: 0;
 			background-color: white;
 			opacity: 1;
-			@include animation(quoteSuccess 3s forwards);
+			@include animation(quoteSuccess 3.5s forwards);
 
 			.Quote_successtext_centered {
 				@include center-element;

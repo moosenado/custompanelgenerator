@@ -49,5 +49,5 @@ $headers_testforce = implode( "\r\n", $headers_testforce );
 mail('egrabish@gmail.com', 'Testforce Email', $details, $headers_testforce);
 
 // email to sender
-$headers_user = "Testforce Systems Inc" . ' ' . '<' . 'sales@testforce.com' . '>';
-mail($email, 'Sender Email', 'thanks for sending panel', $headers_user);
+$headers_user = "DV Test" . ' ' . '<' . 'sales@dvtest.com' . '>';
+mail($email, 'Sender Email', 'We have received your custom panel quote. Thanks.', $headers_user);
