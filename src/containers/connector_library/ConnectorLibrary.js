@@ -84,8 +84,8 @@ class ConnectorLibrary extends Component {
 	    		<div className="ConnectorLibrary__list">
 	    			<div className="title">Power</div>
 	    			<ul>
-	    				<li onClick={() => this.addItemToData('AC Housing', ac, 2.40)}><img src={ac} alt="ac" style={{width:'2.40in'}}/><div className="connectortype">AC Housing</div></li>
-	    				<li onClick={() => this.addItemToData('DC Module', dc, 2.125)}><img src={dc} alt="dc" style={{width:'2.125in'}}/><div className="connectortype">DC Module</div></li>
+	    				<li onClick={() => this.addItemToData('ac', ac, 2.40)}><img src={ac} alt="ac" style={{width:'2.40in'}}/><div className="connectortype">AC Housing</div></li>
+	    				<li onClick={() => this.addItemToData('dc', dc, 2.125)}><img src={dc} alt="dc" style={{width:'2.125in'}}/><div className="connectortype">DC Module</div></li>
 	    			</ul>
 	    			<div className="title">RF Connections</div>
 	    			<ul>
