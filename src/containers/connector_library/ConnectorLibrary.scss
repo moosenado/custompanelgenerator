@@ -7,7 +7,7 @@
 
 	h2 {
 		font-size: 18px;
-		margin-bottom: 5px;
+		margin: 10px 0;
 		font-weight: 700;
 	}
 
@@ -40,8 +40,14 @@
 		@include animation(fadeInConnectors 1.2s forwards);
 		opacity: 0;
 
+		.title {
+			padding: 30px 0 20px 0;
+			text-decoration: underline;
+			font-weight: 700;
+			font-size: 16px;
+		}
+
 		ul {
-			padding: 20px 0;
 
 			li {
 				padding: 10px;

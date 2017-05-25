@@ -90,10 +90,13 @@
           height: 3.75in;
           border: 1px solid black;
           border-radius: 25px;
-          background-color: white;
           overflow: hidden;
           position: relative;
-          -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); }
+          -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+          background-color: white;
+          background-image: linear-gradient(#d8d8d8 1px, transparent 1px), linear-gradient(90deg, #d8d8d8 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+          background-size: .5in .5in, .5in .5in;
+          background-position: -1px -1px, -1px -1px; }
           .LargePanel .LargePanel__rightcol .LargePanel__border .LargePanel__surface_centered .LargePanel__surface .dragme_large {
             position: absolute;
             -webkit-animation: fadePieceInLarge 0.5s forwards;

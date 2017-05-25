@@ -4,7 +4,7 @@
   border-right: 1px solid black; }
   .ConnectorLibrary h2 {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin: 10px 0;
     font-weight: 700; }
   .ConnectorLibrary .desc {
     font-size: 14px; }
@@ -23,25 +23,28 @@
     -webkit-animation: fadeInConnectors 1.2s forwards;
     animation: fadeInConnectors 1.2s forwards;
     opacity: 0; }
-    .ConnectorLibrary .ConnectorLibrary__list ul {
-      padding: 20px 0; }
-      .ConnectorLibrary .ConnectorLibrary__list ul li {
-        padding: 10px;
-        cursor: pointer;
-        opacity: .8;
-        margin: 0 auto;
+    .ConnectorLibrary .ConnectorLibrary__list .title {
+      padding: 30px 0 20px 0;
+      text-decoration: underline;
+      font-weight: 700;
+      font-size: 16px; }
+    .ConnectorLibrary .ConnectorLibrary__list ul li {
+      padding: 10px;
+      cursor: pointer;
+      opacity: .8;
+      margin: 0 auto;
+      -webkit-transition: opacity 0.25s;
+      transition: opacity 0.25s; }
+      .ConnectorLibrary .ConnectorLibrary__list ul li:hover {
+        opacity: 1;
         -webkit-transition: opacity 0.25s;
         transition: opacity 0.25s; }
-        .ConnectorLibrary .ConnectorLibrary__list ul li:hover {
-          opacity: 1;
-          -webkit-transition: opacity 0.25s;
-          transition: opacity 0.25s; }
-        .ConnectorLibrary .ConnectorLibrary__list ul li img {
-          max-width: 100%; }
-          .ConnectorLibrary .ConnectorLibrary__list ul li img:focus, .ConnectorLibrary .ConnectorLibrary__list ul li img:active {
-            opacity: .75 !important; }
-        .ConnectorLibrary .ConnectorLibrary__list ul li .connectortype {
-          padding: 5px; }
+      .ConnectorLibrary .ConnectorLibrary__list ul li img {
+        max-width: 100%; }
+        .ConnectorLibrary .ConnectorLibrary__list ul li img:focus, .ConnectorLibrary .ConnectorLibrary__list ul li img:active {
+          opacity: .75 !important; }
+      .ConnectorLibrary .ConnectorLibrary__list ul li .connectortype {
+        padding: 5px; }
 
 @-webkit-keyframes fadeInConnectors {
   0% {
