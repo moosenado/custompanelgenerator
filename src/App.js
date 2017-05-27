@@ -11,7 +11,6 @@ class App extends Component {
 	        	<main className="app-container">
 	        		<PanelChoice />
 	        	</main>
-	        	<div className="bp-alert"></div>
 	      	</div>
 	    );
 	}

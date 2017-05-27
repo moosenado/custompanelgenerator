@@ -31,9 +31,10 @@ body {
 
 .app-container {
   display: none; }
-  @media (min-width: 1024px) {
-    .app-container {
-      display: block; } }
+
+@media (min-width: 1024px) {
+  .app-container {
+    display: block; } }
 
 .bp-alert {
   display: block;
@@ -43,16 +44,18 @@ body {
   right: 0;
   bottom: 0;
   background-color: white; }
-  .bp-alert:before {
-    content: 'This page must be viewed at landscape (1024px wide) or higher.';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0); }
-  @media (min-width: 1024px) {
-    .bp-alert {
-      display: none; } }
+
+.bp-alert:before {
+  content: 'This application must be viewed at landscape (1024px wide) or higher.';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+@media (min-width: 1024px) {
+  .bp-alert {
+    display: none; } }
 
 ol, ul {
   list-style: none; }

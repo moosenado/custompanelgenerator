@@ -19,6 +19,7 @@ const router = (
 		        	<Route path="/smallpanel" component={SmallPanel} />
 		        	<Route path="/largepanel" component={LargePanel} />
 	        	</Switch>
+	        	<div className="bp-alert"></div>
 	        </div>
 	    </Router>
     </Provider>
