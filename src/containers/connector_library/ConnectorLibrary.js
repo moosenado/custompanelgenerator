@@ -44,8 +44,9 @@ class ConnectorLibrary extends Component {
 
 	render() {
 		const {type} = this.props;
-		let location = window.location.href.split("/");
-		let url = location[0] + ((location[1] === 'custompanel') ? '/custompanel' : '') + "/imgs/connectors_actual/";
+		let locate = window.location.href.split("/");
+		let location_test = (locate[3] === 'custompanel') ? '/custompanel' : '';
+		let url = location_test + "/imgs/connectors_actual/";
 
 		let bnc = url + 'bnc_connector_actual.jpg';
 		let db9 = url + 'db9_connector_actual.jpg';
