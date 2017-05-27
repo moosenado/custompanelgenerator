@@ -63,7 +63,8 @@ class SmallPanel extends Component {
 
 		for (let i = 0; i < draggableElems.length; i++) {
 			var draggie = new Draggabilly(draggableElems[i], {
-		    	containment: '.SmallPanel__surface'
+		    	containment: '.SmallPanel__surface',
+		    	grid: [12,12]
 		  	});
 			draggie.on( 'dragEnd', this.dragEndStuff );
 			this.draggies.push(draggie);

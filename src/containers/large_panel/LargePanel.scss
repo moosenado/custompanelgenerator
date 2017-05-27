@@ -126,6 +126,8 @@
 						position: absolute;
 						@include animation(fadePieceInLarge .5s forwards);
 						cursor: move;
+						//outline: 1px solid #999;
+						//padding: .75in; //padding?
 					}
 				}
 			}

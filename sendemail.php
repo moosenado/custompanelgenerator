@@ -46,7 +46,7 @@ $headers_testforce = array(
   'Reply-To: ' . $name . ' ' . '<' . $email . '>'
 );
 $headers_testforce = implode( "\r\n", $headers_testforce );
-mail('egrabish@gmail.com', 'Testforce Email', $details, $headers_testforce);
+mail('alexandra.aylott@testforce.com', 'Testforce Email', $details, $headers_testforce);
 
 // email to sender
 $headers_user = "DV Test" . ' ' . '<' . 'sales@dvtest.com' . '>';
