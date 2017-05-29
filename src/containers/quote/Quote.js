@@ -235,7 +235,7 @@ class Quote extends Component {
 									<div className="centered"></div>
 								</div>
 								<div className="text">
-									<input type="submit" value="QUOTE"/>
+									<input type="submit" value="SEND"/>
 								</div>
 							</div>
 
