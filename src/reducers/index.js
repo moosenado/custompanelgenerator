@@ -47,6 +47,50 @@ const data = (state = {}, action) => {
     		...state,
     		smallconnectors: state.smallconnectors
     	}
+
+
+    //MEDIUM CONNECTORS
+
+    case 'ADD_MEDIUM_CONNECTOR':
+        let last_entry_medium = (state.mediumconnectors.length > 0) ? state.mediumconnectors[state.mediumconnectors.length-1] : 0;
+        return {
+            ...state,
+            mediumconnectors: [...state.mediumconnectors, [...last_entry_medium, {
+                name: action.name,
+                id: action.id,
+                src: action.src,
+                width: action.width,
+                top: action.top,
+                left: action.left
+            }]]
+        }
+    case 'REFRESH_MEDIUM_CONNECTORS':
+        return {
+            ...state,
+            mediumconnectors: []
+        }
+    case 'EDIT_MEDIUM_CONNECTORS':
+        let last_edit_medium = (state.mediumconnectors.length > 0) ? state.mediumconnectors[state.mediumconnectors.length-1] : state.mediumconnectors[0];
+        let last_edited_medium = last_edit_medium.map(c => {
+                if (+c.id !== +action.id) {
+                    return c;
+                }
+                return {
+                    ...c,
+                    top: action.top,
+                    left: action.left
+                }
+            });
+        return {
+            ...state,
+            mediumconnectors: [...state.mediumconnectors, last_edited_medium]
+        }
+    case 'UNDO_MEDIUM_CONNECTORS':
+        state.mediumconnectors.pop();
+        return {
+            ...state,
+            mediumconnectors: state.mediumconnectors
+        }
     
 
     //LARGE CONNECTORS
@@ -91,6 +135,10 @@ const data = (state = {}, action) => {
     		...state,
     		largeconnectors: state.largeconnectors
     	}
+
+
+    //DEFAULT
+
     default:
       return state;
   }

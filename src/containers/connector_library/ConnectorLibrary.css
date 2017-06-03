@@ -14,6 +14,10 @@
     height: 580px; }
     .ConnectorLibrary.small_connectors ul li {
       max-width: 100%; }
+  .ConnectorLibrary.medium_connectors {
+    height: 660px; }
+    .ConnectorLibrary.medium_connectors ul li {
+      max-width: 100%; }
   .ConnectorLibrary.large_connectors {
     height: 660px; }
     .ConnectorLibrary.large_connectors ul li {

@@ -56,6 +56,9 @@ class Quote extends Component {
 			case 'smallpanel':
 				string = this.serializeArray(this.props.data.smallconnectors[this.props.data.smallconnectors.length-1])
 			break;
+			case 'mediumpanel':
+				string = this.serializeArray(this.props.data.mediumconnectors[this.props.data.mediumconnectors.length-1])
+			break;
 			case 'largepanel':
 				string = this.serializeArray(this.props.data.largeconnectors[this.props.data.largeconnectors.length-1])
 			break;

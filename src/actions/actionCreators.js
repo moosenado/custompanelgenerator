@@ -42,12 +42,21 @@ export function initialStateConnection() {
 			case 'smallpanel':
 				initobj = {
 		            smallconnectors: [initarray],
+		            mediumconnectors: [],
+		            largeconnectors: []
+		        }
+			break;
+			case 'mediumpanel':
+				initobj = {
+		            smallconnectors: [],
+		            mediumconnectors: [initarray],
 		            largeconnectors: []
 		        }
 			break;
 			case 'largepanel':
 				initobj = {
 		            smallconnectors: [],
+		            mediumconnectors: [],
 		            largeconnectors: [initarray]
 		        }
 			break;
@@ -55,6 +64,7 @@ export function initialStateConnection() {
 	} else {
 		initobj = {
             smallconnectors: [],
+            mediumconnectors: [],
             largeconnectors: []
         }
 	}

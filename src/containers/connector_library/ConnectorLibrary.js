@@ -26,6 +26,17 @@ class ConnectorLibrary extends Component {
 					left: 0
 				});
 			break;
+			case "medium":
+				store.dispatch({
+					type: 'ADD_MEDIUM_CONNECTOR',
+					id: this.i++,
+					name: name,
+					src: src,
+					width: width,
+					top: 0,
+					left: 0
+				});
+			break;
 			case "large":
 				store.dispatch({
 					type: 'ADD_LARGE_CONNECTOR',
@@ -52,7 +63,6 @@ class ConnectorLibrary extends Component {
 		let db9 = url + 'db9_connector_actual.jpg';
 		let hdmi = url + 'hdmi_connector_actual.jpg';
 		let ntype = url + 'ntype_connector_actual.jpg';
-		let power = url + 'power_entry_actual.jpg';
 		let rj45 = url + 'rj45_connector_actual.jpg';
 		let sma = url + 'sma_connector_actual.jpg';
 		let tnc = url + 'tnc_connector_actual.jpg';
@@ -65,6 +75,7 @@ class ConnectorLibrary extends Component {
 
 		let type_styles = {
 			small: 'small_connectors',
+			medium: 'medium_connectors',
 			large: 'large_connectors'
 		}
 
@@ -119,6 +130,7 @@ class ConnectorLibrary extends Component {
 const mapStateToProps = (state) => {
     return {
         smallconnectors: state.data.smallconnectors,
+        mediumconnectors: state.data.mediumconnectors,
         largeconnectors: state.data.largeconnectors
     };
 };

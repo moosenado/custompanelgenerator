@@ -27,6 +27,14 @@
 		}
 	}
 
+	&.medium_connectors {
+		height: 660px; //same as panel height - for scroll to work on ios
+
+		ul li {
+			max-width: 100%;
+		}
+	}
+
 	&.large_connectors {
 		height: 660px; //same as panel height - for scroll to work on ios
 

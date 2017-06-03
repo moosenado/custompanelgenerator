@@ -7,6 +7,7 @@ import store from './store';
 
 import AppShell from './AppShell';
 import SmallPanel from './containers/small_panel/SmallPanel';
+import MediumPanel from './containers/medium_panel/MediumPanel';
 import LargePanel from './containers/large_panel/LargePanel';
 
 const router = (
@@ -17,6 +18,7 @@ const router = (
 	    		<Switch>
 		        	<Route exact path="/" component={App} />
 		        	<Route path="/smallpanel" component={SmallPanel} />
+		        	<Route path="/mediumpanel" component={MediumPanel} />
 		        	<Route path="/largepanel" component={LargePanel} />
 	        	</Switch>
 	        	<div className="bp-alert"></div>
