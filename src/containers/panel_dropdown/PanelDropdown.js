@@ -38,7 +38,7 @@ class PanelDropdown extends Component {
 		    	<div className={"PanelDropdown__main " + dropdown_bg} onClick={this.dropMenu}>
 	      			<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='PanelChoice__ani_text'>
 	      				<div className="text" key={this.state.selected_panel}>
-	      					<div>{(!this.state.selected_panel) ? 'CHOOSE ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
+	      					<div>{(!this.state.selected_panel) ? 'SWITCH ENCLOSURE SIZE' : this.state.selected_panel.toUpperCase()}</div>
 	      				</div>
 	      			</ReactCSSTransitionGroup>
 	      			<div className={"PanelDropdown__arrow_down " + arrow_class}></div>
