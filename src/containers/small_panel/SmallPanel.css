@@ -11,7 +11,22 @@
   .SmallPanel .SmallPanel__leftcol {
     width: 250px; }
   .SmallPanel .SmallPanel__rightcol {
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
+    .SmallPanel .SmallPanel__rightcol .SmallPanel__info {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 160px;
+      font-size: 12px; }
+      .SmallPanel .SmallPanel__rightcol .SmallPanel__info a {
+        color: #1f3364;
+        -webkit-transition: opacity 0.5s;
+        transition: opacity 0.5s; }
+        .SmallPanel .SmallPanel__rightcol .SmallPanel__info a:hover {
+          opacity: .6;
+          -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
     .SmallPanel .SmallPanel__rightcol h1 {
       font-size: 30px;
       margin: 10px 0 5px 0; }

@@ -92,7 +92,7 @@ class MediumPanel extends Component {
 	    		</div>
 		      	<div className="MediumPanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
-		      		<div className="MediumPanel__desc">You are currently working on a <span>Medium</span> dbSAFE I/O Panel.</div>
+		      		<div className="MediumPanel__desc">You are currently working on a <span>Medium</span> External I/O Panel.</div>
 		      		<PanelDropdown/>
 		      		<div id="section-to-print" className="MediumPanel__border">
 		      			<div className="MediumPanel__bolts_horiz top">
@@ -144,6 +144,9 @@ class MediumPanel extends Component {
 		      			</div>
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView} type={'medium'} refreshState={this.refreshState} undoState={this.undoState}/>
+		      		<div className="MediumPanel__info">
+			      		Not finding a panel size that works for you? Please contact <a href="mailto:sales@dvtest.com">sales@dvtest.com</a> for a custom I/O Panel.
+			      	</div>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='MediumPanel__finishedView'>
 		      		<FinishedView key={this.state.finished} type={'mediumpanel'} active={this.state.finished} finishedView={this.finishedView}/>

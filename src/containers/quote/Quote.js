@@ -230,7 +230,7 @@ class Quote extends Component {
 							<div className="Quote__fieldtitle">PHONE NUMBER</div>
 							<div className="Quote__input"><input type="text" name="phonenumber" id="phonenumber" onFocus={this.checkFormFields}/></div>
 
-							<div className="Quote__fieldtitle">NOTES</div>
+							<div className="Quote__fieldtitle">NOTES AND OTHER REQUIREMENTS</div>
 							<div className="Quote__input"><textarea name="notes" id="notes" onFocus={this.checkFormFields}/></div>
 
 							<div className="Quote__offishbtn blue">

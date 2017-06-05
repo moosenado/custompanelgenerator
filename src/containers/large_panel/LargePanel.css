@@ -11,10 +11,25 @@
   .LargePanel .LargePanel__leftcol {
     width: 250px; }
   .LargePanel .LargePanel__rightcol {
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
     .LargePanel .LargePanel__rightcol h1 {
       font-size: 24px;
       margin: 10px 0 5px 0; }
+    .LargePanel .LargePanel__rightcol .LargePanel__info {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 160px;
+      font-size: 12px; }
+      .LargePanel .LargePanel__rightcol .LargePanel__info a {
+        color: #1f3364;
+        -webkit-transition: opacity 0.5s;
+        transition: opacity 0.5s; }
+        .LargePanel .LargePanel__rightcol .LargePanel__info a:hover {
+          opacity: .6;
+          -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
     .LargePanel .LargePanel__rightcol .LargePanel__bolts_horiz {
       position: absolute;
       left: 0;

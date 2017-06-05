@@ -17,6 +17,25 @@
 
 	.SmallPanel__rightcol {
 		margin: 0 auto;
+		position: relative;
+
+		.SmallPanel__info {
+			position: absolute;
+		    bottom: 20px;
+		    left: 0;
+		    width: 160px;
+		    font-size: 12px;
+
+		    a {
+		    	color: #1f3364;
+		    	@include transition(opacity .5s);
+
+		    	&:hover {
+		    		opacity: .6;
+		    		@include transition(opacity .25s);
+		    	}
+		    }
+		}
 
 		h1 {
 			font-size: 30px;

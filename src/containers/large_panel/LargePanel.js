@@ -92,7 +92,7 @@ class LargePanel extends Component {
 	    		</div>
 		      	<div className="LargePanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
-		      		<div className="LargePanel__desc">You are currently working on a <span>Large</span> dbSAFE I/O Panel.</div>
+		      		<div className="LargePanel__desc">You are currently working on a <span>Large</span> External I/O Panel.</div>
 		      		<PanelDropdown/>
 		      		<div id="section-to-print" className="LargePanel__border">
 		      			<div className="LargePanel__bolts_horiz top">
@@ -144,6 +144,9 @@ class LargePanel extends Component {
 		      			</div>
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView} type={'large'} refreshState={this.refreshState} undoState={this.undoState}/>
+		      		<div className="LargePanel__info">
+			      		Not finding a panel size that works for you? Please contact <a href="mailto:sales@dvtest.com">sales@dvtest.com</a> for a custom I/O Panel.
+			      	</div>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='LargePanel__finishedView'>
 		      		<FinishedView key={this.state.finished} type={'largepanel'} active={this.state.finished} finishedView={this.finishedView}/>

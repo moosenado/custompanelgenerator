@@ -92,7 +92,7 @@ class SmallPanel extends Component {
 	    		</div>
 		      	<div className="SmallPanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
-		      		<div className="SmallPanel__desc">You are currently working on a <span>Small</span> dbSAFE I/O Panel.</div>
+		      		<div className="SmallPanel__desc">You are currently working on a <span>Small</span> External I/O Panel.</div>
 		      		<PanelDropdown/>
 		      		<div id="section-to-print" className="SmallPanel__border">
 		      			<div className="SmallPanel__bolts_horiz top">
@@ -132,6 +132,9 @@ class SmallPanel extends Component {
 		      			</div>
 		      		</div>
 		      		<PanelButtons finishedView={this.finishedView} type={'small'} refreshState={this.refreshState} undoState={this.undoState}/>
+		      		<div className="SmallPanel__info">
+			      		Not finding a panel size that works for you? Please contact <a href="mailto:sales@dvtest.com">sales@dvtest.com</a> for a custom I/O Panel.
+			      	</div>
 		      	</div>
 		      	<ReactCSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionName='SmallPanel__finishedView'>
 		      		<FinishedView key={this.state.finished} type={'smallpanel'} active={this.state.finished} finishedView={this.finishedView}/>

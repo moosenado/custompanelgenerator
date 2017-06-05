@@ -17,10 +17,29 @@
 
 	.LargePanel__rightcol {
 		margin: 0 auto;
+		position: relative;
 
 		h1 {
 			font-size: 24px;
 			margin: 10px 0 5px 0;
+		}
+
+		.LargePanel__info {
+			position: absolute;
+		    bottom: 10px;
+		    left: 0;
+		    width: 160px;
+		    font-size: 12px;
+
+		    a {
+		    	color: #1f3364;
+		    	@include transition(opacity .5s);
+
+		    	&:hover {
+		    		opacity: .6;
+		    		@include transition(opacity .25s);
+		    	}
+		    }
 		}
 
 		.LargePanel__bolts_horiz {

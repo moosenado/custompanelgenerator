@@ -32,6 +32,8 @@ class PanelDropdown extends Component {
 		let menu_open_class = (!this.state.menu_opened) ? '' : 'active';
 		let arrow_class = (!this.state.menu_opened) ? '' : 'active';
 		let dropdown_bg = (this.state.panels[this.state.selected_panel]) ? 'blue' : '';
+		let url = window.location.href;
+		let current_location = url.split("/").slice(-1)[0];
 
 	    return (
 	    	<div className="PanelDropdown">
@@ -48,10 +50,10 @@ class PanelDropdown extends Component {
 		  			<div className={'container ' + menu_open_class}>
 			      		<ul>
 			      			{Object.keys(this.state.panels).map((key, i) => {
-			      				let highlight = (key === this.state.selected_panel) ? 'highlight' : '';
+			      				let current = (this.state.panels[key] === current_location) ? 'highlight' : ''
 			      				return (
 			      					<Link to={'/' + this.state.panels[key]} key={key}>
-			      						<li className={highlight}>{key.toUpperCase()}</li>
+			      						<li className={current}>{key.toUpperCase()}</li>
 			      					</Link>
 			      				)
 			      			})}
