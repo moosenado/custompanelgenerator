@@ -71,8 +71,12 @@
 
 				img {
 					max-width: 100%;
+					@include transition(all .25s)
+					
 					&:focus, &:active {
 						opacity: .75 !important;
+						@include transform(scale3d(.95,.95,1));
+						@include transition(all .25s);
 					}
 				}
 
