@@ -8,116 +8,141 @@
   overflow: hidden;
   margin: 20px auto;
   position: relative; }
-  .MediumPanel .MediumPanel__leftcol {
-    width: 250px; }
-  .MediumPanel .MediumPanel__rightcol {
-    margin: 0 auto; }
-    .MediumPanel .MediumPanel__rightcol h1 {
-      font-size: 34px;
-      margin: 10px 0 5px 0; }
-    .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz {
-      position: absolute;
-      left: 0;
-      right: 0; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz.top {
-        top: 10px; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz.bottom {
-        bottom: 10px; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz .MediumPanel__bolt {
-        width: 10%;
-        float: left; }
-        .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz .MediumPanel__bolt:before {
-          content: '';
-          width: 10px;
-          height: 10px;
-          border: 1px solid black;
-          border-radius: 50%;
-          display: block;
-          margin: 0 auto;
-          background-color: white;
-          -webkit-animation: boltedMedium 1s forwards;
-          animation: boltedMedium 1s forwards; }
-    .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert {
-      position: absolute;
-      top: 75px;
-      bottom: 0; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert.left {
-        left: 10px; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert.right {
-        right: 10px; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert .MediumPanel__bolt {
-        height: 20%; }
-        .MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert .MediumPanel__bolt:before {
-          content: '';
-          width: 10px;
-          height: 10px;
-          border: 1px solid black;
-          border-radius: 50%;
-          display: block;
-          margin: 0 auto;
-          background-color: white;
-          -webkit-animation: boltedMedium 1s forwards;
-          animation: boltedMedium 1s forwards; }
-    .MediumPanel .MediumPanel__rightcol .MediumPanel__desc {
-      font-size: 14px;
-      margin: 0 0 20px 0; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__desc span {
-        font-weight: 700; }
-    .MediumPanel .MediumPanel__rightcol .MediumPanel__border {
-      width: 7.25in;
-      height: 5in;
-      border: 1px solid black;
-      position: relative;
-      border-radius: 25px;
-      background-color: #ececec; }
-      .MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center; }
-        .MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered .MediumPanel__surface {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%;
-          width: 6in;
-          height: 3.75in;
-          border: 1px solid black;
-          border-radius: 25px;
-          overflow: hidden;
-          position: relative;
-          -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-          background-color: white;
-          background-image: linear-gradient(#d8d8d8 1px, transparent 1px), linear-gradient(90deg, #d8d8d8 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-          background-size: .5in .5in, .5in .5in;
-          background-position: -1px -1px, -1px -1px; }
-          .MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered .MediumPanel__surface .dragme_medium {
-            position: absolute;
-            -webkit-animation: fadePieceInMedium 0.5s forwards;
-            animation: fadePieceInMedium 0.5s forwards;
-            cursor: move; }
-  .MediumPanel .MediumPanel__finishedView-enter {
-    opacity: 0;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s; }
-    .MediumPanel .MediumPanel__finishedView-enter.MediumPanel__finishedView-enter-active {
-      opacity: 1;
-      -webkit-transition: opacity 0.5s;
-      transition: opacity 0.5s; }
-  .MediumPanel .MediumPanel__finishedView-leave {
-    opacity: 1;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s; }
-    .MediumPanel .MediumPanel__finishedView-leave.MediumPanel__finishedView-leave-active {
-      opacity: 0;
-      -webkit-transition: opacity 0.5s;
-      transition: opacity 0.5s; }
+
+.MediumPanel .MediumPanel__leftcol {
+  width: 250px; }
+
+.MediumPanel .MediumPanel__rightcol {
+  margin: 0 auto; }
+
+.MediumPanel .MediumPanel__rightcol h1 {
+  font-size: 24px;
+  margin: 10px 0 5px 0; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz {
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz.top {
+  top: 10px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz.bottom {
+  bottom: 10px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz .MediumPanel__bolt {
+  width: 10%;
+  float: left; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_horiz .MediumPanel__bolt:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-animation: boltedMedium 1s forwards;
+  animation: boltedMedium 1s forwards; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert {
+  position: absolute;
+  top: 75px;
+  bottom: 0; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert.left {
+  left: 10px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert.right {
+  right: 10px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert .MediumPanel__bolt {
+  height: 20%; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__bolts_vert .MediumPanel__bolt:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-animation: boltedMedium 1s forwards;
+  animation: boltedMedium 1s forwards; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__desc {
+  font-size: 14px;
+  margin: 0 0 10px 0; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__desc span {
+  font-weight: 700;
+  font-size: 16px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__border {
+  width: 7.25in;
+  height: 5in;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 25px;
+  background-color: #ececec; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered .MediumPanel__surface {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  width: 6in;
+  height: 3.75in;
+  border: 1px solid black;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  background-color: white;
+  background-image: linear-gradient(#d8d8d8 1px, transparent 1px), linear-gradient(90deg, #d8d8d8 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: .5in .5in, .5in .5in;
+  background-position: -1px -1px, -1px -1px; }
+
+.MediumPanel .MediumPanel__rightcol .MediumPanel__border .MediumPanel__surface_centered .MediumPanel__surface .dragme_medium {
+  position: absolute;
+  -webkit-animation: fadePieceInMedium 0.5s forwards;
+  animation: fadePieceInMedium 0.5s forwards;
+  cursor: move; }
+
+.MediumPanel .MediumPanel__finishedView-enter {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+
+.MediumPanel .MediumPanel__finishedView-enter.MediumPanel__finishedView-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+
+.MediumPanel .MediumPanel__finishedView-leave {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+
+.MediumPanel .MediumPanel__finishedView-leave.MediumPanel__finishedView-leave-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
 
 @-webkit-keyframes boltedMedium {
   0% {

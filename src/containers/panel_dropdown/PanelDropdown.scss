@@ -1,0 +1,96 @@
+@import './../../Shared.scss';
+
+.PanelDropdown {
+	position: relative;
+	margin: 10px 0;
+
+	.PanelDropdown__main {
+		width: 275px;
+		height: 20px;
+		border-radius: 18px;
+		border: 1px solid #1f3364;
+		position: relative;
+		cursor: pointer;
+		@include transition(background-color .4s);
+
+		&:hover, &:active, &:focus {
+			background-color: #1f3364;
+		}
+
+		&.blue {
+			background-color: #1f3364;
+		}
+
+		.text {
+			margin-right: 10px;
+			white-space: nowrap;
+			font-size: 14px;
+			line-height: 14px;
+			color: #d2d0d0;
+			@include center-element;
+
+			div {
+				@include complete-centering;
+			}
+		}
+	}
+
+	.PanelDropdown__menu {
+		overflow: hidden;
+		position: absolute;
+		left: 6px;
+		z-index: -1;
+		@include transition(z-index .6s 0s);
+
+		.container {
+			margin: 0 auto;
+			height: 150px;
+			width: 260px;
+			border: 1px solid #1f3364;
+			margin-bottom: 20px;
+			background-color: white;
+			@include transform(translate3d(0,-200px,0));
+			@include transition(all .5s);
+
+			&.active {
+				@include transform(translate3d(0,-10px,0));
+			}
+
+			ul {
+				margin-top: 20px;
+
+				li {
+					cursor: pointer;
+					padding: 5px 10px;
+					font-size: 18px;
+
+					&.highlight {
+						background-color: #e9e9e9;
+					}
+				}
+			}
+		}
+
+		&.active {
+			z-index: 2;
+			@include transition(z-index 0s 0s);
+		}
+	}
+
+	.PanelDropdown__arrow_down {
+		position: absolute;
+		top: 35%;
+		right: 15px;
+	  	width: 0;
+	  	height: 0;
+	  	border-left: 6px solid transparent;
+	  	border-right: 6px solid transparent;
+	  	border-top: 8px solid #d2d0d0;
+	  	@include transition(all .25s);
+
+	  	&.active {
+	  		@include transform(translate3d(0,-2px,0) rotate(180deg));
+	  		@include transition(all .25s);
+	  	}
+	}
+}

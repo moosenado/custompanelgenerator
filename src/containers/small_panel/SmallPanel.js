@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ConnectorLibrary from './../connector_library/ConnectorLibrary';
 import PanelButtons from './../panel_buttons/PanelButtons';
+import PanelDropdown from './../panel_dropdown/PanelDropdown';
 import { connect } from 'react-redux';
 import FinishedView from './../finished_view/FinishedView';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -92,6 +93,7 @@ class SmallPanel extends Component {
 		      	<div className="SmallPanel__rightcol">
 		      		<h1>Your Custom dbSAFE I/O Panel</h1>
 		      		<div className="SmallPanel__desc">You are currently working on a <span>Small</span> dbSAFE I/O Panel.</div>
+		      		<PanelDropdown/>
 		      		<div id="section-to-print" className="SmallPanel__border">
 		      			<div className="SmallPanel__bolts_horiz top">
 		      				<div className="SmallPanel__bolt"></div>

@@ -63,7 +63,7 @@ class ConnectorLibrary extends Component {
 		let db9 = url + 'db9_connector_actual.jpg';
 		let hdmi = url + 'hdmi_connector_actual.jpg';
 		let ntype = url + 'ntype_connector_actual.jpg';
-		let rj45 = url + 'rj45_connector_actual.jpg';
+		let onegbps = url + 'onegbps_connector_actual.jpg';
 		let sma = url + 'sma_connector_actual.jpg';
 		let tnc = url + 'tnc_connector_actual.jpg';
 		let usb2 = url + 'usb2_actual.jpg';
@@ -110,7 +110,7 @@ class ConnectorLibrary extends Component {
 	    			<div className="title">Data</div>
 	    			<ul>
 	    				<li onClick={() => this.addItemToData('hdmi', hdmi, 1.02)}><img src={hdmi} alt="hdmi" style={{width:'1.02in'}}/><div className="connectortype">HDMI</div></li>
-	    				<li onClick={() => this.addItemToData('rj45', rj45, 3.25)}><img src={rj45} alt="rj45" style={{width:'3.25in'}}/><div className="connectortype">RJ45</div></li>
+	    				<li onClick={() => this.addItemToData('onegbps', onegbps, 3.25)}><img src={onegbps} alt="1gbps" style={{width:'3.25in'}}/><div className="connectortype">1GBPS</div></li>
 	    				<li onClick={() => this.addItemToData('usb2', usb2, 1.74)}><img src={usb2} alt="usb2" style={{width:'1.74in'}}/><div className="connectortype">USB2</div></li>
 	    				<li onClick={() => this.addItemToData('usb3', usb3, 1.74)}><img src={usb3} alt="usb3" style={{width:'1.74in'}}/><div className="connectortype">USB3</div></li>
 	    			</ul>
