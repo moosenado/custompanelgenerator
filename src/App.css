@@ -80,7 +80,9 @@ a {
     left: 0;
     top: 0; }
   .FinishedView {
-    display: none; } }
+    display: none; }
+  .SmallPanel__rightcol, .MediumPanel__rightcol, .LargePanel__rightcol {
+    position: static !important; } }
 
 .scrollarea .scrollbar-container {
   z-index: 0 !important; }
