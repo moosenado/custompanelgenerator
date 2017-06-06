@@ -35,8 +35,8 @@ class Quote extends Component {
 	      break;
 
 	      case 'phonenumber':
-	        let phone_regex = /^\d{10}$/;
-	        pass = (phone_regex.test(value)) ? true : false;
+	      	let phone_regex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	        pass = (phone_regex.test(value)) ? true : true;
 	      break;
 
 	      case 'notes':

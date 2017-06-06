@@ -32,7 +32,10 @@ $details = array(
   'Email: '.$email,
   'Company: '.$company,
   'Phone Number: '.$phonenumber,
-  'Notes: '.$notes,
+  'Notes: ',
+  '',
+  $notes,
+  '',
   'Custom Panel URL: '.$panelurl
 );
 $details = implode( "\r\n", $details );
@@ -46,10 +49,12 @@ $headers_testforce = implode( "\r\n", $headers_testforce );
 mail('egrabish@gmail.com', 'DVTEST Quote Request', $details, $headers_testforce);
 //alexandra.aylott@testforce.com
 $customer_message = array(
-'Hello '.$name',',
-'Thank you for your Quote Request from DVTEST Inc. Within the next 24 hours you can expect our response. If you have any questions about your quote request please contact us at support@dvtest.com or call us at (647) 726-0058 Monday - Friday, 8am - 5pm EST.',
-'Thank you again for your interest.',
-'View Your Custom Panel Here: '.$panelurl
+  'Hello '.$name.',',
+  '',
+  'Thank you for your Quote Request from DVTEST Inc. Within the next 24 hours you can expect our response. If you have any questions about your quote request please contact us at support@dvtest.com or call us at (647) 726-0058 Monday - Friday, 8am - 5pm EST.',
+  'Thank you again for your interest.',
+  '',
+  'View Your Custom Panel Here: '.$panelurl
 );
 $customer_message = implode( "\r\n", $customer_message );
 
