@@ -4,83 +4,96 @@
   width: 220px;
   padding-top: 2px;
   float: right; }
-  .PanelButtons .PanelButtons__panelbtn {
-    margin: 0 auto;
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    position: relative;
-    opacity: .2;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: scale3d(0.95, 0.95, 1);
-    transform: scale3d(0.95, 0.95, 1);
-    cursor: pointer; }
-    .PanelButtons .PanelButtons__panelbtn:hover.active {
-      -webkit-transition: all 0.25s;
-      transition: all 0.25s;
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1); }
-      .PanelButtons .PanelButtons__panelbtn:hover.active .inner_outline .centered {
-        opacity: 1;
-        -webkit-transition: all 0.2s;
-        transition: all 0.2s;
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1); }
-    .PanelButtons .PanelButtons__panelbtn:hover.unactive {
-      -webkit-transform: scale3d(0.95, 0.95, 1);
-      transform: scale3d(0.95, 0.95, 1); }
-      .PanelButtons .PanelButtons__panelbtn:hover.unactive .inner_outline .centered {
-        -webkit-transform: scale3d(0.95, 0.95, 1);
-        transform: scale3d(0.95, 0.95, 1); }
-    .PanelButtons .PanelButtons__panelbtn.unactive {
-      opacity: .7 !important;
-      cursor: default !important; }
-    .PanelButtons .PanelButtons__panelbtn.blue {
-      background-color: #1f3364;
-      opacity: 1; }
-    .PanelButtons .PanelButtons__panelbtn .inner_outline {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      text-align: center; }
-      .PanelButtons .PanelButtons__panelbtn .inner_outline:before {
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-        height: 100%; }
-      .PanelButtons .PanelButtons__panelbtn .inner_outline .centered {
-        vertical-align: middle;
-        display: inline-block;
-        width: 100%;
-        border: 2px solid #eaeaea;
-        border-radius: 50%;
-        height: 62px;
-        width: 62px;
-        background-color: transparent;
-        opacity: 0;
-        -webkit-transition: all 0.75s;
-        transition: all 0.75s;
-        -webkit-transform: scale3d(0.9, 0.9, 1);
-        transform: scale3d(0.9, 0.9, 1); }
-    .PanelButtons .PanelButtons__panelbtn .text {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      text-align: center;
-      color: white;
-      font-size: 13px;
-      line-height: 20px; }
-      .PanelButtons .PanelButtons__panelbtn .text:before {
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-        height: 100%; }
-      .PanelButtons .PanelButtons__panelbtn .text div {
-        vertical-align: middle;
-        display: inline-block;
-        width: 100%; }
+
+.PanelButtons .PanelButtons__panelbtn {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  opacity: .2;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1);
+  cursor: pointer; }
+
+.PanelButtons .PanelButtons__panelbtn:hover.active {
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+.PanelButtons .PanelButtons__panelbtn:hover.active .inner_outline .centered {
+  opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+.PanelButtons .PanelButtons__panelbtn:hover.unactive {
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1); }
+
+.PanelButtons .PanelButtons__panelbtn:hover.unactive .inner_outline .centered {
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1); }
+
+.PanelButtons .PanelButtons__panelbtn.unactive {
+  opacity: .7 !important;
+  cursor: default !important; }
+
+.PanelButtons .PanelButtons__panelbtn.blue {
+  background-color: #1f3364;
+  opacity: 1; }
+
+.PanelButtons .PanelButtons__panelbtn .inner_outline {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.PanelButtons .PanelButtons__panelbtn .inner_outline:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.PanelButtons .PanelButtons__panelbtn .inner_outline .centered {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  border: 2px solid #eaeaea;
+  border-radius: 50%;
+  height: 62px;
+  width: 62px;
+  background-color: transparent;
+  opacity: 0;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+  -webkit-transform: scale3d(0.9, 0.9, 1);
+  transform: scale3d(0.9, 0.9, 1); }
+
+.PanelButtons .PanelButtons__panelbtn .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  line-height: 20px; }
+
+.PanelButtons .PanelButtons__panelbtn .text:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.PanelButtons .PanelButtons__panelbtn .text div {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%; }

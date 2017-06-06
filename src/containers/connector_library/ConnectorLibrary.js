@@ -72,6 +72,7 @@ class ConnectorLibrary extends Component {
 		let dc = url + 'dc_module_actual.jpg';
 		let db15 = url + 'db15_connector_actual.jpg';
 		let db25 = url + 'db25_connector_actual.jpg';
+		let audio = url + 'audio_connector_actual.jpg';
 
 		let type_styles = {
 			small: 'small_connectors',
@@ -119,6 +120,10 @@ class ConnectorLibrary extends Component {
 	    				<li onClick={() => this.addItemToData('db9', db9, 1.21)}><img src={db9} alt="db9" style={{width:'1.21in'}}/><div className="connectortype">DB9</div></li>
 	    				<li onClick={() => this.addItemToData('db15', db15, 1.55)}><img src={db15} alt="db15" style={{width:'1.55in'}}/><div className="connectortype">DB15</div></li>
 	    				<li onClick={() => this.addItemToData('db25', db25, 2.10)}><img src={db25} alt="db25" style={{width:'2.10in'}}/><div className="connectortype">DB25</div></li>
+	    			</ul>
+	    			<div className="title">Audio</div>
+	    			<ul>
+	    				<li onClick={() => this.addItemToData('audio', audio, 1.21)}><img src={audio} alt="audio" style={{width:'2.50in'}}/><div className="connectortype">Audio Module</div></li>
 	    			</ul>
 	    		</div>
 

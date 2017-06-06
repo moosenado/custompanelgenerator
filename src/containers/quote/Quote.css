@@ -6,227 +6,264 @@
   left: 0;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 25px; }
-  .Quote .Quote__sendingoverlay {
-    display: none; }
-    .Quote .Quote__sendingoverlay.active {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 200px;
-      right: 200px;
-      bottom: 0;
-      background-color: white;
-      opacity: .9; }
-      .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center; }
-        .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%;
-          font-size: 20px;
-          -webkit-animation: quoteSendingIntro 1s forwards;
-          animation: quoteSendingIntro 1s forwards; }
-          .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span {
-            font-size: 20px;
-            -webkit-animation: dotAni 1.4s 0s both infinite;
-            animation: dotAni 1.4s 0s both infinite; }
-            .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span:nth-child(2) {
-              -webkit-animation: dotAni 1.4s 0.2s both infinite;
-              animation: dotAni 1.4s 0.2s both infinite; }
-            .Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span:nth-child(3) {
-              -webkit-animation: dotAni 1.4s 0.4s both infinite;
-              animation: dotAni 1.4s 0.4s both infinite; }
-  .Quote .Quote__success {
-    display: none; }
-    .Quote .Quote__success.active {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 200px;
-      right: 200px;
-      bottom: 0;
-      background-color: white;
-      opacity: 1;
-      -webkit-animation: quoteSuccess 3.5s forwards;
-      animation: quoteSuccess 3.5s forwards; }
-      .Quote .Quote__success.active .Quote_successtext_centered {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center; }
-        .Quote .Quote__success.active .Quote_successtext_centered:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .Quote .Quote__success.active .Quote_successtext_centered .Quote_successtext {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%;
-          font-size: 20px; }
-  .Quote .Quote__content {
-    margin-top: 15px; }
-    .Quote .Quote__content .Quote__close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      background-color: #1f3364;
-      cursor: pointer;
-      -webkit-transition: opacity 0.25s;
-      transition: opacity 0.25s; }
-      .Quote .Quote__content .Quote__close:hover {
-        opacity: .8;
-        -webkit-transition: opacity 0.25s;
-        transition: opacity 0.25s; }
-      .Quote .Quote__content .Quote__close:before {
-        content: '';
-        display: block;
-        height: 10px;
-        position: absolute;
-        left: 11.5px;
-        width: 2px;
-        top: 7.5px;
-        background-color: white;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-animation: closeRotateIn 1s forwards;
-        animation: closeRotateIn 1s forwards; }
-      .Quote .Quote__content .Quote__close:after {
-        content: '';
-        display: block;
-        height: 10px;
-        position: absolute;
-        left: 11.5px;
-        width: 2px;
-        top: 7.5px;
-        background-color: white;
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        -webkit-animation: closeRotateInTwo 1s forwards;
-        animation: closeRotateInTwo 1s forwards; }
-    .Quote .Quote__content .Quote__error {
-      display: none;
-      text-align: center;
-      padding: 10px;
-      color: red;
-      -webkit-animation: quoteFadeInOut 1.5s infinite linear;
-      animation: quoteFadeInOut 1.5s infinite linear; }
-      .Quote .Quote__content .Quote__error.active {
-        display: block; }
-    .Quote .Quote__content h3 {
-      font-size: 34px;
-      text-align: center; }
-    .Quote .Quote__content .Quote__fieldtitle {
-      text-align: center;
-      font-size: 16px;
-      font-weight: 700;
-      margin: 10px 0; }
-    .Quote .Quote__content .Quote__input {
-      text-align: center;
-      margin: 10px 0; }
-      .Quote .Quote__content .Quote__input input, .Quote .Quote__content .Quote__input textarea {
-        border: 1px solid #727272;
-        height: 25px;
-        width: 300px;
-        padding: 2px;
-        font-size: 14px; }
-      .Quote .Quote__content .Quote__input textarea {
-        height: 120px; }
-    .Quote .Quote__content .Quote__offishbtn {
-      margin: 0 auto;
-      border-radius: 50%;
-      height: 70px;
-      width: 70px;
-      position: relative;
-      opacity: .2;
-      -webkit-transition: all 0.5s;
-      transition: all 0.5s;
-      -webkit-transform: scale3d(0.95, 0.95, 1);
-      transform: scale3d(0.95, 0.95, 1);
-      -webkit-animation: 1s buttonUpPlease forwards;
-      animation: 1s buttonUpPlease forwards; }
-      .Quote .Quote__content .Quote__offishbtn.blue {
-        background-color: #1f3364;
-        opacity: 1; }
-        .Quote .Quote__content .Quote__offishbtn.blue > div {
-          cursor: pointer; }
-        .Quote .Quote__content .Quote__offishbtn.blue:hover {
-          -webkit-transition: all 0.25s;
-          transition: all 0.25s;
-          -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1); }
-          .Quote .Quote__content .Quote__offishbtn.blue:hover .inner_outline .centered {
-            opacity: 1;
-            -webkit-transition: all 0.2s;
-            transition: all 0.2s;
-            -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); }
-      .Quote .Quote__content .Quote__offishbtn .inner_outline {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center; }
-        .Quote .Quote__content .Quote__offishbtn .inner_outline:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .Quote .Quote__content .Quote__offishbtn .inner_outline .centered {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%;
-          border: 2px solid #eaeaea;
-          border-radius: 50%;
-          height: 62px;
-          width: 62px;
-          background-color: transparent;
-          opacity: 0;
-          -webkit-transition: all 0.75s;
-          transition: all 0.75s;
-          -webkit-transform: scale3d(0.9, 0.9, 1);
-          transform: scale3d(0.9, 0.9, 1); }
-      .Quote .Quote__content .Quote__offishbtn .text {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center;
-        color: white;
-        font-size: 14px;
-        line-height: 20px; }
-        .Quote .Quote__content .Quote__offishbtn .text:before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          height: 100%; }
-        .Quote .Quote__content .Quote__offishbtn .text input {
-          height: 62px;
-          width: 62px;
-          background-color: transparent;
-          color: white;
-          cursor: pointer; }
-        .Quote .Quote__content .Quote__offishbtn .text div {
-          vertical-align: middle;
-          display: inline-block;
-          width: 100%; }
+
+.Quote .Quote__sendingoverlay {
+  display: none; }
+
+.Quote .Quote__sendingoverlay.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 200px;
+  bottom: 0;
+  background-color: white;
+  opacity: .9; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  -webkit-animation: quoteSendingIntro 1s forwards;
+  animation: quoteSendingIntro 1s forwards; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span {
+  font-size: 20px;
+  -webkit-animation: dotAni 1.4s 0s both infinite;
+  animation: dotAni 1.4s 0s both infinite; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span:nth-child(2) {
+  -webkit-animation: dotAni 1.4s 0.2s both infinite;
+  animation: dotAni 1.4s 0.2s both infinite; }
+
+.Quote .Quote__sendingoverlay.active .Quote_sendtext_centered .Quote_sendtext span:nth-child(3) {
+  -webkit-animation: dotAni 1.4s 0.4s both infinite;
+  animation: dotAni 1.4s 0.4s both infinite; }
+
+.Quote .Quote__success {
+  display: none; }
+
+.Quote .Quote__success.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 200px;
+  bottom: 0;
+  background-color: white;
+  opacity: 1;
+  -webkit-animation: quoteSuccess 3.5s forwards;
+  animation: quoteSuccess 3.5s forwards; }
+
+.Quote .Quote__success.active .Quote_successtext_centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.Quote .Quote__success.active .Quote_successtext_centered:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.Quote .Quote__success.active .Quote_successtext_centered .Quote_successtext {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px; }
+
+.Quote .Quote__content {
+  margin-top: 15px; }
+
+.Quote .Quote__content .Quote__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #1f3364;
+  cursor: pointer;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+.Quote .Quote__content .Quote__close:hover {
+  opacity: .8;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+.Quote .Quote__content .Quote__close:before {
+  content: '';
+  display: block;
+  height: 10px;
+  position: absolute;
+  left: 11.5px;
+  width: 2px;
+  top: 7.5px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: closeRotateIn 1s forwards;
+  animation: closeRotateIn 1s forwards; }
+
+.Quote .Quote__content .Quote__close:after {
+  content: '';
+  display: block;
+  height: 10px;
+  position: absolute;
+  left: 11.5px;
+  width: 2px;
+  top: 7.5px;
+  background-color: white;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: closeRotateInTwo 1s forwards;
+  animation: closeRotateInTwo 1s forwards; }
+
+.Quote .Quote__content .Quote__error {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  color: red;
+  -webkit-animation: quoteFadeInOut 1.5s infinite linear;
+  animation: quoteFadeInOut 1.5s infinite linear; }
+
+.Quote .Quote__content .Quote__error.active {
+  display: block; }
+
+.Quote .Quote__content h3 {
+  font-size: 34px;
+  text-align: center; }
+
+.Quote .Quote__content .Quote__fieldtitle {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0; }
+
+.Quote .Quote__content .Quote__input {
+  text-align: center;
+  margin: 10px 0; }
+
+.Quote .Quote__content .Quote__input input, .Quote .Quote__content .Quote__input textarea {
+  border: 1px solid #727272;
+  height: 25px;
+  width: 300px;
+  padding: 2px;
+  font-size: 14px; }
+
+.Quote .Quote__content .Quote__input textarea {
+  height: 120px; }
+
+.Quote .Quote__content .Quote__offishbtn {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  opacity: .2;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale3d(0.95, 0.95, 1);
+  transform: scale3d(0.95, 0.95, 1);
+  -webkit-animation: 1s buttonUpPlease forwards;
+  animation: 1s buttonUpPlease forwards; }
+
+.Quote .Quote__content .Quote__offishbtn.blue {
+  background-color: #1f3364;
+  opacity: 1; }
+
+.Quote .Quote__content .Quote__offishbtn.blue > div {
+  cursor: pointer; }
+
+.Quote .Quote__content .Quote__offishbtn.blue:hover {
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+.Quote .Quote__content .Quote__offishbtn.blue:hover .inner_outline .centered {
+  opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+.Quote .Quote__content .Quote__offishbtn .inner_outline {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+
+.Quote .Quote__content .Quote__offishbtn .inner_outline:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.Quote .Quote__content .Quote__offishbtn .inner_outline .centered {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  border: 2px solid #eaeaea;
+  border-radius: 50%;
+  height: 62px;
+  width: 62px;
+  background-color: transparent;
+  opacity: 0;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+  -webkit-transform: scale3d(0.9, 0.9, 1);
+  transform: scale3d(0.9, 0.9, 1); }
+
+.Quote .Quote__content .Quote__offishbtn .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 20px; }
+
+.Quote .Quote__content .Quote__offishbtn .text:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
+.Quote .Quote__content .Quote__offishbtn .text input {
+  height: 62px;
+  width: 62px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer; }
+
+.Quote .Quote__content .Quote__offishbtn .text div {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%; }
 
 @-webkit-keyframes closeRotateIn {
   0% {

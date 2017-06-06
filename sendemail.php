@@ -37,17 +37,22 @@ $details = array(
 );
 $details = implode( "\r\n", $details );
 
-// $namePat = "/^[a-z ,.'-]+$/i";
-// $emailPat = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/";
-
 // email to testforce
 $headers_testforce = array(
   'From: ' . $name . ' ' . '<' . $email . '>',
   'Reply-To: ' . $name . ' ' . '<' . $email . '>'
 );
 $headers_testforce = implode( "\r\n", $headers_testforce );
-mail('alexandra.aylott@testforce.com', 'Testforce Email', $details, $headers_testforce);
+mail('egrabish@gmail.com', 'DVTEST Quote Request', $details, $headers_testforce);
+//alexandra.aylott@testforce.com
+$customer_message = array(
+'Hello '.$name',',
+'Thank you for your Quote Request from DVTEST Inc. Within the next 24 hours you can expect our response. If you have any questions about your quote request please contact us at support@dvtest.com or call us at (647) 726-0058 Monday - Friday, 8am - 5pm EST.',
+'Thank you again for your interest.',
+'View Your Custom Panel Here: '.$panelurl
+);
+$customer_message = implode( "\r\n", $customer_message );
 
 // email to sender
 $headers_user = "DV Test" . ' ' . '<' . 'sales@dvtest.com' . '>';
-mail($email, 'Sender Email', 'We have received your custom panel quote. Thanks.', $headers_user);
+mail($email, 'DVTEST Quote Request', $customer_message, $headers_user);
