@@ -123,7 +123,7 @@ class ConnectorLibrary extends Component {
 	    			</ul>
 	    			<div className="title">Audio</div>
 	    			<ul>
-	    				<li onClick={() => this.addItemToData('audio', audio, 1.21)}><img src={audio} alt="audio" style={{width:'2.50in'}}/><div className="connectortype">Audio Module</div></li>
+	    				<li onClick={() => this.addItemToData('audio', audio, 2.50)}><img src={audio} alt="audio" style={{width:'2.50in'}}/><div className="connectortype">Audio Module</div></li>
 	    			</ul>
 	    		</div>
 
