@@ -19,6 +19,7 @@ class LargePanel extends Component {
 		this.refreshState = this.refreshState.bind(this);
 		this.undoState = this.undoState.bind(this);
 		this.dragEndStuff = this.dragEndStuff.bind(this);
+		this.removeConnector = this.removeConnector.bind(this);
 		this.draggies = [];
 
 		this.state = {
@@ -29,6 +30,13 @@ class LargePanel extends Component {
 	finishedView() {
 		this.setState({
 			finished: !this.state.finished
+		});
+	}
+
+	removeConnector(id) {
+		store.dispatch({
+			type: 'REMOVE_LARGE_CONNECTOR',
+			id: id
 		});
 	}
 
@@ -47,9 +55,9 @@ class LargePanel extends Component {
 	dragEndStuff(event, pointer) {
 		store.dispatch({
 			type: 'EDIT_LARGE_CONNECTORS',
-			id: event.target.id,
-			top: event.target.offsetTop,
-			left: event.target.offsetLeft
+			id: event.target.offsetParent.id,
+			top: event.target.offsetParent.offsetTop,
+			left: event.target.offsetParent.offsetLeft
 		});
 	}
 
@@ -138,7 +146,10 @@ class LargePanel extends Component {
 		      					{connectors_exist ? data.largeconnectors[data.largeconnectors.length-1].map((item, i)=>{
 									let top = item.top;
 									let left = item.left;
-									return <img id={item.id} key={i} className="dragme_large" src={item.src} alt={item.name} style={{width: item.width + 'in', top: top, left: left}}/>;
+									return (<div id={item.id} className="dragme_large" key={i} style={{width: item.width + 'in', top: top, left: left}}>
+											<img src={item.src} alt={item.name} />
+		      								<div className="dragme_close" onClick={() => this.removeConnector(item.id)}></div>
+		      								</div>)
 		      					}) : ''}
 		      				</div>
 		      			</div>

@@ -5,6 +5,7 @@ const data = (state = {}, action) => {
     case 'INIT_CONNECTORS':
     	return action.data;
 
+
     //SMALL CONNECTORS
 
     case 'ADD_SMALL_CONNECTOR':
@@ -20,6 +21,18 @@ const data = (state = {}, action) => {
         		left: action.left
         	}]]
     	}
+    case 'REMOVE_SMALL_CONNECTOR':
+        let last_entry_small_con = (state.smallconnectors.length > 0) ? state.smallconnectors[state.smallconnectors.length-1] : 0;
+        let new_entry_small = [];
+        last_entry_small_con.map((c,i) => {
+            if (+c.id !== +action.id) {
+                new_entry_small.push(c);
+            }
+        });
+        return {
+            ...state,
+            smallconnectors: [...state.smallconnectors, new_entry_small]
+        }
     case 'REFRESH_SMALL_CONNECTORS':
     	return {
       		...state,
@@ -49,6 +62,7 @@ const data = (state = {}, action) => {
     	}
 
 
+
     //MEDIUM CONNECTORS
 
     case 'ADD_MEDIUM_CONNECTOR':
@@ -63,6 +77,18 @@ const data = (state = {}, action) => {
                 top: action.top,
                 left: action.left
             }]]
+        }
+    case 'REMOVE_MEDIUM_CONNECTOR':
+        let last_entry_medium_con = (state.mediumconnectors.length > 0) ? state.mediumconnectors[state.mediumconnectors.length-1] : 0;
+        let new_entry_medium = [];
+        last_entry_medium_con.map((c,i) => {
+            if (+c.id !== +action.id) {
+                new_entry_medium.push(c);
+            }
+        });
+        return {
+            ...state,
+            mediumconnectors: [...state.mediumconnectors, new_entry_medium]
         }
     case 'REFRESH_MEDIUM_CONNECTORS':
         return {
@@ -93,6 +119,7 @@ const data = (state = {}, action) => {
         }
     
 
+
     //LARGE CONNECTORS
 
     case 'ADD_LARGE_CONNECTOR':
@@ -108,6 +135,18 @@ const data = (state = {}, action) => {
         		left: action.left
         	}]]
     	}
+    case 'REMOVE_LARGE_CONNECTOR':
+        let last_entry_large_con = (state.largeconnectors.length > 0) ? state.largeconnectors[state.largeconnectors.length-1] : 0;
+        let new_entry_large = [];
+        last_entry_large_con.map((c,i) => {
+            if (+c.id !== +action.id) {
+                new_entry_large.push(c);
+            }
+        });
+        return {
+            ...state,
+            largeconnectors: [...state.largeconnectors, new_entry_large]
+        }
     case 'REFRESH_LARGE_CONNECTORS':
     	return {
       		...state,

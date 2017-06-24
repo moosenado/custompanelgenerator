@@ -17,7 +17,7 @@ $top = $_POST['top'];
 $width = $_POST['width'];
 
 //panel url
-$panelurl = 'http://moosenado.com/custompanel/#/'.$panel.'/'.
+$panelurl = 'http://www.dvtest.com/custompanel/#/'.$panel.'/'.
 			'?id='.$id.
 			'&partname='.$partname.
 			'&left='.$left.
@@ -46,8 +46,8 @@ $headers_testforce = array(
   'Reply-To: ' . $name . ' ' . '<' . $email . '>'
 );
 $headers_testforce = implode( "\r\n", $headers_testforce );
-mail('egrabish@gmail.com', 'DVTEST Quote Request', $details, $headers_testforce);
-//alexandra.aylott@testforce.com
+mail('sales@dvtest.com', 'DVTEST Quote Request', $details, $headers_testforce);
+
 $customer_message = array(
   'Hello '.$name.',',
   '',

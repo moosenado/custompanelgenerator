@@ -142,6 +142,20 @@
   animation: fadePieceInLarge 0.5s forwards;
   cursor: move; }
 
+.LargePanel .LargePanel__rightcol .LargePanel__border .LargePanel__surface_centered .LargePanel__surface .dragme_large img {
+  width: 100%; }
+
+.LargePanel .LargePanel__rightcol .LargePanel__border .LargePanel__surface_centered .LargePanel__surface .dragme_large .dragme_close {
+  position: absolute;
+  cursor: pointer !important;
+  top: -15px;
+  right: 0px;
+  width: 16px;
+  height: 16px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAx0lEQVQ4T63TTWpCMRTF8Z+jOpeuqbiGaukGWlCLXYJa7cfAsaCIGxDcla6hBPIgLxp5oJnl4/zvueeSlhtX60a9uwMe0cWm4OwVexyr+9zBC9YY4C+DjDHDM3YlQDgP4p8M8okp3rBMwaUMhviOkDYml8QBdC3EERax2lnlay1Udx+Yx02AhbbOVslBEH/hHQ/RSWjrNydcAqTiKrA0k9p0ckCY8ypWrqWdTKePbSmDDp7SOWeWezjg1CTERt/k7n+hUdX00T+JQCARtuY86QAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: left center; }
+
 .LargePanel .LargePanel__finishedView-enter {
   opacity: 0;
   -webkit-transition: opacity 0.5s;

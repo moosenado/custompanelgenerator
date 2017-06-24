@@ -40,7 +40,7 @@ class FinishedView extends Component {
 				    				<span onClick={finishedView}>BACK</span>
 				    			</div>
 				    			<div className="FinishedView__finishedbtn">
-				    				<span><a href="http://www.testforce.com">DONE</a></span>
+				    				<span><a href="http://www.dvtest.com">DONE</a></span>
 				    			</div>
 			    			</div>
 		    			</div>
