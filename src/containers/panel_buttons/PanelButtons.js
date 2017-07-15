@@ -8,9 +8,9 @@ class PanelButtons extends Component {
 	render() {
 		const {finishedView, refreshState, undoState, data, type} = this.props;
 
-		let small_exists = (data.hasOwnProperty("smallconnectors")) ? data.smallconnectors.length > 0 : false;
-		let medium_exists = (data.hasOwnProperty("mediumconnectors")) ? data.mediumconnectors.length > 0 : false;
-		let large_exists = (data.hasOwnProperty("largeconnectors")) ? data.largeconnectors.length > 0 : false;
+		let small_exists = (data.hasOwnProperty("smallconnectors") && (data.smallconnectors.length > 0 && Object.keys(data.smallconnectors[data.smallconnectors.length - 1]).length !== 0)) ? true : false;
+		let medium_exists = (data.hasOwnProperty("mediumconnectors") && (data.mediumconnectors.length > 0 && Object.keys(data.mediumconnectors[data.mediumconnectors.length - 1]).length !== 0)) ? true : false;
+		let large_exists = (data.hasOwnProperty("largeconnectors") && (data.largeconnectors.length > 0 && Object.keys(data.largeconnectors[data.largeconnectors.length - 1]).length !== 0)) ? true : false;
 		let can_finish = ((type === 'small' && small_exists) || (type === 'medium' && medium_exists) || (type === 'large' && large_exists));
 		let finish_style = (can_finish) ? 'active' : 'unactive';
 
