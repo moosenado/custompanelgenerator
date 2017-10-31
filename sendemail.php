@@ -17,7 +17,7 @@ $top = $_POST['top'];
 $width = $_POST['width'];
 
 //panel url
-$panelurl = 'http://www.dvtest.com/custompanel/#/'.$panel.'/'.
+$panelurl = 'http://www.testforce.com/custompanel/#/'.$panel.'/'.
 			'?id='.$id.
 			'&partname='.$partname.
 			'&left='.$left.
