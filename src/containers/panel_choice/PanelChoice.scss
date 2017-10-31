@@ -58,14 +58,14 @@
 		@include transform(scale3d(.95,.95,1));
 
 		&.red {
-			background-color: red;
+			background-color: #cf9f59;
 			a {
 				cursor: default;
 			}
 		}
 
 		&.green {
-			background-color: green;
+			background-color: #cf9f59;
 			opacity: 1;
 			a {
 				cursor: pointer;

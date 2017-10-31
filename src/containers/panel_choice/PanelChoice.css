@@ -64,13 +64,13 @@
   transform: scale3d(0.95, 0.95, 1); }
 
 .PanelChoice .PanelChoice__start_btn.red {
-  background-color: red; }
+  background-color: #cf9f59; }
 
 .PanelChoice .PanelChoice__start_btn.red a {
   cursor: default; }
 
 .PanelChoice .PanelChoice__start_btn.green {
-  background-color: green;
+  background-color: #cf9f59;
   opacity: 1; }
 
 .PanelChoice .PanelChoice__start_btn.green a {
