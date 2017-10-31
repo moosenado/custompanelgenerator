@@ -82,7 +82,7 @@
 			border-radius: 50%;
 			width: 25px;
 			height: 25px;
-			background-color: #1f3364;
+			background-color: #000;
 			cursor: pointer;
 			@include transition(opacity .25s);
 
@@ -171,7 +171,7 @@
 			@include animation(1s buttonUpPlease forwards);
 
 			&.blue {
-				background-color: #1f3364;
+				background-color: #000;
 				opacity: 1;
 				> div {
 					cursor: pointer;

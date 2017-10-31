@@ -29,7 +29,7 @@
   font-size: 12px; }
 
 .LargePanel .LargePanel__rightcol .LargePanel__info a {
-  color: #1f3364;
+  color: #000;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; }
 
