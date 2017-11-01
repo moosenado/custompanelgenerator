@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "draggabilly": "^2.1.1",
     "es6-promise": "^4.1.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
@@ -20,7 +21,7 @@
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5"
   },
-  "homepage": "http://moosenado.com/custompanel/",
+  "homepage": "http://custompanel.dvtest.com/",
   "scripts": {
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",

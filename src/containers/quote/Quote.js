@@ -173,7 +173,7 @@ class Quote extends Component {
 	      				 "&notes=" + encodeURIComponent(form.notes) +
 	      				 this.getSerialize();
 
-      		xmlhttp.open("POST","/sendemail.php", true);
+      		xmlhttp.open("POST","https://testforce.com/sendemail.php", true);
 
       		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
