@@ -1,5 +1,7 @@
 <?php
 
+header("access-control-allow-origin: *");
+
 //form details
 $name = $_POST['name'];
 $email = $_POST['email'];
